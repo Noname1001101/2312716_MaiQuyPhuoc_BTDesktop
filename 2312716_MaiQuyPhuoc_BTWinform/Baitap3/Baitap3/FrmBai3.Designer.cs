@@ -154,7 +154,7 @@
             // 
             this.bntXemKetQua.AutoSize = true;
             this.bntXemKetQua.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bntXemKetQua.Location = new System.Drawing.Point(273, 250);
+            this.bntXemKetQua.Location = new System.Drawing.Point(273, 255);
             this.bntXemKetQua.Name = "bntXemKetQua";
             this.bntXemKetQua.Size = new System.Drawing.Size(120, 37);
             this.bntXemKetQua.TabIndex = 10;

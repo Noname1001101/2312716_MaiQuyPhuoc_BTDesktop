@@ -3,11 +3,15 @@
   "WorkspaceRootPath": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\2312716_MaiQuyPhuoc_BTWinform\\Baitap1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A646223A-42EF-40E4-849F-782147E78F33}|2312716_MaiQuyPhuoc_BTWinform\\2312716_MaiQuyPhuoc_BTWinform.csproj|D:\\2312716_MaiQuyPhuoc_baitapdesktop\\2312716_MaiQuyPhuoc_BTWinform\\Baitap1\\2312716_maiquyphuoc_btwinform\\frmbai3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A646223A-42EF-40E4-849F-782147E78F33}|2312716_MaiQuyPhuoc_BTWinform\\2312716_MaiQuyPhuoc_BTWinform.csproj|d:\\2312716_maiquyphuoc_baitapdesktop\\2312716_maiquyphuoc_btwinform\\baitap1\\2312716_maiquyphuoc_btwinform\\frmbai1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A646223A-42EF-40E4-849F-782147E78F33}|2312716_MaiQuyPhuoc_BTWinform\\2312716_MaiQuyPhuoc_BTWinform.csproj|solutionrelative:2312716_maiquyphuoc_btwinform\\frmbai1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A646223A-42EF-40E4-849F-782147E78F33}|2312716_MaiQuyPhuoc_BTWinform\\2312716_MaiQuyPhuoc_BTWinform.csproj|d:\\2312716_maiquyphuoc_baitapdesktop\\2312716_maiquyphuoc_btwinform\\baitap1\\2312716_maiquyphuoc_btwinform\\frmbai3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A646223A-42EF-40E4-849F-782147E78F33}|2312716_MaiQuyPhuoc_BTWinform\\2312716_MaiQuyPhuoc_BTWinform.csproj|solutionrelative:2312716_maiquyphuoc_btwinform\\frmbai3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A646223A-42EF-40E4-849F-782147E78F33}|2312716_MaiQuyPhuoc_BTWinform\\2312716_MaiQuyPhuoc_BTWinform.csproj|d:\\2312716_maiquyphuoc_baitapdesktop\\2312716_maiquyphuoc_btwinform\\baitap1\\2312716_maiquyphuoc_btwinform\\frmbai3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{A646223A-42EF-40E4-849F-782147E78F33}|2312716_MaiQuyPhuoc_BTWinform\\2312716_MaiQuyPhuoc_BTWinform.csproj|D:\\2312716_MaiQuyPhuoc_baitapdesktop\\2312716_MaiQuyPhuoc_BTWinform\\Baitap1\\2312716_maiquyphuoc_btwinform\\frmbai3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{A646223A-42EF-40E4-849F-782147E78F33}|2312716_MaiQuyPhuoc_BTWinform\\2312716_MaiQuyPhuoc_BTWinform.csproj|solutionrelative:2312716_maiquyphuoc_btwinform\\frmbai3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -26,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,7 +38,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
+              "Title": "frmBai1.cs [Design]",
+              "DocumentMoniker": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\2312716_MaiQuyPhuoc_BTWinform\\Baitap1\\2312716_MaiQuyPhuoc_BTWinform\\frmBai1.cs",
+              "RelativeDocumentMoniker": "2312716_MaiQuyPhuoc_BTWinform\\frmBai1.cs",
+              "ToolTip": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\2312716_MaiQuyPhuoc_BTWinform\\Baitap1\\2312716_MaiQuyPhuoc_BTWinform\\frmBai1.cs [Design]",
+              "RelativeToolTip": "2312716_MaiQuyPhuoc_BTWinform\\frmBai1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-29T15:08:10.265Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "HangHoa.cs",
               "DocumentMoniker": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\2312716_MaiQuyPhuoc_BTWinform\\Baitap1\\2312716_MaiQuyPhuoc_BTWinform\\HangHoa.cs",
               "RelativeDocumentMoniker": "2312716_MaiQuyPhuoc_BTWinform\\HangHoa.cs",
@@ -42,12 +58,11 @@
               "RelativeToolTip": "2312716_MaiQuyPhuoc_BTWinform\\HangHoa.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-29T09:01:47.852Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-29T09:01:47.852Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "frmBai3.cs [Design]",
               "DocumentMoniker": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\2312716_MaiQuyPhuoc_BTWinform\\Baitap1\\2312716_MaiQuyPhuoc_BTWinform\\frmBai3.cs",
               "RelativeDocumentMoniker": "2312716_MaiQuyPhuoc_BTWinform\\frmBai3.cs",
@@ -59,7 +74,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "frmBai3.cs",
               "DocumentMoniker": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\2312716_MaiQuyPhuoc_BTWinform\\Baitap1\\2312716_MaiQuyPhuoc_BTWinform\\frmBai3.cs",
               "RelativeDocumentMoniker": "2312716_MaiQuyPhuoc_BTWinform\\frmBai3.cs",
@@ -72,7 +87,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "TinhToan.cs",
               "DocumentMoniker": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\2312716_MaiQuyPhuoc_BTWinform\\Baitap1\\2312716_MaiQuyPhuoc_BTWinform\\TinhToan.cs",
               "RelativeDocumentMoniker": "2312716_MaiQuyPhuoc_BTWinform\\TinhToan.cs",
