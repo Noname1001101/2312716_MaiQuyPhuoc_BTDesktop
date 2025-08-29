@@ -1,0 +1,14 @@
+D:\2312716_MaiQuyPhuoc_baitapdesktop\2312716_MaiQuyPhuoc_BTWinform\Baitap2\Baitap2\bin\Debug\Baitap2.exe.config
+D:\2312716_MaiQuyPhuoc_baitapdesktop\2312716_MaiQuyPhuoc_BTWinform\Baitap2\Baitap2\bin\Debug\Baitap2.exe
+D:\2312716_MaiQuyPhuoc_baitapdesktop\2312716_MaiQuyPhuoc_BTWinform\Baitap2\Baitap2\bin\Debug\Baitap2.pdb
+D:\2312716_MaiQuyPhuoc_baitapdesktop\2312716_MaiQuyPhuoc_BTWinform\Baitap2\Baitap2\obj\Debug\Baitap2.csproj.AssemblyReference.cache
+D:\2312716_MaiQuyPhuoc_baitapdesktop\2312716_MaiQuyPhuoc_BTWinform\Baitap2\Baitap2\obj\Debug\Baitap2.Properties.Resources.resources
+D:\2312716_MaiQuyPhuoc_baitapdesktop\2312716_MaiQuyPhuoc_BTWinform\Baitap2\Baitap2\obj\Debug\Baitap2.csproj.GenerateResource.cache
+D:\2312716_MaiQuyPhuoc_baitapdesktop\2312716_MaiQuyPhuoc_BTWinform\Baitap2\Baitap2\obj\Debug\Baitap2.csproj.CoreCompileInputs.cache
+D:\2312716_MaiQuyPhuoc_baitapdesktop\2312716_MaiQuyPhuoc_BTWinform\Baitap2\Baitap2\obj\Debug\Baitap2.exe
+D:\2312716_MaiQuyPhuoc_baitapdesktop\2312716_MaiQuyPhuoc_BTWinform\Baitap2\Baitap2\obj\Debug\Baitap2.pdb
+D:\2312716_MaiQuyPhuoc_baitapdesktop\2312716_MaiQuyPhuoc_BTWinform\Baitap2\Baitap2\obj\Debug\Baitap2.exe.config
+D:\2312716_MaiQuyPhuoc_baitapdesktop\2312716_MaiQuyPhuoc_BTWinform\Baitap2\Baitap2\obj\Debug\Baitap2.frmChinh.resources
+D:\2312716_MaiQuyPhuoc_baitapdesktop\2312716_MaiQuyPhuoc_BTWinform\Baitap2\Baitap2\obj\Debug\Baitap2.frmBai1.resources
+D:\2312716_MaiQuyPhuoc_baitapdesktop\2312716_MaiQuyPhuoc_BTWinform\Baitap2\Baitap2\obj\Debug\Baitap2.FrmBai2.resources
+D:\2312716_MaiQuyPhuoc_baitapdesktop\2312716_MaiQuyPhuoc_BTWinform\Baitap2\Baitap2\obj\Debug\Baitap2.frmBai3.resources

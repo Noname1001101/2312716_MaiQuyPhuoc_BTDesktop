@@ -28,5 +28,10 @@ namespace _2312716_MaiQuyPhuoc_BTWinform
 
             lblThongBao.Text = hh.HienThi();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

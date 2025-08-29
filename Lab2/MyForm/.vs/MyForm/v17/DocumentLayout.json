@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab2\\MyForm\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3A0D5AB7-588F-4AA8-9B95-85DF34CD2A87}|MyForm\\MyForm.csproj|d:\\2312716_maiquyphuoc_baitapdesktop\\lab2\\myform\\myform\\giangvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3A0D5AB7-588F-4AA8-9B95-85DF34CD2A87}|MyForm\\MyForm.csproj|D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab2\\MyForm\\myform\\hocphan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A0D5AB7-588F-4AA8-9B95-85DF34CD2A87}|MyForm\\MyForm.csproj|solutionrelative:myform\\hocphan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A0D5AB7-588F-4AA8-9B95-85DF34CD2A87}|MyForm\\MyForm.csproj|D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab2\\MyForm\\myform\\giangvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3A0D5AB7-588F-4AA8-9B95-85DF34CD2A87}|MyForm\\MyForm.csproj|solutionrelative:myform\\giangvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3A0D5AB7-588F-4AA8-9B95-85DF34CD2A87}|MyForm\\MyForm.csproj|D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab2\\MyForm\\myform\\danhsachhocphan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3A0D5AB7-588F-4AA8-9B95-85DF34CD2A87}|MyForm\\MyForm.csproj|d:\\2312716_maiquyphuoc_baitapdesktop\\lab2\\myform\\myform\\danhsachhocphan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3A0D5AB7-588F-4AA8-9B95-85DF34CD2A87}|MyForm\\MyForm.csproj|solutionrelative:myform\\danhsachhocphan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3A0D5AB7-588F-4AA8-9B95-85DF34CD2A87}|MyForm\\MyForm.csproj|D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab2\\MyForm\\myform\\hocphan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3A0D5AB7-588F-4AA8-9B95-85DF34CD2A87}|MyForm\\MyForm.csproj|solutionrelative:myform\\hocphan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3A0D5AB7-588F-4AA8-9B95-85DF34CD2A87}|MyForm\\MyForm.csproj|D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab2\\MyForm\\myform\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -34,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,7 +42,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "GiangVien.cs",
               "DocumentMoniker": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab2\\MyForm\\MyForm\\GiangVien.cs",
               "RelativeDocumentMoniker": "MyForm\\GiangVien.cs",
@@ -55,27 +55,29 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "DanhSachHocPhan.cs",
               "DocumentMoniker": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab2\\MyForm\\MyForm\\DanhSachHocPhan.cs",
               "RelativeDocumentMoniker": "MyForm\\DanhSachHocPhan.cs",
               "ToolTip": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab2\\MyForm\\MyForm\\DanhSachHocPhan.cs",
               "RelativeToolTip": "MyForm\\DanhSachHocPhan.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAAACYAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAABQAAAAAAAAAAAAAwCYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-19T03:39:41.706Z"
+              "WhenOpened": "2025-08-19T03:39:41.706Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "HocPhan.cs",
               "DocumentMoniker": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab2\\MyForm\\MyForm\\HocPhan.cs",
               "RelativeDocumentMoniker": "MyForm\\HocPhan.cs",
               "ToolTip": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab2\\MyForm\\MyForm\\HocPhan.cs",
               "RelativeToolTip": "MyForm\\HocPhan.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAgwB4AAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAAAB4AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-19T03:34:53.343Z"
+              "WhenOpened": "2025-08-19T03:34:53.343Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
