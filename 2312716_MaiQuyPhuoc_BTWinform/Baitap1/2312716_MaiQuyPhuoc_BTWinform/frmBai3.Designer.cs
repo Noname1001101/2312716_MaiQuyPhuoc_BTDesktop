@@ -35,8 +35,8 @@
             this.txtSoB = new System.Windows.Forms.TextBox();
             this.txtSoN = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rdTongAB = new System.Windows.Forms.RadioButton();
             this.rdTongN = new System.Windows.Forms.RadioButton();
+            this.rdTongAB = new System.Windows.Forms.RadioButton();
             this.btnXemKQ = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.lblKetQua = new System.Windows.Forms.Label();
@@ -105,6 +105,17 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
+            // rdTongN
+            // 
+            this.rdTongN.AutoSize = true;
+            this.rdTongN.Location = new System.Drawing.Point(6, 64);
+            this.rdTongN.Name = "rdTongN";
+            this.rdTongN.Size = new System.Drawing.Size(142, 20);
+            this.rdTongN.TabIndex = 7;
+            this.rdTongN.TabStop = true;
+            this.rdTongN.Text = "Tính tổng từ 1 đến n";
+            this.rdTongN.UseVisualStyleBackColor = true;
+            // 
             // rdTongAB
             // 
             this.rdTongAB.AutoSize = true;
@@ -116,17 +127,6 @@
             this.rdTongAB.Text = "Tính tổng của a,b";
             this.rdTongAB.UseVisualStyleBackColor = true;
             this.rdTongAB.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
-            // 
-            // rdTongN
-            // 
-            this.rdTongN.AutoSize = true;
-            this.rdTongN.Location = new System.Drawing.Point(6, 64);
-            this.rdTongN.Name = "rdTongN";
-            this.rdTongN.Size = new System.Drawing.Size(142, 20);
-            this.rdTongN.TabIndex = 7;
-            this.rdTongN.TabStop = true;
-            this.rdTongN.Text = "Tính tổng từ 1 đến n";
-            this.rdTongN.UseVisualStyleBackColor = true;
             // 
             // btnXemKQ
             // 
@@ -154,9 +154,9 @@
             this.lblKetQua.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKetQua.Location = new System.Drawing.Point(170, 330);
             this.lblKetQua.Name = "lblKetQua";
-            this.lblKetQua.Size = new System.Drawing.Size(17, 25);
+            this.lblKetQua.Size = new System.Drawing.Size(0, 25);
             this.lblKetQua.TabIndex = 10;
-            this.lblKetQua.Text = ",";
+            this.lblKetQua.Click += new System.EventHandler(this.lblKetQua_Click);
             // 
             // frmBai3
             // 

@@ -65,5 +65,10 @@ namespace _2312716_MaiQuyPhuoc_BTWinform
             
 
         }
+
+        private void frmBai2_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

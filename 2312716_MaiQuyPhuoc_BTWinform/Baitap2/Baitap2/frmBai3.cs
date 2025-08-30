@@ -38,6 +38,9 @@ namespace Baitap2
 
         }
 
-       
+        private void lblKetQua_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

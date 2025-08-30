@@ -52,6 +52,14 @@ namespace Baitap4
         {
             int diemLyThuyet = int.Parse(txtDiemLyThuyet.Text);
             int diemThucHanh = int.Parse(txtDiemThucHanh.Text);
+            if (diemLyThuyet < 0 || diemLyThuyet > 10 || diemThucHanh < 0 || diemThucHanh > 10)
+            {
+                MessageBox.Show("Điểm nhập vào phải nằm trong khoảng 0 đến 10!",
+                                "Lỗi nhập liệu",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+                return; 
+            }
             string kq = XepLoaiHocTap(diemThucHanh, diemLyThuyet);
             lblKetQua.Text = kq.ToString();
             

@@ -38,8 +38,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rdChuyenkhoan = new System.Windows.Forms.RadioButton();
             this.rdTienMat = new System.Windows.Forms.RadioButton();
+            this.rdChuyenkhoan = new System.Windows.Forms.RadioButton();
             this.bntTinhTien = new System.Windows.Forms.Button();
             this.lblSoTien = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
@@ -132,16 +132,6 @@
             this.groupBox1.Text = "Hình thức thanh toán:";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // rdChuyenkhoan
-            // 
-            this.rdChuyenkhoan.AutoSize = true;
-            this.rdChuyenkhoan.Location = new System.Drawing.Point(24, 25);
-            this.rdChuyenkhoan.Name = "rdChuyenkhoan";
-            this.rdChuyenkhoan.Size = new System.Drawing.Size(113, 20);
-            this.rdChuyenkhoan.TabIndex = 0;
-            this.rdChuyenkhoan.Text = "Chuyển khoản";
-            this.rdChuyenkhoan.UseVisualStyleBackColor = true;
-            // 
             // rdTienMat
             // 
             this.rdTienMat.AutoSize = true;
@@ -153,6 +143,16 @@
             this.rdTienMat.TabStop = true;
             this.rdTienMat.Text = "Tiền Mặt";
             this.rdTienMat.UseVisualStyleBackColor = true;
+            // 
+            // rdChuyenkhoan
+            // 
+            this.rdChuyenkhoan.AutoSize = true;
+            this.rdChuyenkhoan.Location = new System.Drawing.Point(24, 25);
+            this.rdChuyenkhoan.Name = "rdChuyenkhoan";
+            this.rdChuyenkhoan.Size = new System.Drawing.Size(113, 20);
+            this.rdChuyenkhoan.TabIndex = 0;
+            this.rdChuyenkhoan.Text = "Chuyển khoản";
+            this.rdChuyenkhoan.UseVisualStyleBackColor = true;
             // 
             // bntTinhTien
             // 
@@ -171,9 +171,8 @@
             this.lblSoTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSoTien.Location = new System.Drawing.Point(232, 341);
             this.lblSoTien.Name = "lblSoTien";
-            this.lblSoTien.Size = new System.Drawing.Size(17, 25);
+            this.lblSoTien.Size = new System.Drawing.Size(0, 25);
             this.lblSoTien.TabIndex = 11;
-            this.lblSoTien.Text = ",";
             // 
             // frmBai2
             // 
@@ -193,6 +192,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmBai2";
             this.Text = "Bai2";
+            this.Load += new System.EventHandler(this.frmBai2_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

@@ -11,3 +11,4 @@ D:\2312716_MaiQuyPhuoc_baitapdesktop\2312716_MaiQuyPhuoc_BTWinform\Baitap4\Baita
 D:\2312716_MaiQuyPhuoc_baitapdesktop\2312716_MaiQuyPhuoc_BTWinform\Baitap4\Baitap4\obj\Debug\Baitap4.pdb
 D:\2312716_MaiQuyPhuoc_baitapdesktop\2312716_MaiQuyPhuoc_BTWinform\Baitap4\Baitap4\obj\Debug\Baitap4.exe.config
 D:\2312716_MaiQuyPhuoc_baitapdesktop\2312716_MaiQuyPhuoc_BTWinform\Baitap4\Baitap4\obj\Debug\Baitap4.frmBai2.resources
+D:\2312716_MaiQuyPhuoc_baitapdesktop\2312716_MaiQuyPhuoc_BTWinform\Baitap4\Baitap4\obj\Debug\Baitap4.frmBai3.resources

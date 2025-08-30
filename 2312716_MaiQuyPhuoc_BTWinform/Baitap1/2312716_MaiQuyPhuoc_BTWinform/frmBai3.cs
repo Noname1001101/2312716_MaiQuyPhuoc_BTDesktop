@@ -40,5 +40,10 @@ namespace _2312716_MaiQuyPhuoc_BTWinform
 
             lblKetQua.Text = kq.ToString();
         }
+
+        private void lblKetQua_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

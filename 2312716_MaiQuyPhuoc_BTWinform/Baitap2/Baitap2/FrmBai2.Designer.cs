@@ -159,7 +159,6 @@
             this.lblKetQua.Name = "lblKetQua";
             this.lblKetQua.Size = new System.Drawing.Size(107, 23);
             this.lblKetQua.TabIndex = 7;
-            this.lblKetQua.Text = ",";
             // 
             // FrmBai2
             // 

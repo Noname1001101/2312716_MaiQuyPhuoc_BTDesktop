@@ -48,9 +48,8 @@
             this.lblThongBao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblThongBao.Location = new System.Drawing.Point(124, 84);
             this.lblThongBao.Name = "lblThongBao";
-            this.lblThongBao.Size = new System.Drawing.Size(17, 25);
+            this.lblThongBao.Size = new System.Drawing.Size(0, 25);
             this.lblThongBao.TabIndex = 1;
-            this.lblThongBao.Text = ",";
             // 
             // frmBai1
             // 

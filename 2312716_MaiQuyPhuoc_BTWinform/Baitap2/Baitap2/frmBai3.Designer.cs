@@ -155,7 +155,7 @@
             this.lblKetQua.Name = "lblKetQua";
             this.lblKetQua.Size = new System.Drawing.Size(296, 60);
             this.lblKetQua.TabIndex = 9;
-            this.lblKetQua.Text = ",";
+            this.lblKetQua.Click += new System.EventHandler(this.lblKetQua_Click);
             // 
             // frmBai3
             // 

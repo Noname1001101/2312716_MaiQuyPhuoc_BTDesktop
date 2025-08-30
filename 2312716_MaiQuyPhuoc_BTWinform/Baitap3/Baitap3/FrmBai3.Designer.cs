@@ -146,9 +146,8 @@
             this.lblKetQua.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKetQua.Location = new System.Drawing.Point(277, 312);
             this.lblKetQua.Name = "lblKetQua";
-            this.lblKetQua.Size = new System.Drawing.Size(17, 25);
+            this.lblKetQua.Size = new System.Drawing.Size(0, 25);
             this.lblKetQua.TabIndex = 9;
-            this.lblKetQua.Text = ".";
             // 
             // bntXemKetQua
             // 
