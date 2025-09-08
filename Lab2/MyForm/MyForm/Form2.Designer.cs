@@ -175,7 +175,6 @@
             this.label5.Size = new System.Drawing.Size(78, 16);
             this.label5.TabIndex = 11;
             this.label5.Text = "Ngày Sinh";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label6
             // 
@@ -277,6 +276,7 @@
             this.btnChon.TabIndex = 20;
             this.btnChon.Text = ">>";
             this.btnChon.UseVisualStyleBackColor = true;
+            this.btnChon.Click += new System.EventHandler(this.btnChon_Click);
             // 
             // btnXoa
             // 
@@ -287,6 +287,7 @@
             this.btnXoa.TabIndex = 21;
             this.btnXoa.Text = "<<";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThongBao
             // 
@@ -298,6 +299,7 @@
             this.btnThongBao.TabIndex = 22;
             this.btnThongBao.Text = "Thông Báo";
             this.btnThongBao.UseVisualStyleBackColor = true;
+            this.btnThongBao.Click += new System.EventHandler(this.btnThongBao_Click);
             // 
             // btnCancel
             // 
@@ -312,6 +314,7 @@
             this.btnCancel.Text = "Cancel";
             this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnExit
             // 
@@ -333,6 +336,7 @@
             this.linklbLienHe.TabIndex = 25;
             this.linklbLienHe.TabStop = true;
             this.linklbLienHe.Text = "Liên hệ";
+            this.linklbLienHe.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklbLienHe_LinkClicked);
             // 
             // label10
             // 
@@ -378,7 +382,6 @@
             this.Controls.Add(this.lblThongBao);
             this.Name = "frmTBGiangVien";
             this.Text = "Thông tin giảng viên";
-            this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
