@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyForm
 {
-    internal class DanhSachHocPhan
+    public class DanhSachHocPhan
     {
         public List<HocPhan> ds;
         public DanhSachHocPhan()

@@ -37,5 +37,10 @@ namespace Baitap4
                 lblKetQua.Text = kq.ToString();
             }
         }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

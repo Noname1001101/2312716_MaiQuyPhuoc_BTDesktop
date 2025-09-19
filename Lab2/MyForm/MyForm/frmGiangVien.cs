@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,17 +11,12 @@ using System.Windows.Forms;
 
 namespace MyForm
 {
-    public partial class frmTBGiangVien : Form
+    public partial class frmGiangVien : Form
     {
-        public frmTBGiangVien()
+        private QuanLyGiangVien dsGiangVien = new QuanLyGiangVien();
+        public frmGiangVien()
         {
             InitializeComponent();
-        }
-
-        //Gán chuỗi s cho thuộc text của lblThongBao
-        public void SetText(string s)
-        {
-            this.lblThongBao.Text = s;
         }
 
         private void frmGiangVien_Load(object sender, EventArgs e)
@@ -35,22 +31,26 @@ namespace MyForm
             int i = this.lbHocPhanDay.SelectedItems.Count - 1;
             while (i >= 0)
             {
-                this.lbDanhSachHP.Items.Add(lbHocPhanDay.SelectedItem[i]);
-                this.lbHocPhanDay.Items.Remove(lbHocPhanDay.SelectedItem[i]);
+                var item = lbHocPhanDay.SelectedItems[i];
+                this.lbDanhSachHP.Items.Add(item);
+                this.lbHocPhanDay.Items.Remove(item);
                 i--;
             }
         }
 
+   
+
         private void btnChon_Click(object sender, EventArgs e)
         {
-            int i = this.lbDanhSachHP.SelectedItems.Count - 1;
-            while (i >= 0)
+            // duyệt ngược để tránh lỗi khi Remove
+            for (int i = lbDanhSachHP.SelectedItems.Count - 1; i >= 0; i--)
             {
-                this.lbHocPhanDay.Items.Add(lbDanhSachHP.SelectedItem[i]);
-                this.lbDanhSachHP.Items.Remove(lbDanhSachHP.SelectedItem[i]);
-                i--;
+                var item = lbDanhSachHP.SelectedItems[i]; // lấy ra item đang chọn
+                lbHocPhanDay.Items.Add(item);             // thêm vào listbox khác
+                lbDanhSachHP.Items.Remove(item);          // xóa khỏi listbox hiện tại
             }
         }
+
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -79,10 +79,23 @@ namespace MyForm
 
         private void btnThongBao_Click(object sender, EventArgs e)
         {
+            if (dsGiangVien.dsGiangVien.Count == 0)
+            {
+                MessageBox.Show("Chưa có giảng viên nào!", "Thông báo");
+                return;
+            }
+
+            string info = "";
+            foreach (GiangVien gv in dsGiangVien.dsGiangVien)
+            {
+                info += gv.ToString() + "\n----------------\n";
+            }
+
             frmTBGiangVien frm = new frmTBGiangVien();
-            frm.SetText(GetGiangVien().ToString());
+            frm.SetText(info);
             frm.ShowDialog();
         }
+
 
         //Lấy thông tin của giảng viên được nhập trên form
         public GiangVien GetGiangVien()
@@ -91,7 +104,7 @@ namespace MyForm
             if (rdNu.Checked)
             {
                 gt = "Nữ";
-                
+
             }
             GiangVien gv = new GiangVien();
             gv.MaSo = this.cboMaSo.Text;
@@ -108,24 +121,51 @@ namespace MyForm
                     ngoaiNgu += chklbNgoaiNgu.Items[i] + ";";
                 }
             }
-                gv.NgoaiNgu = ngoaiNgu.Split(';');
-                DanhSachHocPhan dshp = new DanhSachHocPhan();
-            
-                foreach (object hp in lbHocPhanDay.Items)
-                {
-                    dshp.Them(new HocPhan(hp.ToString()));
-                    
-                }
-                gv.dsHocPhan = dshp;
-                return gv;
-            
+            gv.NgoaiNgu = ngoaiNgu.Split(';');
+            DanhSachHocPhan dshp = new DanhSachHocPhan();
+
+            foreach (object hp in lbHocPhanDay.Items)
+            {
+                dshp.Them(new HocPhan(hp.ToString()));
+
+            }
+            gv.dsHocPhan = dshp;
+            return gv;
+
         }
+
 
         private void linklbLienHe_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             string strlink = e.Link.LinkData.ToString();
             Process.Start(strlink);
         }
+
+
+
+        private void bntTim_Click(object sender, EventArgs e)
+        {
+            frmTim frm = new frmTim(dsGiangVien);
+            frm.ShowDialog();
+        }
+
+
+        private void bntThem_Click(object sender, EventArgs e)
+        {
+            GiangVien gv = GetGiangVien();
+
+            if (dsGiangVien.Them(gv))
+            {
+                MessageBox.Show("Thêm giảng viên thành công!", "Thông báo");
+                Reset();
+            }
+            else
+            {
+                MessageBox.Show("Mã giảng viên đã tồn tại!", "Thông báo");
+            }
+        }
+
+
     }
     
 }

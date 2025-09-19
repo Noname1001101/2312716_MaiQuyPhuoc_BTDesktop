@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab2\\MyForm\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3A0D5AB7-588F-4AA8-9B95-85DF34CD2A87}|MyForm\\MyForm.csproj|d:\\2312716_maiquyphuoc_baitapdesktop\\lab2\\myform\\myform\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3A0D5AB7-588F-4AA8-9B95-85DF34CD2A87}|MyForm\\MyForm.csproj|solutionrelative:myform\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3A0D5AB7-588F-4AA8-9B95-85DF34CD2A87}|MyForm\\MyForm.csproj|d:\\2312716_maiquyphuoc_baitapdesktop\\lab2\\myform\\myform\\frmsinhvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A0D5AB7-588F-4AA8-9B95-85DF34CD2A87}|MyForm\\MyForm.csproj|solutionrelative:myform\\frmsinhvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3A0D5AB7-588F-4AA8-9B95-85DF34CD2A87}|MyForm\\MyForm.csproj|D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab2\\MyForm\\myform\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{3A0D5AB7-588F-4AA8-9B95-85DF34CD2A87}|MyForm\\MyForm.csproj|solutionrelative:myform\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{3A0D5AB7-588F-4AA8-9B95-85DF34CD2A87}|MyForm\\MyForm.csproj|d:\\2312716_maiquyphuoc_baitapdesktop\\lab2\\myform\\myform\\frmsinhvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3A0D5AB7-588F-4AA8-9B95-85DF34CD2A87}|MyForm\\MyForm.csproj|solutionrelative:myform\\frmsinhvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,26 +27,26 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Form2.cs",
-              "DocumentMoniker": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab2\\MyForm\\MyForm\\Form2.cs",
-              "RelativeDocumentMoniker": "MyForm\\Form2.cs",
-              "ToolTip": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab2\\MyForm\\MyForm\\Form2.cs",
-              "RelativeToolTip": "MyForm\\Form2.cs",
-              "ViewState": "AgIAAHEAAAAAAAAAAIAwwH8AAAAJAAAAAAAAAA==",
+              "Title": "frmSinhVien.cs",
+              "DocumentMoniker": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab2\\MyForm\\MyForm\\frmSinhVien.cs",
+              "RelativeDocumentMoniker": "MyForm\\frmSinhVien.cs",
+              "ToolTip": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab2\\MyForm\\MyForm\\frmSinhVien.cs",
+              "RelativeToolTip": "MyForm\\frmSinhVien.cs",
+              "ViewState": "AgIAALYAAAAAAAAAAAAuwM4AAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-08T01:11:08.663Z",
+              "WhenOpened": "2025-09-19T09:43:39.211Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Form2.cs [Design]",
-              "DocumentMoniker": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab2\\MyForm\\MyForm\\Form2.cs",
-              "RelativeDocumentMoniker": "MyForm\\Form2.cs",
-              "ToolTip": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab2\\MyForm\\MyForm\\Form2.cs [Design]",
-              "RelativeToolTip": "MyForm\\Form2.cs [Design]",
+              "Title": "frmSinhVien.cs [Design]",
+              "DocumentMoniker": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab2\\MyForm\\MyForm\\frmSinhVien.cs",
+              "RelativeDocumentMoniker": "MyForm\\frmSinhVien.cs",
+              "ToolTip": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab2\\MyForm\\MyForm\\frmSinhVien.cs [Design]",
+              "RelativeToolTip": "MyForm\\frmSinhVien.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-18T03:29:18.718Z",
+              "WhenOpened": "2025-09-19T09:43:05.666Z",
               "EditorCaption": " [Design]"
             }
           ]

@@ -16,7 +16,7 @@ namespace MyForm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmTrungTam());
+            Application.Run(new FrmChinh());
         }
     }
 }

@@ -3,24 +3,32 @@
   "WorkspaceRootPath": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\2312716_MaiQuyPhuoc_BTWinform\\Baitap4\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6340E703-8DC3-4D38-AD04-C340904091B2}|Baitap4\\Baitap4.csproj|d:\\2312716_maiquyphuoc_baitapdesktop\\2312716_maiquyphuoc_btwinform\\baitap4\\baitap4\\frmbai1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6340E703-8DC3-4D38-AD04-C340904091B2}|Baitap4\\Baitap4.csproj|solutionrelative:baitap4\\frmbai1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{6340E703-8DC3-4D38-AD04-C340904091B2}|Baitap4\\Baitap4.csproj|d:\\2312716_maiquyphuoc_baitapdesktop\\2312716_maiquyphuoc_btwinform\\baitap4\\baitap4\\frmbai2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6340E703-8DC3-4D38-AD04-C340904091B2}|Baitap4\\Baitap4.csproj|solutionrelative:baitap4\\frmbai2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6340E703-8DC3-4D38-AD04-C340904091B2}|Baitap4\\Baitap4.csproj|d:\\2312716_maiquyphuoc_baitapdesktop\\2312716_maiquyphuoc_btwinform\\baitap4\\baitap4\\frmbai2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{6340E703-8DC3-4D38-AD04-C340904091B2}|Baitap4\\Baitap4.csproj|D:\\2312716_MaiQuyPhuoc_baitapdesktop\\2312716_MaiQuyPhuoc_BTWinform\\Baitap4\\baitap4\\frmbai2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{6340E703-8DC3-4D38-AD04-C340904091B2}|Baitap4\\Baitap4.csproj|solutionrelative:baitap4\\frmbai2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6340E703-8DC3-4D38-AD04-C340904091B2}|Baitap4\\Baitap4.csproj|d:\\2312716_maiquyphuoc_baitapdesktop\\2312716_maiquyphuoc_btwinform\\baitap4\\baitap4\\frmbai3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6340E703-8DC3-4D38-AD04-C340904091B2}|Baitap4\\Baitap4.csproj|solutionrelative:baitap4\\frmbai3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6340E703-8DC3-4D38-AD04-C340904091B2}|Baitap4\\Baitap4.csproj|d:\\2312716_maiquyphuoc_baitapdesktop\\2312716_maiquyphuoc_btwinform\\baitap4\\baitap4\\frmbai3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{6340E703-8DC3-4D38-AD04-C340904091B2}|Baitap4\\Baitap4.csproj|solutionrelative:baitap4\\frmbai3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6340E703-8DC3-4D38-AD04-C340904091B2}|Baitap4\\Baitap4.csproj|d:\\2312716_maiquyphuoc_baitapdesktop\\2312716_maiquyphuoc_btwinform\\baitap4\\baitap4\\tinhtoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6340E703-8DC3-4D38-AD04-C340904091B2}|Baitap4\\Baitap4.csproj|D:\\2312716_MaiQuyPhuoc_baitapdesktop\\2312716_MaiQuyPhuoc_BTWinform\\Baitap4\\baitap4\\frmbai1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6340E703-8DC3-4D38-AD04-C340904091B2}|Baitap4\\Baitap4.csproj|solutionrelative:baitap4\\frmbai1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6340E703-8DC3-4D38-AD04-C340904091B2}|Baitap4\\Baitap4.csproj|D:\\2312716_MaiQuyPhuoc_baitapdesktop\\2312716_MaiQuyPhuoc_BTWinform\\Baitap4\\baitap4\\frmchinh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6340E703-8DC3-4D38-AD04-C340904091B2}|Baitap4\\Baitap4.csproj|solutionrelative:baitap4\\frmchinh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6340E703-8DC3-4D38-AD04-C340904091B2}|Baitap4\\Baitap4.csproj|D:\\2312716_MaiQuyPhuoc_baitapdesktop\\2312716_MaiQuyPhuoc_BTWinform\\Baitap4\\baitap4\\tinhtoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6340E703-8DC3-4D38-AD04-C340904091B2}|Baitap4\\Baitap4.csproj|solutionrelative:baitap4\\tinhtoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6340E703-8DC3-4D38-AD04-C340904091B2}|Baitap4\\Baitap4.csproj|D:\\2312716_MaiQuyPhuoc_baitapdesktop\\2312716_MaiQuyPhuoc_BTWinform\\Baitap4\\baitap4\\frmbai3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6340E703-8DC3-4D38-AD04-C340904091B2}|Baitap4\\Baitap4.csproj|solutionrelative:baitap4\\frmbai3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -39,14 +47,37 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "frmBai2.cs",
+              "DocumentMoniker": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\2312716_MaiQuyPhuoc_BTWinform\\Baitap4\\Baitap4\\frmBai2.cs",
+              "RelativeDocumentMoniker": "Baitap4\\frmBai2.cs",
+              "ToolTip": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\2312716_MaiQuyPhuoc_BTWinform\\Baitap4\\Baitap4\\frmBai2.cs",
+              "RelativeToolTip": "Baitap4\\frmBai2.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAAACIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-08T03:37:44.926Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "frmChinh.cs [Design]",
+              "DocumentMoniker": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\2312716_MaiQuyPhuoc_BTWinform\\Baitap4\\Baitap4\\frmChinh.cs",
+              "RelativeDocumentMoniker": "Baitap4\\frmChinh.cs",
+              "ToolTip": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\2312716_MaiQuyPhuoc_BTWinform\\Baitap4\\Baitap4\\frmChinh.cs [Design]",
+              "RelativeToolTip": "Baitap4\\frmChinh.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-08T03:27:38.794Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "frmBai1.cs [Design]",
               "DocumentMoniker": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\2312716_MaiQuyPhuoc_BTWinform\\Baitap4\\Baitap4\\frmBai1.cs",
               "RelativeDocumentMoniker": "Baitap4\\frmBai1.cs",
               "ToolTip": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\2312716_MaiQuyPhuoc_BTWinform\\Baitap4\\Baitap4\\frmBai1.cs [Design]",
               "RelativeToolTip": "Baitap4\\frmBai1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-30T03:26:14.989Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-08-30T03:26:14.989Z"
             },
             {
               "$type": "Document",
@@ -62,33 +93,32 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "frmBai3.cs",
               "DocumentMoniker": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\2312716_MaiQuyPhuoc_BTWinform\\Baitap4\\Baitap4\\frmBai3.cs",
               "RelativeDocumentMoniker": "Baitap4\\frmBai3.cs",
               "ToolTip": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\2312716_MaiQuyPhuoc_BTWinform\\Baitap4\\Baitap4\\frmBai3.cs",
               "RelativeToolTip": "Baitap4\\frmBai3.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAuwBYAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAABQAAAAAAAAAAAAAwCMAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-30T02:13:33.265Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "TinhToan.cs",
               "DocumentMoniker": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\2312716_MaiQuyPhuoc_BTWinform\\Baitap4\\Baitap4\\TinhToan.cs",
               "RelativeDocumentMoniker": "Baitap4\\TinhToan.cs",
               "ToolTip": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\2312716_MaiQuyPhuoc_BTWinform\\Baitap4\\Baitap4\\TinhToan.cs",
               "RelativeToolTip": "Baitap4\\TinhToan.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAIwBkAAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAqwBYAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-30T02:02:45.256Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-30T02:02:45.256Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "frmBai3.cs [Design]",
               "DocumentMoniker": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\2312716_MaiQuyPhuoc_BTWinform\\Baitap4\\Baitap4\\frmBai3.cs",
               "RelativeDocumentMoniker": "Baitap4\\frmBai3.cs",

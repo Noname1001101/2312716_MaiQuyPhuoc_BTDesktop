@@ -9,4 +9,8 @@ D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab2\MyForm\MyForm\obj\Debug\MyForm.exe
 D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab2\MyForm\MyForm\obj\Debug\MyForm.pdb
 D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab2\MyForm\MyForm\obj\Debug\MyForm.exe.config
 D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab2\MyForm\MyForm\obj\Debug\MyForm.frmTrungTam.resources
+D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab2\MyForm\MyForm\obj\Debug\MyForm.FrmChinh.resources
+D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab2\MyForm\MyForm\obj\Debug\MyForm.FrmSinhVien.resources
+D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab2\MyForm\MyForm\obj\Debug\MyForm.frmTim.resources
+D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab2\MyForm\MyForm\obj\Debug\MyForm.frmGiangVien.resources
 D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab2\MyForm\MyForm\obj\Debug\MyForm.frmTBGiangVien.resources

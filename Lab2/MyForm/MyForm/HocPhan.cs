@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyForm
 {
-    internal class HocPhan
+    public class HocPhan
     {
         public int ID {  get; set; }
         public string TenHP { get; set; }

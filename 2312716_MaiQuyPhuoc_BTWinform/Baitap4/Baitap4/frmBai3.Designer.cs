@@ -125,6 +125,7 @@
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "UCLN của 2 số nguyên";
             this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // label2
             // 

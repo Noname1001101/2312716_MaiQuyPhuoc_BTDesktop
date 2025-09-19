@@ -63,7 +63,7 @@
             "003",
             "004",
             "005"});
-            this.cboMaHV.Location = new System.Drawing.Point(127, 62);
+            this.cboMaHV.Location = new System.Drawing.Point(136, 62);
             this.cboMaHV.Name = "cboMaHV";
             this.cboMaHV.Size = new System.Drawing.Size(139, 24);
             this.cboMaHV.TabIndex = 0;
@@ -73,7 +73,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Fuchsia;
-            this.label1.Location = new System.Drawing.Point(85, 9);
+            this.label1.Location = new System.Drawing.Point(46, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(464, 38);
             this.label1.TabIndex = 1;
@@ -94,7 +94,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(272, 65);
+            this.label3.Location = new System.Drawing.Point(288, 65);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 18);
             this.label3.TabIndex = 2;
@@ -105,16 +105,16 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 109);
+            this.label4.Location = new System.Drawing.Point(4, 109);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 20);
+            this.label4.Size = new System.Drawing.Size(76, 20);
             this.label4.TabIndex = 2;
-            this.label4.Text = "Họ Tên";
+            this.label4.Text = "Họ Tên:";
             // 
             // rdNam
             // 
             this.rdNam.AutoSize = true;
-            this.rdNam.Location = new System.Drawing.Point(354, 63);
+            this.rdNam.Location = new System.Drawing.Point(370, 64);
             this.rdNam.Name = "rdNam";
             this.rdNam.Size = new System.Drawing.Size(57, 20);
             this.rdNam.TabIndex = 1;
@@ -128,7 +128,7 @@
             this.rdNu.AccessibleDescription = "";
             this.rdNu.AccessibleName = "";
             this.rdNu.AutoSize = true;
-            this.rdNu.Location = new System.Drawing.Point(417, 65);
+            this.rdNu.Location = new System.Drawing.Point(445, 63);
             this.rdNu.Name = "rdNu";
             this.rdNu.Size = new System.Drawing.Size(45, 20);
             this.rdNu.TabIndex = 2;
@@ -139,7 +139,7 @@
             // txtHoTen
             // 
             this.txtHoTen.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.txtHoTen.Location = new System.Drawing.Point(127, 109);
+            this.txtHoTen.Location = new System.Drawing.Point(136, 109);
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.Size = new System.Drawing.Size(335, 22);
             this.txtHoTen.TabIndex = 3;
@@ -157,7 +157,7 @@
             // 
             // dtpNgayDangKy
             // 
-            this.dtpNgayDangKy.Location = new System.Drawing.Point(127, 149);
+            this.dtpNgayDangKy.Location = new System.Drawing.Point(136, 149);
             this.dtpNgayDangKy.Name = "dtpNgayDangKy";
             this.dtpNgayDangKy.Size = new System.Drawing.Size(200, 22);
             this.dtpNgayDangKy.TabIndex = 4;
@@ -262,7 +262,7 @@
             // 
             this.btnTinhTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTinhTien.ForeColor = System.Drawing.Color.Blue;
-            this.btnTinhTien.Location = new System.Drawing.Point(16, 329);
+            this.btnTinhTien.Location = new System.Drawing.Point(12, 347);
             this.btnTinhTien.Name = "btnTinhTien";
             this.btnTinhTien.Size = new System.Drawing.Size(116, 40);
             this.btnTinhTien.TabIndex = 11;
@@ -272,11 +272,12 @@
             // 
             // btnExit
             // 
+            this.btnExit.AutoSize = true;
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.Color.Blue;
-            this.btnExit.Location = new System.Drawing.Point(287, 330);
+            this.btnExit.Location = new System.Drawing.Point(329, 349);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(87, 42);
+            this.btnExit.Size = new System.Drawing.Size(87, 40);
             this.btnExit.TabIndex = 10;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -284,13 +285,14 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.AutoSize = true;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.Red;
             this.btnCancel.Image = global::MyForm.Properties.Resources.Cancel;
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCancel.Location = new System.Drawing.Point(148, 329);
+            this.btnCancel.Location = new System.Drawing.Point(168, 347);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(118, 40);
+            this.btnCancel.Size = new System.Drawing.Size(122, 42);
             this.btnCancel.TabIndex = 10;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;

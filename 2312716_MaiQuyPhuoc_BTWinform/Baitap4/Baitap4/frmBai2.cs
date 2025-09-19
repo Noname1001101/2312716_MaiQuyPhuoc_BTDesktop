@@ -17,36 +17,22 @@ namespace Baitap4
             InitializeComponent();
         }
 
-        
+
         public static string XepLoaiHocTap(int d1, int d2)
         {
-           
             int DTB = (d1 + d2) / 2;
-            string ketQua = "";
+
             if (d1 < 5 || d2 < 5)
-            {
-                ketQua = "Yếu";
-            }
-            else if (DTB < 7)
-            {
-                ketQua = "Trung bình";
-
-            }
-            else if (7 <= DTB && DTB < 8)
-            {
-                ketQua = "Khá";
-
-            }
-            else if (8 <= DTB && DTB < 9)
-            {
-                ketQua = "Giỏi";
-            }
-            else if (DTB >= 9)
-            {
-                ketQua = "Xuất sắc";
-            }
-            return ketQua;
+                return "Yếu";
+            if (DTB < 7)
+                return "Trung bình";
+            if (DTB < 8)
+                return "Khá";
+            if (DTB < 9)
+                return "Giỏi";
+            return "Xuất sắc";
         }
+
 
         private void bntXepLoai_Click(object sender, EventArgs e)
         {

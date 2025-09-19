@@ -1,6 +1,6 @@
 ﻿namespace MyForm
 {
-    partial class frmTBGiangVien
+    partial class frmGiangVien
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblThongBao = new System.Windows.Forms.Label();
+            this.lbl = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cboMaSo = new System.Windows.Forms.ComboBox();
             this.rdNam = new System.Windows.Forms.RadioButton();
@@ -51,22 +51,24 @@
             this.btnChon = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThongBao = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.linklbLienHe = new System.Windows.Forms.LinkLabel();
             this.label10 = new System.Windows.Forms.Label();
+            this.bntThem = new System.Windows.Forms.Button();
+            this.bntTim = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // lblThongBao
+            // lbl
             // 
-            this.lblThongBao.AutoSize = true;
-            this.lblThongBao.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblThongBao.ForeColor = System.Drawing.Color.MediumOrchid;
-            this.lblThongBao.Location = new System.Drawing.Point(49, 9);
-            this.lblThongBao.Name = "lblThongBao";
-            this.lblThongBao.Size = new System.Drawing.Size(465, 29);
-            this.lblThongBao.TabIndex = 0;
-            this.lblThongBao.Text = "THÔNG TIN GIẢNG VIÊN KHOA CNTT";
+            this.lbl.AutoSize = true;
+            this.lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl.ForeColor = System.Drawing.Color.MediumOrchid;
+            this.lbl.Location = new System.Drawing.Point(49, 9);
+            this.lbl.Name = "lbl";
+            this.lbl.Size = new System.Drawing.Size(465, 29);
+            this.lbl.TabIndex = 0;
+            this.lbl.Text = "THÔNG TIN GIẢNG VIÊN KHOA CNTT";
             // 
             // label1
             // 
@@ -293,34 +295,20 @@
             // 
             this.btnThongBao.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThongBao.ForeColor = System.Drawing.Color.Blue;
-            this.btnThongBao.Location = new System.Drawing.Point(134, 438);
+            this.btnThongBao.Location = new System.Drawing.Point(249, 438);
             this.btnThongBao.Name = "btnThongBao";
             this.btnThongBao.Size = new System.Drawing.Size(105, 37);
             this.btnThongBao.TabIndex = 22;
             this.btnThongBao.Text = "Thông Báo";
             this.btnThongBao.UseVisualStyleBackColor = true;
             this.btnThongBao.Click += new System.EventHandler(this.btnThongBao_Click);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.ForeColor = System.Drawing.Color.Red;
-            this.btnCancel.Image = global::MyForm.Properties.Resources.Cancel;
-            this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancel.Location = new System.Drawing.Point(280, 438);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(102, 37);
-            this.btnCancel.TabIndex = 23;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+
             // 
             // btnExit
             // 
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.Color.Blue;
-            this.btnExit.Location = new System.Drawing.Point(407, 438);
+            this.btnExit.Location = new System.Drawing.Point(488, 438);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(85, 37);
             this.btnExit.TabIndex = 24;
@@ -330,7 +318,7 @@
             // linklbLienHe
             // 
             this.linklbLienHe.AutoSize = true;
-            this.linklbLienHe.Location = new System.Drawing.Point(557, 463);
+            this.linklbLienHe.Location = new System.Drawing.Point(557, 495);
             this.linklbLienHe.Name = "linklbLienHe";
             this.linklbLienHe.Size = new System.Drawing.Size(50, 16);
             this.linklbLienHe.TabIndex = 25;
@@ -342,17 +330,58 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(498, 463);
+            this.label10.Location = new System.Drawing.Point(485, 495);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(64, 16);
             this.label10.TabIndex = 26;
             this.label10.Text = "Website";
             // 
-            // frmTBGiangVien
+            // bntThem
+            // 
+            this.bntThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bntThem.ForeColor = System.Drawing.Color.Blue;
+            this.bntThem.Location = new System.Drawing.Point(137, 438);
+            this.bntThem.Name = "bntThem";
+            this.bntThem.Size = new System.Drawing.Size(92, 37);
+            this.bntThem.TabIndex = 27;
+            this.bntThem.Text = "Thêm";
+            this.bntThem.UseVisualStyleBackColor = true;
+            this.bntThem.Click += new System.EventHandler(this.bntThem_Click);
+            // 
+            // bntTim
+            // 
+            this.bntTim.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bntTim.ForeColor = System.Drawing.Color.Blue;
+            this.bntTim.Location = new System.Drawing.Point(12, 438);
+            this.bntTim.Name = "bntTim";
+            this.bntTim.Size = new System.Drawing.Size(92, 37);
+            this.bntTim.TabIndex = 28;
+            this.bntTim.Text = "Tìm";
+            this.bntTim.UseVisualStyleBackColor = true;
+            this.bntTim.Click += new System.EventHandler(this.bntTim_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.Red;
+            this.btnCancel.Image = global::MyForm.Properties.Resources.Cancel;
+            this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancel.Location = new System.Drawing.Point(367, 438);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(102, 37);
+            this.btnCancel.TabIndex = 23;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // frmGiangVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(619, 491);
+            this.ClientSize = new System.Drawing.Size(619, 520);
+            this.Controls.Add(this.bntTim);
+            this.Controls.Add(this.bntThem);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.linklbLienHe);
             this.Controls.Add(this.btnExit);
@@ -379,8 +408,8 @@
             this.Controls.Add(this.rdNam);
             this.Controls.Add(this.cboMaSo);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.lblThongBao);
-            this.Name = "frmTBGiangVien";
+            this.Controls.Add(this.lbl);
+            this.Name = "frmGiangVien";
             this.Text = "Thông tin giảng viên";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -389,7 +418,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblThongBao;
+        private System.Windows.Forms.Label lbl;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cboMaSo;
         private System.Windows.Forms.RadioButton rdNam;
@@ -416,5 +445,7 @@
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.LinkLabel linklbLienHe;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button bntThem;
+        private System.Windows.Forms.Button bntTim;
     }
 }

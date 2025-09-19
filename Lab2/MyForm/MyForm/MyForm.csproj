@@ -47,27 +47,66 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DanhSachHocPhan.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="frmTinhTienHTT.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="frmTinhTienHTT.Designer.cs">
+      <DependentUpon>frmTinhTienHTT.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
+    <Compile Include="frmGiangVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="frmGiangVien.Designer.cs">
+      <DependentUpon>frmGiangVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSinhVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSinhVien.Designer.cs">
+      <DependentUpon>frmSinhVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmChinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmChinh.Designer.cs">
+      <DependentUpon>FrmChinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTBGiangVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTBGiangVien.Designer.cs">
+      <DependentUpon>frmTBGiangVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTim.Designer.cs">
+      <DependentUpon>FrmTim.cs</DependentUpon>
     </Compile>
     <Compile Include="GiangVien.cs" />
     <Compile Include="HocPhan.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="QuanLyGiangVien.cs" />
+    <Compile Include="QuanLySinhVien.cs" />
+    <Compile Include="SinhVien.cs" />
+    <EmbeddedResource Include="frmTinhTienHTT.resx">
+      <DependentUpon>frmTinhTienHTT.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <EmbeddedResource Include="frmGiangVien.resx">
+      <DependentUpon>frmGiangVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSinhVien.resx">
+      <DependentUpon>frmSinhVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmChinh.resx">
+      <DependentUpon>FrmChinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTBGiangVien.resx">
+      <DependentUpon>frmTBGiangVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTim.resx">
+      <DependentUpon>FrmTim.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
