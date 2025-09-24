@@ -103,6 +103,7 @@
             this.txtTuKhoa.Name = "txtTuKhoa";
             this.txtTuKhoa.Size = new System.Drawing.Size(264, 22);
             this.txtTuKhoa.TabIndex = 3;
+            this.txtTuKhoa.TextChanged += new System.EventHandler(this.txtTuKhoa_TextChanged);
             // 
             // bntTim
             // 
@@ -127,6 +128,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frmTim";
             this.Text = "Tìm thông tin giảng viên";
+            this.Load += new System.EventHandler(this.frmTim_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

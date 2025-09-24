@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MyForm
@@ -28,7 +25,7 @@ namespace MyForm
             string gt = "Nữ";
             if (sv.GioiTinh)
             {
-                gt = "Nam";   
+                gt = "Nam";
             }
             lvItem.SubItems.Add(gt);
             string cn = "";
@@ -146,7 +143,7 @@ namespace MyForm
             this.txtHinh.Text = "";
             this.pbHinh.ImageLocation = "";
             this.rdNam.Checked = true;
-            for (int i = 0; i < this.clbChuyenNganh.Items.Count - 1 ; i++)
+            for (int i = 0; i < this.clbChuyenNganh.Items.Count - 1; i++)
             {
                 this.clbChuyenNganh.SetItemChecked(i, false);
             }
@@ -157,7 +154,7 @@ namespace MyForm
             Application.Exit();
         }
 
-        private int SoSanhTheoMa(object sv1,object sv2)
+        private int SoSanhTheoMa(object sv1, object sv2)
         {
             SinhVien sv = sv2 as SinhVien;
             return sv.MaSo.CompareTo(sv1);
@@ -204,11 +201,72 @@ namespace MyForm
 
                 // Hiển thị ảnh lên PictureBox
                 this.pbHinh.Image = Image.FromFile(ofd.FileName);
-              
+
             }
 
         }
 
-      
+
+        private void sắpXếpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = new frmTuyChon();
+            // Đăng ký sự kiện từ frmTuyChon
+            form.YeuCauSapXep += (kieu) =>
+            {
+                switch (kieu)
+                {
+                    case TuyChon.MaSV:
+                        qlsv.dsSinhVien = qlsv.dsSinhVien.OrderBy(sv => sv.MaSo).ToList();
+                        break;
+                    case TuyChon.HoTen:
+                        qlsv.dsSinhVien = qlsv.dsSinhVien.OrderBy(sv => sv.HoTen).ToList();
+                        break;
+                    case TuyChon.NgaySinh:
+                        qlsv.dsSinhVien = qlsv.dsSinhVien.OrderBy(sv => sv.NgaySinh).ToList();
+                        break;
+                }
+                LoadListView();
+            };
+
+            // Đăng ký sự kiện Tìm kiếm
+            form.YeuCauTimKiem += (chuoiTim, kieu) =>
+            {
+                IEnumerable<SinhVien> ketQua = null;
+                switch (kieu)
+                {
+                    case TuyChon.MaSV:
+                        ketQua = qlsv.dsSinhVien
+                            .Where(sv => sv.MaSo.ToLower().Contains(chuoiTim.ToLower()));
+                        break;
+                    case TuyChon.HoTen:
+                        ketQua = qlsv.dsSinhVien
+                            .Where(sv => sv.HoTen.ToLower().Contains(chuoiTim.ToLower()));
+                        break;
+                    case TuyChon.NgaySinh:
+                        ketQua = qlsv.dsSinhVien
+                            .Where(sv => sv.NgaySinh.ToShortDateString().Contains(chuoiTim));
+                        break;
+                }
+
+                lvSinhVien.Items.Clear();
+                foreach (SinhVien sv in ketQua)
+                {
+                    ThemSV(sv);
+                }
+
+                // Đếm số kết quả tìm được
+                int soLuong = ketQua.Count();
+
+                // Hiển thị ra MessageBox
+                MessageBox.Show($"Số sinh viên tìm thấy: {soLuong}");
+            };
+
+            form.Show(this); // không khóa form chính
+        }
+
+        private void lisViewToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -7,8 +7,16 @@
       "RelativeMoniker": "D:0:0:{3A0D5AB7-588F-4AA8-9B95-85DF34CD2A87}|MyForm\\MyForm.csproj|solutionrelative:myform\\frmsinhvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3A0D5AB7-588F-4AA8-9B95-85DF34CD2A87}|MyForm\\MyForm.csproj|d:\\2312716_maiquyphuoc_baitapdesktop\\lab2\\myform\\myform\\frmsinhvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{3A0D5AB7-588F-4AA8-9B95-85DF34CD2A87}|MyForm\\MyForm.csproj|solutionrelative:myform\\frmsinhvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{3A0D5AB7-588F-4AA8-9B95-85DF34CD2A87}|MyForm\\MyForm.csproj|D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab2\\MyForm\\myform\\quanlysinhvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A0D5AB7-588F-4AA8-9B95-85DF34CD2A87}|MyForm\\MyForm.csproj|solutionrelative:myform\\quanlysinhvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A0D5AB7-588F-4AA8-9B95-85DF34CD2A87}|MyForm\\MyForm.csproj|D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab2\\MyForm\\myform\\frmtuychon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A0D5AB7-588F-4AA8-9B95-85DF34CD2A87}|MyForm\\MyForm.csproj|solutionrelative:myform\\frmtuychon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A0D5AB7-588F-4AA8-9B95-85DF34CD2A87}|MyForm\\MyForm.csproj|D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab2\\MyForm\\myform\\frmtuychon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3A0D5AB7-588F-4AA8-9B95-85DF34CD2A87}|MyForm\\MyForm.csproj|solutionrelative:myform\\frmtuychon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,11 +26,23 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "QuanLySinhVien.cs",
+              "DocumentMoniker": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab2\\MyForm\\MyForm\\QuanLySinhVien.cs",
+              "RelativeDocumentMoniker": "MyForm\\QuanLySinhVien.cs",
+              "ToolTip": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab2\\MyForm\\MyForm\\QuanLySinhVien.cs",
+              "RelativeToolTip": "MyForm\\QuanLySinhVien.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-20T03:59:31.663Z"
             },
             {
               "$type": "Document",
@@ -32,22 +52,33 @@
               "RelativeDocumentMoniker": "MyForm\\frmSinhVien.cs",
               "ToolTip": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab2\\MyForm\\MyForm\\frmSinhVien.cs",
               "RelativeToolTip": "MyForm\\frmSinhVien.cs",
-              "ViewState": "AgIAALwAAAAAAAAAAAAAAM4AAAAOAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-19T09:43:39.211Z",
+              "WhenOpened": "2025-09-20T03:53:41.581Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "frmSinhVien.cs [Design]",
-              "DocumentMoniker": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab2\\MyForm\\MyForm\\frmSinhVien.cs",
-              "RelativeDocumentMoniker": "MyForm\\frmSinhVien.cs",
-              "ToolTip": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab2\\MyForm\\MyForm\\frmSinhVien.cs [Design]",
-              "RelativeToolTip": "MyForm\\frmSinhVien.cs [Design]",
+              "DocumentIndex": 2,
+              "Title": "frmTuyChon.cs",
+              "DocumentMoniker": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab2\\MyForm\\MyForm\\frmTuyChon.cs",
+              "RelativeDocumentMoniker": "MyForm\\frmTuyChon.cs",
+              "ToolTip": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab2\\MyForm\\MyForm\\frmTuyChon.cs",
+              "RelativeToolTip": "MyForm\\frmTuyChon.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAswB8AAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-19T09:43:05.666Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-09-20T03:15:25.519Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "frmTuyChon.cs [Design]",
+              "DocumentMoniker": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab2\\MyForm\\MyForm\\frmTuyChon.cs",
+              "RelativeDocumentMoniker": "MyForm\\frmTuyChon.cs",
+              "ToolTip": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab2\\MyForm\\MyForm\\frmTuyChon.cs [Design]",
+              "RelativeToolTip": "MyForm\\frmTuyChon.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-20T03:15:21.446Z"
             }
           ]
         }
