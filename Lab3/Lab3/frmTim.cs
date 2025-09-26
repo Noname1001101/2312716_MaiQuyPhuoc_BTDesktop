@@ -7,7 +7,7 @@ namespace MyForm
 
     public partial class frmTim : Form
     {
-        QuanLySinhVien qlsv;
+
         public event Action<string, KieuTim> YeuCauTimKiem;
 
         public frmTim()
@@ -20,11 +20,19 @@ namespace MyForm
         {
             string tuKhoa = txtTuKhoa.Text.Trim();
             KieuTim kieu;
-            if (rdMSSV.Checked) kieu = KieuTim.TheoMSSV;
-            else if (rdTen.Checked) kieu = KieuTim.TheoTen;
-            else kieu = KieuTim.TheoLop;
 
-            YeuCauTimKiem?.Invoke(tuKhoa, kieu);
+            if (rdMSSV.Checked)
+                kieu = KieuTim.TheoMSSV;
+            else if (rdTen.Checked)
+                kieu = KieuTim.TheoTen;
+            else
+                kieu = KieuTim.TheoLop;
+
+            // Gọi sự kiện gửi yêu cầu tìm kiếm cho Form1
+            if (YeuCauTimKiem != null)
+            {
+                YeuCauTimKiem(tuKhoa, kieu);
+            }
             this.Close();
         }
     }

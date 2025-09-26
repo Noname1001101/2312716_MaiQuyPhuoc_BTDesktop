@@ -1,6 +1,6 @@
 ﻿namespace Lab3
 {
-    partial class Form1
+    partial class frmSinhVien
     {
         /// <summary>
         /// Required designer variable.
@@ -28,15 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
             this.label1 = new System.Windows.Forms.Label();
-            this.mtxtMSSV = new System.Windows.Forms.MaskedTextBox();
+            this.txtMSSV = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtHoVaTenLot = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
-            this.mtxtSoCMND = new System.Windows.Forms.MaskedTextBox();
+            this.txtSoCMND = new System.Windows.Forms.MaskedTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.rdNam = new System.Windows.Forms.RadioButton();
@@ -46,10 +47,13 @@
             this.rdNu = new System.Windows.Forms.RadioButton();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.mtxtSDT = new System.Windows.Forms.MaskedTextBox();
+            this.txtSDT = new System.Windows.Forms.MaskedTextBox();
             this.cboLop = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.clbMHDK = new System.Windows.Forms.CheckedListBox();
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.mennuThemMon = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuXoaMon = new System.Windows.Forms.ToolStripMenuItem();
             this.bntTimKiem = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.bntCapNhat = new System.Windows.Forms.Button();
@@ -64,7 +68,17 @@
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.menuXoa = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.đọcFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuDocTXT = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuDocXML = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuDocJSON = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -76,14 +90,14 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "MSSV:";
             // 
-            // mtxtMSSV
+            // txtMSSV
             // 
-            this.mtxtMSSV.Location = new System.Drawing.Point(153, 46);
-            this.mtxtMSSV.Mask = "0000000";
-            this.mtxtMSSV.Name = "mtxtMSSV";
-            this.mtxtMSSV.Size = new System.Drawing.Size(216, 22);
-            this.mtxtMSSV.TabIndex = 1;
-            this.mtxtMSSV.ValidatingType = typeof(int);
+            this.txtMSSV.Location = new System.Drawing.Point(153, 46);
+            this.txtMSSV.Mask = "0000000";
+            this.txtMSSV.Name = "txtMSSV";
+            this.txtMSSV.Size = new System.Drawing.Size(216, 22);
+            this.txtMSSV.TabIndex = 1;
+            this.txtMSSV.ValidatingType = typeof(int);
             // 
             // label2
             // 
@@ -99,7 +113,7 @@
             this.txtHoVaTenLot.Location = new System.Drawing.Point(153, 84);
             this.txtHoVaTenLot.Name = "txtHoVaTenLot";
             this.txtHoVaTenLot.Size = new System.Drawing.Size(216, 22);
-            this.txtHoVaTenLot.TabIndex = 3;
+            this.txtHoVaTenLot.TabIndex = 2;
             // 
             // label3
             // 
@@ -116,7 +130,7 @@
             this.dtpNgaySinh.Location = new System.Drawing.Point(153, 128);
             this.dtpNgaySinh.Name = "dtpNgaySinh";
             this.dtpNgaySinh.Size = new System.Drawing.Size(216, 22);
-            this.dtpNgaySinh.TabIndex = 5;
+            this.dtpNgaySinh.TabIndex = 3;
             // 
             // label4
             // 
@@ -127,14 +141,14 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Số CMND:";
             // 
-            // mtxtSoCMND
+            // txtSoCMND
             // 
-            this.mtxtSoCMND.Location = new System.Drawing.Point(153, 175);
-            this.mtxtSoCMND.Mask = "000000000";
-            this.mtxtSoCMND.Name = "mtxtSoCMND";
-            this.mtxtSoCMND.Size = new System.Drawing.Size(216, 22);
-            this.mtxtSoCMND.TabIndex = 7;
-            this.mtxtSoCMND.ValidatingType = typeof(int);
+            this.txtSoCMND.Location = new System.Drawing.Point(153, 175);
+            this.txtSoCMND.Mask = "000000000";
+            this.txtSoCMND.Name = "txtSoCMND";
+            this.txtSoCMND.Size = new System.Drawing.Size(216, 22);
+            this.txtSoCMND.TabIndex = 4;
+            this.txtSoCMND.ValidatingType = typeof(int);
             // 
             // label5
             // 
@@ -150,7 +164,7 @@
             this.txtDiaChi.Location = new System.Drawing.Point(153, 222);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(542, 22);
-            this.txtDiaChi.TabIndex = 9;
+            this.txtDiaChi.TabIndex = 10;
             // 
             // rdNam
             // 
@@ -158,7 +172,7 @@
             this.rdNam.Location = new System.Drawing.Point(512, 42);
             this.rdNam.Name = "rdNam";
             this.rdNam.Size = new System.Drawing.Size(57, 20);
-            this.rdNam.TabIndex = 10;
+            this.rdNam.TabIndex = 5;
             this.rdNam.TabStop = true;
             this.rdNam.Text = "Nam";
             this.rdNam.UseVisualStyleBackColor = true;
@@ -186,7 +200,7 @@
             this.txtTen.Location = new System.Drawing.Point(512, 81);
             this.txtTen.Name = "txtTen";
             this.txtTen.Size = new System.Drawing.Size(183, 22);
-            this.txtTen.TabIndex = 13;
+            this.txtTen.TabIndex = 7;
             // 
             // rdNu
             // 
@@ -194,7 +208,7 @@
             this.rdNu.Location = new System.Drawing.Point(602, 42);
             this.rdNu.Name = "rdNu";
             this.rdNu.Size = new System.Drawing.Size(45, 20);
-            this.rdNu.TabIndex = 14;
+            this.rdNu.TabIndex = 6;
             this.rdNu.TabStop = true;
             this.rdNu.Text = "Nữ";
             this.rdNu.UseVisualStyleBackColor = true;
@@ -217,21 +231,31 @@
             this.label9.TabIndex = 16;
             this.label9.Text = "Số ĐT:";
             // 
-            // mtxtSDT
+            // txtSDT
             // 
-            this.mtxtSDT.Location = new System.Drawing.Point(512, 175);
-            this.mtxtSDT.Mask = "0000.000.000";
-            this.mtxtSDT.Name = "mtxtSDT";
-            this.mtxtSDT.Size = new System.Drawing.Size(183, 22);
-            this.mtxtSDT.TabIndex = 17;
+            this.txtSDT.Location = new System.Drawing.Point(512, 175);
+            this.txtSDT.Mask = "0000.000.000";
+            this.txtSDT.Name = "txtSDT";
+            this.txtSDT.Size = new System.Drawing.Size(183, 22);
+            this.txtSDT.TabIndex = 9;
             // 
             // cboLop
             // 
             this.cboLop.FormattingEnabled = true;
+            this.cboLop.Items.AddRange(new object[] {
+            "CTK47",
+            "TNK46",
+            "THK45",
+            "KLK44",
+            "DKK43",
+            "HDK42",
+            "HHK41",
+            "VLK40"});
             this.cboLop.Location = new System.Drawing.Point(512, 125);
             this.cboLop.Name = "cboLop";
             this.cboLop.Size = new System.Drawing.Size(183, 24);
-            this.cboLop.TabIndex = 18;
+            this.cboLop.TabIndex = 8;
+            this.cboLop.SelectedIndexChanged += new System.EventHandler(this.cboLop_SelectedIndexChanged);
             // 
             // label10
             // 
@@ -244,6 +268,7 @@
             // 
             // clbMHDK
             // 
+            this.clbMHDK.ContextMenuStrip = this.contextMenuStrip2;
             this.clbMHDK.FormattingEnabled = true;
             this.clbMHDK.Items.AddRange(new object[] {
             "Mạng máy tính",
@@ -258,7 +283,30 @@
             this.clbMHDK.MultiColumn = true;
             this.clbMHDK.Name = "clbMHDK";
             this.clbMHDK.Size = new System.Drawing.Size(543, 72);
-            this.clbMHDK.TabIndex = 20;
+            this.clbMHDK.TabIndex = 11;
+            // 
+            // contextMenuStrip2
+            // 
+            this.contextMenuStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mennuThemMon,
+            this.menuXoaMon});
+            this.contextMenuStrip2.Name = "contextMenuStrip2";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(150, 52);
+            // 
+            // mennuThemMon
+            // 
+            this.mennuThemMon.Name = "mennuThemMon";
+            this.mennuThemMon.Size = new System.Drawing.Size(149, 24);
+            this.mennuThemMon.Text = "Thêm môn";
+            this.mennuThemMon.Click += new System.EventHandler(this.mennuThemMon_Click);
+            // 
+            // menuXoaMon
+            // 
+            this.menuXoaMon.Name = "menuXoaMon";
+            this.menuXoaMon.Size = new System.Drawing.Size(149, 24);
+            this.menuXoaMon.Text = "Xóa môn";
+            this.menuXoaMon.Click += new System.EventHandler(this.menuXoaMon_Click);
             // 
             // bntTimKiem
             // 
@@ -266,7 +314,7 @@
             this.bntTimKiem.Location = new System.Drawing.Point(291, 367);
             this.bntTimKiem.Name = "bntTimKiem";
             this.bntTimKiem.Size = new System.Drawing.Size(95, 30);
-            this.bntTimKiem.TabIndex = 21;
+            this.bntTimKiem.TabIndex = 12;
             this.bntTimKiem.Text = "Tìm kiếm";
             this.bntTimKiem.UseVisualStyleBackColor = true;
             this.bntTimKiem.Click += new System.EventHandler(this.bntTimKiem_Click);
@@ -274,10 +322,10 @@
             // btnThem
             // 
             this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem.Location = new System.Drawing.Point(404, 367);
+            this.btnThem.Location = new System.Drawing.Point(405, 367);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(95, 30);
-            this.btnThem.TabIndex = 22;
+            this.btnThem.TabIndex = 13;
             this.btnThem.Text = "Thêm mới";
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
@@ -288,7 +336,7 @@
             this.bntCapNhat.Location = new System.Drawing.Point(530, 367);
             this.bntCapNhat.Name = "bntCapNhat";
             this.bntCapNhat.Size = new System.Drawing.Size(95, 30);
-            this.bntCapNhat.TabIndex = 23;
+            this.bntCapNhat.TabIndex = 14;
             this.bntCapNhat.Text = "Cập nhật";
             this.bntCapNhat.UseVisualStyleBackColor = true;
             this.bntCapNhat.Click += new System.EventHandler(this.bntCapNhat_Click);
@@ -299,9 +347,10 @@
             this.bntThoat.Location = new System.Drawing.Point(653, 367);
             this.bntThoat.Name = "bntThoat";
             this.bntThoat.Size = new System.Drawing.Size(95, 30);
-            this.bntThoat.TabIndex = 24;
+            this.bntThoat.TabIndex = 15;
             this.bntThoat.Text = "Thoát";
             this.bntThoat.UseVisualStyleBackColor = true;
+            this.bntThoat.Click += new System.EventHandler(this.bntThoat_Click);
             // 
             // groupBox1
             // 
@@ -325,7 +374,9 @@
             this.columnHeader5,
             this.columnHeader6,
             this.columnHeader7});
+            this.lvSinhVien.ContextMenuStrip = this.contextMenuStrip1;
             this.lvSinhVien.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvSinhVien.FullRowSelect = true;
             this.lvSinhVien.GridLines = true;
             listViewGroup1.Header = "ListViewGroup";
             listViewGroup1.Name = "MSSV";
@@ -338,6 +389,7 @@
             this.lvSinhVien.TabIndex = 0;
             this.lvSinhVien.UseCompatibleStateImageBehavior = false;
             this.lvSinhVien.View = System.Windows.Forms.View.Details;
+            this.lvSinhVien.SelectedIndexChanged += new System.EventHandler(this.lvSinhVien_SelectedIndexChanged);
             // 
             // columnHeader0
             // 
@@ -377,11 +429,66 @@
             this.columnHeader7.Text = "Địa chỉ liên lạc";
             this.columnHeader7.Width = 147;
             // 
-            // Form1
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuXoa});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(105, 28);
+            // 
+            // menuXoa
+            // 
+            this.menuXoa.Name = "menuXoa";
+            this.menuXoa.Size = new System.Drawing.Size(104, 24);
+            this.menuXoa.Text = "Xóa";
+            this.menuXoa.Click += new System.EventHandler(this.menuXoa_Click);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.đọcFileToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(800, 30);
+            this.menuStrip1.TabIndex = 26;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // đọcFileToolStripMenuItem
+            // 
+            this.đọcFileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuDocTXT,
+            this.menuDocXML,
+            this.menuDocJSON});
+            this.đọcFileToolStripMenuItem.Name = "đọcFileToolStripMenuItem";
+            this.đọcFileToolStripMenuItem.Size = new System.Drawing.Size(77, 24);
+            this.đọcFileToolStripMenuItem.Text = "Đọc File";
+            // 
+            // menuDocTXT
+            // 
+            this.menuDocTXT.Name = "menuDocTXT";
+            this.menuDocTXT.Size = new System.Drawing.Size(224, 26);
+            this.menuDocTXT.Text = "Đọc file txt";
+            // 
+            // menuDocXML
+            // 
+            this.menuDocXML.Name = "menuDocXML";
+            this.menuDocXML.Size = new System.Drawing.Size(224, 26);
+            this.menuDocXML.Text = "Đọc file XML";
+            // 
+            // menuDocJSON
+            // 
+            this.menuDocJSON.Name = "menuDocJSON";
+            this.menuDocJSON.Size = new System.Drawing.Size(224, 26);
+            this.menuDocJSON.Text = "Đọc file JSON";
+            // 
+            // frmSinhVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 796);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.bntThoat);
             this.Controls.Add(this.bntCapNhat);
@@ -390,7 +497,7 @@
             this.Controls.Add(this.clbMHDK);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.cboLop);
-            this.Controls.Add(this.mtxtSDT);
+            this.Controls.Add(this.txtSDT);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.rdNu);
@@ -400,18 +507,23 @@
             this.Controls.Add(this.rdNam);
             this.Controls.Add(this.txtDiaChi);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.mtxtSoCMND);
+            this.Controls.Add(this.txtSoCMND);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dtpNgaySinh);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtHoVaTenLot);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.mtxtMSSV);
+            this.Controls.Add(this.txtMSSV);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
+            this.MainMenuStrip = this.menuStrip1;
+            this.Name = "frmSinhVien";
             this.Text = "Nhập thông tin sinh viên";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.contextMenuStrip2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
+            this.contextMenuStrip1.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -420,13 +532,13 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.MaskedTextBox mtxtMSSV;
+        private System.Windows.Forms.MaskedTextBox txtMSSV;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtHoVaTenLot;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dtpNgaySinh;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.MaskedTextBox mtxtSoCMND;
+        private System.Windows.Forms.MaskedTextBox txtSoCMND;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtDiaChi;
         private System.Windows.Forms.RadioButton rdNam;
@@ -436,7 +548,7 @@
         private System.Windows.Forms.RadioButton rdNu;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.MaskedTextBox mtxtSDT;
+        private System.Windows.Forms.MaskedTextBox txtSDT;
         private System.Windows.Forms.ComboBox cboLop;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.CheckedListBox clbMHDK;
@@ -454,6 +566,16 @@
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem menuXoa;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
+        private System.Windows.Forms.ToolStripMenuItem mennuThemMon;
+        private System.Windows.Forms.ToolStripMenuItem menuXoaMon;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem đọcFileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem menuDocTXT;
+        private System.Windows.Forms.ToolStripMenuItem menuDocXML;
+        private System.Windows.Forms.ToolStripMenuItem menuDocJSON;
     }
 }
 

@@ -32,29 +32,6 @@ namespace Lab3
             this.dsSinhVien.Add(sv);
         }
 
-        //public IEnumerable<SinhVien> TimKiem(string tuKhoa, KieuTim kieu)
-        //{
-        //    if (string.IsNullOrWhiteSpace(tuKhoa))
-        //        return dsSinhVien; // trả về tất cả nếu rỗng
-
-        //    tuKhoa = tuKhoa.Trim().ToLower();
-
-        //    switch (kieu)
-        //    {
-        //        case KieuTim.TheoMSSV:
-        //            return dsSinhVien.Where(sv => !string.IsNullOrEmpty(sv.MSSV) &&
-        //                                          sv.MSSV.ToLower().Contains(tuKhoa));
-        //        case KieuTim.TheoTen:
-        //            return dsSinhVien.Where(sv =>
-        //                    ((sv.HoVaTenLot ?? "") + " " + (sv.Ten ?? "")).ToLower().Contains(tuKhoa));
-        //        case KieuTim.TheoLop:
-        //            return dsSinhVien.Where(sv => !string.IsNullOrEmpty(sv.Lop) &&
-        //                                          sv.Lop.ToLower().Contains(tuKhoa));
-        //        default:
-        //            return Enumerable.Empty<SinhVien>();
-        //    }
-        //}
-
         public List<SinhVien> TimKiem(string tuKhoa, KieuTim kieu)
         {
             List<SinhVien> ketQua = new List<SinhVien>();
@@ -113,6 +90,90 @@ namespace Lab3
             }
         }
 
+        public bool KiemTraThongTin(SinhVien sv, out string thongBao)
+        {
+            if (string.IsNullOrWhiteSpace(sv.MSSV))
+            {
+                thongBao = "Vui lòng nhập MSSV!";
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(sv.HoVaTenLot))
+            {
+                thongBao = "Vui lòng nhập Họ và tên lót!";
+                return false;
+            }
+
+            if (sv.NgaySinh == DateTime.MinValue)
+            {
+                thongBao = "Vui lòng nhập Ngày sinh!";
+                return false;
+            }
+
+            if (sv.NgaySinh > DateTime.Now)
+            {
+                thongBao = "Ngày sinh không hợp lệ (lớn hơn ngày hiện tại)!";
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(sv.SoCMND))
+            {
+                thongBao = "Vui lòng nhập Số CMND!";
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(sv.Ten))
+            {
+                thongBao = "Vui lòng nhập Tên!";
+                return false;
+            }
+            if (sv.GioiTinh == null)
+            {
+                thongBao = "Vui lòng chọn giới tính!";
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(sv.Lop))
+            {
+                thongBao = "Vui lòng nhập Lớp!";
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(sv.SDT))
+            {
+                thongBao = "Vui lòng nhập SĐT!";
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(sv.DiaChi))
+            {
+                thongBao = "Vui lòng nhập Địa Chỉ!";
+                return false;
+            }
+
+            thongBao = ""; // không có lỗi
+            return true;
+        }
+
+
+
+        public string TaoMSSV(string lop)
+        {
+            Random rnd = new Random();
+
+            // Lấy 2 số cuối của lớp (ví dụ CTK47 -> "47")
+            string aa = lop.Substring(lop.Length - 2);
+
+            // BB = 10
+            string bb = "10";
+
+            // Sinh số random từ 1 đến 999, rồi format thành 3 chữ số
+            int soNgauNhien = rnd.Next(1, 1000);
+            string ccc = soNgauNhien.ToString("D3");
+
+            return aa + bb + ccc;
+        }
+
+
         public void DocTuFile(string filename)
         {
             string t;
@@ -127,7 +188,7 @@ namespace Lab3
                     sv.MSSV = s[0];
                     sv.HoVaTenLot = s[1];
                     sv.Ten = s[2];
-                    //sv.NgaySinh = DateTime.Parse(s[3]); format ngày sinh theo MM/dd/yyyy
+                    //sv.NgaySinh = DateTime.Parse(s[3]); //format ngày sinh theo MM / dd / yyyy
                     sv.NgaySinh = DateTime.ParseExact(s[3].Trim(), "dd/MM/yyyy", CultureInfo.InvariantCulture); // format ngày sinh theo dd/MM/yyyy
                     sv.Lop = s[4];
                     sv.SoCMND = s[5];
@@ -159,5 +220,8 @@ namespace Lab3
                 }
             }
         }
+
+
+
     }
 }

@@ -22,6 +22,7 @@ namespace MyForm
             lvItem.SubItems.Add(sv.NgaySinh.ToShortDateString());
             lvItem.SubItems.Add(sv.DiaChi);
             lvItem.SubItems.Add(sv.Lop);
+            lvItem.SubItems.Add(sv.Hinh);
             string gt = "Nữ";
             if (sv.GioiTinh)
             {
@@ -35,7 +36,7 @@ namespace MyForm
             }
             cn = cn.Substring(0, cn.Length - 1);
             lvItem.SubItems.Add(cn);
-            lvItem.SubItems.Add(sv.Hinh);
+
             this.lvSinhVien.Items.Add(lvItem);
         }
 

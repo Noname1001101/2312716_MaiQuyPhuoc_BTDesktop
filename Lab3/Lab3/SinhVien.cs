@@ -10,7 +10,7 @@ namespace Lab3
         public string Ten { get; set; }
         public DateTime NgaySinh { get; set; }
         public string SoCMND { get; set; }
-        public bool GioiTinh { get; set; }
+        public bool? GioiTinh { get; set; }
         public string Lop { get; set; }
         public string SDT { get; set; }
         public string DiaChi { get; set; }
@@ -22,7 +22,7 @@ namespace Lab3
             MHDK = new List<string>();
         }
 
-        public SinhVien(string mssv, string hovatenlot, string t, DateTime ngaysinh, string socmnd, bool gt, string lop, string sdt, string diachi, List<string> mhdk)
+        public SinhVien(string mssv, string hovatenlot, string t, DateTime ngaysinh, string socmnd, bool? gt, string lop, string sdt, string diachi, List<string> mhdk)
         {
             this.MSSV = mssv;
             this.HoVaTenLot = hovatenlot;
