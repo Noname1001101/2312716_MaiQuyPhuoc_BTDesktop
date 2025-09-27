@@ -237,7 +237,7 @@ namespace Lab3
             }
 
             var result = MessageBox.Show(
-                $"Bạn có chắc muốn xóa ({itemsToDelete.Count}) sinh viên:\n\n + {svInfo}",
+                $"Bạn có chắc muốn xóa ({itemsToDelete.Count}) sinh viên:\n\n{svInfo}",
                 "Xác nhận xóa",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question);
