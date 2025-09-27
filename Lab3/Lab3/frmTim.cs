@@ -1,40 +1,42 @@
 ﻿using Lab3;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace MyForm
+namespace MyForm // giữ namespace của bạn (nếu khác thì đổi cho đúng)
 {
-
     public partial class frmTim : Form
     {
+        // tham chiếu tới danh sách gốc (được gán từ frmSinhVien trước khi ShowDialog)
+        public Lab3.QuanLySinhVien qlsv;
 
-        public event Action<string, KieuTim> YeuCauTimKiem;
+        // sau khi tìm xong sẽ gán vào đây để form cha lấy
+        public List<Lab3.SinhVien> KetQua { get; private set; }
 
         public frmTim()
         {
             InitializeComponent();
-
         }
 
         private void btnTim_Click(object sender, EventArgs e)
         {
-            string tuKhoa = txtTuKhoa.Text.Trim();
-            KieuTim kieu;
+            string mssv = cbMSSV.Checked ? txtMSSV.Text.Trim() : null;
+            string hoVaTenLot = cbHoVaTenLot.Checked ? txtHoVaTenLot.Text.Trim() : null;
+            string ngaySinh = cbNgaySinh.Checked ? dtpNgaySinh.Text.Trim() : null;
+            string soCMND = cbSoCMND.Checked ? txtSoCMND.Text.Trim() : null;
+            string lop = cbLop.Checked ? cbLop.Text.Trim() : null;
+            string ten = cbTen.Checked ? txtTen.Text.Trim() : null;
+            string soDT = cbSoDT.Checked ? txtSDT.Text.Trim() : null;
+            string diaChi = cbDiaChi.Checked ? txtDiaChi.Text.Trim() : null;
 
-            if (rdMSSV.Checked)
-                kieu = KieuTim.TheoMSSV;
-            else if (rdTen.Checked)
-                kieu = KieuTim.TheoTen;
-            else
-                kieu = KieuTim.TheoLop;
+            // gọi hàm tìm nhiều điều kiện từ qlsv gốc
+            var ketQua = qlsv.TimKiemNhieuDieuKien(
+                mssv, ten, lop, diaChi,
+                hoVaTenLot, ngaySinh, soCMND, soDT
+            );
 
-            // Gọi sự kiện gửi yêu cầu tìm kiếm cho Form1
-            if (YeuCauTimKiem != null)
-            {
-                YeuCauTimKiem(tuKhoa, kieu);
-            }
-            this.Close();
+            frmSinhVien frm = (frmSinhVien)this.Owner;
+            frm.HienKetQuaTimKiem(ketQua);
         }
     }
-
 }

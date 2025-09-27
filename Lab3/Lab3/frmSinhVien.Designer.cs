@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
             this.label1 = new System.Windows.Forms.Label();
             this.txtMSSV = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -95,9 +95,11 @@
             this.txtMSSV.Location = new System.Drawing.Point(153, 46);
             this.txtMSSV.Mask = "0000000";
             this.txtMSSV.Name = "txtMSSV";
+            this.txtMSSV.ReadOnly = true;
             this.txtMSSV.Size = new System.Drawing.Size(216, 22);
-            this.txtMSSV.TabIndex = 1;
+            this.txtMSSV.TabIndex = 20;
             this.txtMSSV.ValidatingType = typeof(int);
+            this.txtMSSV.Click += new System.EventHandler(this.txtMSSV_Click);
             // 
             // label2
             // 
@@ -113,7 +115,7 @@
             this.txtHoVaTenLot.Location = new System.Drawing.Point(153, 84);
             this.txtHoVaTenLot.Name = "txtHoVaTenLot";
             this.txtHoVaTenLot.Size = new System.Drawing.Size(216, 22);
-            this.txtHoVaTenLot.TabIndex = 2;
+            this.txtHoVaTenLot.TabIndex = 1;
             // 
             // label3
             // 
@@ -130,7 +132,7 @@
             this.dtpNgaySinh.Location = new System.Drawing.Point(153, 128);
             this.dtpNgaySinh.Name = "dtpNgaySinh";
             this.dtpNgaySinh.Size = new System.Drawing.Size(216, 22);
-            this.dtpNgaySinh.TabIndex = 3;
+            this.dtpNgaySinh.TabIndex = 2;
             // 
             // label4
             // 
@@ -147,7 +149,7 @@
             this.txtSoCMND.Mask = "000000000";
             this.txtSoCMND.Name = "txtSoCMND";
             this.txtSoCMND.Size = new System.Drawing.Size(216, 22);
-            this.txtSoCMND.TabIndex = 4;
+            this.txtSoCMND.TabIndex = 3;
             this.txtSoCMND.ValidatingType = typeof(int);
             // 
             // label5
@@ -164,7 +166,7 @@
             this.txtDiaChi.Location = new System.Drawing.Point(153, 222);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(542, 22);
-            this.txtDiaChi.TabIndex = 10;
+            this.txtDiaChi.TabIndex = 9;
             // 
             // rdNam
             // 
@@ -172,7 +174,7 @@
             this.rdNam.Location = new System.Drawing.Point(512, 42);
             this.rdNam.Name = "rdNam";
             this.rdNam.Size = new System.Drawing.Size(57, 20);
-            this.rdNam.TabIndex = 5;
+            this.rdNam.TabIndex = 4;
             this.rdNam.TabStop = true;
             this.rdNam.Text = "Nam";
             this.rdNam.UseVisualStyleBackColor = true;
@@ -200,7 +202,7 @@
             this.txtTen.Location = new System.Drawing.Point(512, 81);
             this.txtTen.Name = "txtTen";
             this.txtTen.Size = new System.Drawing.Size(183, 22);
-            this.txtTen.TabIndex = 7;
+            this.txtTen.TabIndex = 6;
             // 
             // rdNu
             // 
@@ -208,7 +210,7 @@
             this.rdNu.Location = new System.Drawing.Point(602, 42);
             this.rdNu.Name = "rdNu";
             this.rdNu.Size = new System.Drawing.Size(45, 20);
-            this.rdNu.TabIndex = 6;
+            this.rdNu.TabIndex = 5;
             this.rdNu.TabStop = true;
             this.rdNu.Text = "Nữ";
             this.rdNu.UseVisualStyleBackColor = true;
@@ -237,7 +239,7 @@
             this.txtSDT.Mask = "0000.000.000";
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(183, 22);
-            this.txtSDT.TabIndex = 9;
+            this.txtSDT.TabIndex = 8;
             // 
             // cboLop
             // 
@@ -254,7 +256,7 @@
             this.cboLop.Location = new System.Drawing.Point(512, 125);
             this.cboLop.Name = "cboLop";
             this.cboLop.Size = new System.Drawing.Size(183, 24);
-            this.cboLop.TabIndex = 8;
+            this.cboLop.TabIndex = 7;
             this.cboLop.SelectedIndexChanged += new System.EventHandler(this.cboLop_SelectedIndexChanged);
             // 
             // label10
@@ -283,7 +285,7 @@
             this.clbMHDK.MultiColumn = true;
             this.clbMHDK.Name = "clbMHDK";
             this.clbMHDK.Size = new System.Drawing.Size(543, 72);
-            this.clbMHDK.TabIndex = 11;
+            this.clbMHDK.TabIndex = 10;
             // 
             // contextMenuStrip2
             // 
@@ -314,7 +316,7 @@
             this.bntTimKiem.Location = new System.Drawing.Point(291, 367);
             this.bntTimKiem.Name = "bntTimKiem";
             this.bntTimKiem.Size = new System.Drawing.Size(95, 30);
-            this.bntTimKiem.TabIndex = 12;
+            this.bntTimKiem.TabIndex = 11;
             this.bntTimKiem.Text = "Tìm kiếm";
             this.bntTimKiem.UseVisualStyleBackColor = true;
             this.bntTimKiem.Click += new System.EventHandler(this.bntTimKiem_Click);
@@ -325,7 +327,7 @@
             this.btnThem.Location = new System.Drawing.Point(405, 367);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(95, 30);
-            this.btnThem.TabIndex = 13;
+            this.btnThem.TabIndex = 12;
             this.btnThem.Text = "Thêm mới";
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
@@ -336,7 +338,7 @@
             this.bntCapNhat.Location = new System.Drawing.Point(530, 367);
             this.bntCapNhat.Name = "bntCapNhat";
             this.bntCapNhat.Size = new System.Drawing.Size(95, 30);
-            this.bntCapNhat.TabIndex = 14;
+            this.bntCapNhat.TabIndex = 13;
             this.bntCapNhat.Text = "Cập nhật";
             this.bntCapNhat.UseVisualStyleBackColor = true;
             this.bntCapNhat.Click += new System.EventHandler(this.bntCapNhat_Click);
@@ -347,7 +349,7 @@
             this.bntThoat.Location = new System.Drawing.Point(653, 367);
             this.bntThoat.Name = "bntThoat";
             this.bntThoat.Size = new System.Drawing.Size(95, 30);
-            this.bntThoat.TabIndex = 15;
+            this.bntThoat.TabIndex = 14;
             this.bntThoat.Text = "Thoát";
             this.bntThoat.UseVisualStyleBackColor = true;
             this.bntThoat.Click += new System.EventHandler(this.bntThoat_Click);
@@ -378,10 +380,10 @@
             this.lvSinhVien.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lvSinhVien.FullRowSelect = true;
             this.lvSinhVien.GridLines = true;
-            listViewGroup1.Header = "ListViewGroup";
-            listViewGroup1.Name = "MSSV";
+            listViewGroup2.Header = "ListViewGroup";
+            listViewGroup2.Name = "MSSV";
             this.lvSinhVien.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup1});
+            listViewGroup2});
             this.lvSinhVien.HideSelection = false;
             this.lvSinhVien.Location = new System.Drawing.Point(3, 18);
             this.lvSinhVien.Name = "lvSinhVien";
@@ -451,7 +453,7 @@
             this.đọcFileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
             this.menuStrip1.TabIndex = 26;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -468,20 +470,23 @@
             // menuDocTXT
             // 
             this.menuDocTXT.Name = "menuDocTXT";
-            this.menuDocTXT.Size = new System.Drawing.Size(224, 26);
+            this.menuDocTXT.Size = new System.Drawing.Size(183, 26);
             this.menuDocTXT.Text = "Đọc file txt";
+            this.menuDocTXT.Click += new System.EventHandler(this.menuDocTXT_Click);
             // 
             // menuDocXML
             // 
             this.menuDocXML.Name = "menuDocXML";
-            this.menuDocXML.Size = new System.Drawing.Size(224, 26);
+            this.menuDocXML.Size = new System.Drawing.Size(183, 26);
             this.menuDocXML.Text = "Đọc file XML";
+            this.menuDocXML.Click += new System.EventHandler(this.menuDocXML_Click);
             // 
             // menuDocJSON
             // 
             this.menuDocJSON.Name = "menuDocJSON";
-            this.menuDocJSON.Size = new System.Drawing.Size(224, 26);
+            this.menuDocJSON.Size = new System.Drawing.Size(183, 26);
             this.menuDocJSON.Text = "Đọc file JSON";
+            this.menuDocJSON.Click += new System.EventHandler(this.menuDocJSON_Click);
             // 
             // frmSinhVien
             // 
@@ -518,7 +523,8 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmSinhVien";
             this.Text = "Nhập thông tin sinh viên";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.frmSinhVien_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmSinhVien_MouseDown);
             this.contextMenuStrip2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.contextMenuStrip1.ResumeLayout(false);

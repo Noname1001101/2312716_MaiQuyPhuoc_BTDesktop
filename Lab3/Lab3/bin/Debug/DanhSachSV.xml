@@ -1,0 +1,255 @@
+<?xml version="1.0"?>
+<ArrayOfSinhVien xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SinhVien>
+    <MSSV>SV001</MSSV>
+    <HoVaTenLot>Nguyễn Văn</HoVaTenLot>
+    <Ten>An</Ten>
+    <NgaySinh>2003-05-12T00:00:00</NgaySinh>
+    <SoCMND>123456789</SoCMND>
+    <GioiTinh xsi:nil="true" />
+    <Lop>CTK45</Lop>
+    <SDT>0912345678</SDT>
+    <DiaChi>TP.HCM</DiaChi>
+    <MHDK />
+  </SinhVien>
+  <SinhVien>
+    <MSSV>SV002</MSSV>
+    <HoVaTenLot>Trần Thị</HoVaTenLot>
+    <Ten>Bích</Ten>
+    <NgaySinh>2002-11-23T00:00:00</NgaySinh>
+    <SoCMND>987654321</SoCMND>
+    <GioiTinh xsi:nil="true" />
+    <Lop>CTK45</Lop>
+    <SDT>0987654321</SDT>
+    <DiaChi>Hà Nội</DiaChi>
+    <MHDK />
+  </SinhVien>
+  <SinhVien>
+    <MSSV>SV003</MSSV>
+    <HoVaTenLot>Lê Hoàng</HoVaTenLot>
+    <Ten>Minh</Ten>
+    <NgaySinh>2003-01-08T00:00:00</NgaySinh>
+    <SoCMND>135792468</SoCMND>
+    <GioiTinh xsi:nil="true" />
+    <Lop>CTK46</Lop>
+    <SDT>0901234567</SDT>
+    <DiaChi>Đà Nẵng</DiaChi>
+    <MHDK />
+  </SinhVien>
+  <SinhVien>
+    <MSSV>SV004</MSSV>
+    <HoVaTenLot>Phạm Ngọc</HoVaTenLot>
+    <Ten>Hà</Ten>
+    <NgaySinh>2002-09-19T00:00:00</NgaySinh>
+    <SoCMND>246813579</SoCMND>
+    <GioiTinh xsi:nil="true" />
+    <Lop>CTK46</Lop>
+    <SDT>0934567890</SDT>
+    <DiaChi>Cần Thơ</DiaChi>
+    <MHDK />
+  </SinhVien>
+  <SinhVien>
+    <MSSV>SV005</MSSV>
+    <HoVaTenLot>Đỗ Thị</HoVaTenLot>
+    <Ten>Thu</Ten>
+    <NgaySinh>2003-07-30T00:00:00</NgaySinh>
+    <SoCMND>112233445</SoCMND>
+    <GioiTinh xsi:nil="true" />
+    <Lop>CTK47</Lop>
+    <SDT>0978123456</SDT>
+    <DiaChi>Hải Phòng</DiaChi>
+    <MHDK />
+  </SinhVien>
+  <SinhVien>
+    <MSSV>SV006</MSSV>
+    <HoVaTenLot>Võ Thành</HoVaTenLot>
+    <Ten>Công</Ten>
+    <NgaySinh>2001-03-04T00:00:00</NgaySinh>
+    <SoCMND>334455667</SoCMND>
+    <GioiTinh xsi:nil="true" />
+    <Lop>CTK44</Lop>
+    <SDT>0911222333</SDT>
+    <DiaChi>Huế</DiaChi>
+    <MHDK />
+  </SinhVien>
+  <SinhVien>
+    <MSSV>SV007</MSSV>
+    <HoVaTenLot>Nguyễn Thị</HoVaTenLot>
+    <Ten>Hồng</Ten>
+    <NgaySinh>2002-07-15T00:00:00</NgaySinh>
+    <SoCMND>556677889</SoCMND>
+    <GioiTinh xsi:nil="true" />
+    <Lop>CTK45</Lop>
+    <SDT>0988776655</SDT>
+    <DiaChi>Quảng Ngãi</DiaChi>
+    <MHDK />
+  </SinhVien>
+  <SinhVien>
+    <MSSV>SV008</MSSV>
+    <HoVaTenLot>Trần Văn</HoVaTenLot>
+    <Ten>Hòa</Ten>
+    <NgaySinh>2003-10-21T00:00:00</NgaySinh>
+    <SoCMND>778899001</SoCMND>
+    <GioiTinh xsi:nil="true" />
+    <Lop>CTK46</Lop>
+    <SDT>0905566778</SDT>
+    <DiaChi>Nha Trang</DiaChi>
+    <MHDK />
+  </SinhVien>
+  <SinhVien>
+    <MSSV>SV009</MSSV>
+    <HoVaTenLot>Lê Thị</HoVaTenLot>
+    <Ten>Mai</Ten>
+    <NgaySinh>2001-12-09T00:00:00</NgaySinh>
+    <SoCMND>990011223</SoCMND>
+    <GioiTinh xsi:nil="true" />
+    <Lop>CTK44</Lop>
+    <SDT>0977334455</SDT>
+    <DiaChi>Đà Lạt</DiaChi>
+    <MHDK />
+  </SinhVien>
+  <SinhVien>
+    <MSSV>SV010</MSSV>
+    <HoVaTenLot>Phan Văn</HoVaTenLot>
+    <Ten>Tùng</Ten>
+    <NgaySinh>2002-04-11T00:00:00</NgaySinh>
+    <SoCMND>223344556</SoCMND>
+    <GioiTinh xsi:nil="true" />
+    <Lop>CTK45</Lop>
+    <SDT>0911998877</SDT>
+    <DiaChi>Bình Định</DiaChi>
+    <MHDK />
+  </SinhVien>
+  <SinhVien>
+    <MSSV>SV011</MSSV>
+    <HoVaTenLot>Hoàng Anh</HoVaTenLot>
+    <Ten>Tuấn</Ten>
+    <NgaySinh>2003-08-28T00:00:00</NgaySinh>
+    <SoCMND>445566778</SoCMND>
+    <GioiTinh xsi:nil="true" />
+    <Lop>CTK47</Lop>
+    <SDT>0933221100</SDT>
+    <DiaChi>Đắk Lắk</DiaChi>
+    <MHDK />
+  </SinhVien>
+  <SinhVien>
+    <MSSV>SV012</MSSV>
+    <HoVaTenLot>Nguyễn Thị</HoVaTenLot>
+    <Ten>Lan</Ten>
+    <NgaySinh>2001-06-02T00:00:00</NgaySinh>
+    <SoCMND>667788990</SoCMND>
+    <GioiTinh xsi:nil="true" />
+    <Lop>CTK44</Lop>
+    <SDT>0988112233</SDT>
+    <DiaChi>Hà Nam</DiaChi>
+    <MHDK />
+  </SinhVien>
+  <SinhVien>
+    <MSSV>SV013</MSSV>
+    <HoVaTenLot>Đinh Công</HoVaTenLot>
+    <Ten>Toàn</Ten>
+    <NgaySinh>2002-05-17T00:00:00</NgaySinh>
+    <SoCMND>889900112</SoCMND>
+    <GioiTinh xsi:nil="true" />
+    <Lop>CTK45</Lop>
+    <SDT>0977445566</SDT>
+    <DiaChi>Thanh Hóa</DiaChi>
+    <MHDK />
+  </SinhVien>
+  <SinhVien>
+    <MSSV>SV014</MSSV>
+    <HoVaTenLot>Lê Ngọc</HoVaTenLot>
+    <Ten>Quỳnh</Ten>
+    <NgaySinh>2003-09-29T00:00:00</NgaySinh>
+    <SoCMND>101112131</SoCMND>
+    <GioiTinh xsi:nil="true" />
+    <Lop>CTK47</Lop>
+    <SDT>0908776655</SDT>
+    <DiaChi>Ninh Bình</DiaChi>
+    <MHDK />
+  </SinhVien>
+  <SinhVien>
+    <MSSV>SV015</MSSV>
+    <HoVaTenLot>Trần Văn</HoVaTenLot>
+    <Ten>Quang</Ten>
+    <NgaySinh>2002-01-06T00:00:00</NgaySinh>
+    <SoCMND>121314151</SoCMND>
+    <GioiTinh xsi:nil="true" />
+    <Lop>CTK46</Lop>
+    <SDT>0913445566</SDT>
+    <DiaChi>Bắc Ninh</DiaChi>
+    <MHDK />
+  </SinhVien>
+  <SinhVien>
+    <MSSV>4710500</MSSV>
+    <HoVaTenLot>mai</HoVaTenLot>
+    <Ten>fasdasdas</Ten>
+    <NgaySinh>2025-09-27T00:00:00</NgaySinh>
+    <SoCMND>314123123</SoCMND>
+    <GioiTinh xsi:nil="true" />
+    <Lop>CTK47</Lop>
+    <SDT>3123.123.123</SDT>
+    <DiaChi>dsafasdfsd</DiaChi>
+    <MHDK />
+  </SinhVien>
+  <SinhVien>
+    <MSSV>4710479</MSSV>
+    <HoVaTenLot>minh</HoVaTenLot>
+    <Ten>aaaaaa</Ten>
+    <NgaySinh>2025-09-27T00:00:00</NgaySinh>
+    <SoCMND>314123123</SoCMND>
+    <GioiTinh xsi:nil="true" />
+    <Lop>CTK47</Lop>
+    <SDT>3123.123.123</SDT>
+    <DiaChi>dsafasdfsd</DiaChi>
+    <MHDK />
+  </SinhVien>
+  <SinhVien>
+    <MSSV>4710456</MSSV>
+    <HoVaTenLot>sadasd</HoVaTenLot>
+    <Ten>adidass</Ten>
+    <NgaySinh>2025-09-27T00:00:00</NgaySinh>
+    <SoCMND>312312312</SoCMND>
+    <GioiTinh xsi:nil="true" />
+    <Lop>CTK47</Lop>
+    <SDT>2131.232.132</SDT>
+    <DiaChi>dewqeqeqweqw</DiaChi>
+    <MHDK />
+  </SinhVien>
+  <SinhVien>
+    <MSSV>4710962</MSSV>
+    <HoVaTenLot>mai</HoVaTenLot>
+    <Ten>fasdasdas</Ten>
+    <NgaySinh>2025-09-27T00:00:00</NgaySinh>
+    <SoCMND>314123123</SoCMND>
+    <GioiTinh>true</GioiTinh>
+    <Lop>CTK47</Lop>
+    <SDT>3123.123.123</SDT>
+    <DiaChi>dsafasdfsd</DiaChi>
+    <MHDK />
+  </SinhVien>
+  <SinhVien>
+    <MSSV>4710962</MSSV>
+    <HoVaTenLot>mai</HoVaTenLot>
+    <Ten>fasdasdas</Ten>
+    <NgaySinh>2025-09-27T00:00:00</NgaySinh>
+    <SoCMND>314123123</SoCMND>
+    <GioiTinh>true</GioiTinh>
+    <Lop>CTK47</Lop>
+    <SDT>3123.123.123</SDT>
+    <DiaChi>dsafasdfsd</DiaChi>
+    <MHDK />
+  </SinhVien>
+  <SinhVien>
+    <MSSV>4710962</MSSV>
+    <HoVaTenLot>mai</HoVaTenLot>
+    <Ten>fasdasdas</Ten>
+    <NgaySinh>2025-09-27T00:00:00</NgaySinh>
+    <SoCMND>314123123</SoCMND>
+    <GioiTinh>true</GioiTinh>
+    <Lop>CTK47</Lop>
+    <SDT>3123.123.123</SDT>
+    <DiaChi>dsafasdfsd</DiaChi>
+    <MHDK />
+  </SinhVien>
+</ArrayOfSinhVien>

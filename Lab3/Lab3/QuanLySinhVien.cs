@@ -1,17 +1,16 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using System.Linq;
+using System.Xml.Serialization;
 namespace Lab3
 {
+    // Delegate để so sánh 2 đối tượng (trả về 0 nếu bằng nhau)
     public delegate int SoSanh(object sv1, object sv2);
-    public enum KieuTim
-    {
-        TheoMSSV,
-        TheoTen,
-        TheoLop
-    }
-    class QuanLySinhVien
+
+    public class QuanLySinhVien
     {
         public List<SinhVien> dsSinhVien;
 
@@ -32,39 +31,39 @@ namespace Lab3
             this.dsSinhVien.Add(sv);
         }
 
-        public List<SinhVien> TimKiem(string tuKhoa, KieuTim kieu)
-        {
-            List<SinhVien> ketQua = new List<SinhVien>();
+        //public List<SinhVien> TimKiem(string tuKhoa, KieuTim kieu)
+        //{
+        //    List<SinhVien> ketQua = new List<SinhVien>();
 
-            tuKhoa = tuKhoa.ToLower(); // đổi về chữ thường để so sánh cho dễ
+        //    tuKhoa = tuKhoa.ToLower(); // đổi về chữ thường để so sánh cho dễ
 
-            foreach (SinhVien sv in dsSinhVien)
-            {
-                switch (kieu)
-                {
-                    case KieuTim.TheoMSSV:
-                        if (sv.MSSV != null && sv.MSSV.ToLower().Contains(tuKhoa))
-                            ketQua.Add(sv);
-                        break;
+        //    foreach (SinhVien sv in dsSinhVien)
+        //    {
+        //        switch (kieu)
+        //        {
+        //            case KieuTim.TheoMSSV:
+        //                if (sv.MSSV != null && sv.MSSV.ToLower().Contains(tuKhoa))
+        //                    ketQua.Add(sv);
+        //                break;
 
-                    case KieuTim.TheoTen:
-                        string hoTen = (sv.HoVaTenLot + " " + sv.Ten).ToLower();
-                        if (hoTen.Contains(tuKhoa))
-                            ketQua.Add(sv);
-                        break;
+        //            case KieuTim.TheoTen:
+        //                string hoTen = (sv.HoVaTenLot + " " + sv.Ten).ToLower();
+        //                if (hoTen.Contains(tuKhoa))
+        //                    ketQua.Add(sv);
+        //                break;
 
-                    case KieuTim.TheoLop:
-                        if (sv.Lop != null && sv.Lop.ToLower().Contains(tuKhoa))
-                            ketQua.Add(sv);
-                        break;
-                }
-            }
+        //            case KieuTim.TheoLop:
+        //                if (sv.Lop != null && sv.Lop.ToLower().Contains(tuKhoa))
+        //                    ketQua.Add(sv);
+        //                break;
+        //        }
+        //    }
 
-            return ketQua; // nếu không có kết quả thì trả về list rỗng
-        }
+        //    return ketQua; // nếu không có kết quả thì trả về list rỗng
+        //}
 
 
-
+        // Cập nhật thông tin sinh viên theo hàm so sánh
         public bool CapNhat(SinhVien svsua, object obj, SoSanh ss)
         {
             for (int i = 0; i < this.dsSinhVien.Count; i++)
@@ -78,6 +77,7 @@ namespace Lab3
             return false;
         }
 
+        // Xóa sinh viên theo điều kiện so sánh
         public void Xoa(object obj, SoSanh ss)
         {
             int i = dsSinhVien.Count - 1;
@@ -90,6 +90,7 @@ namespace Lab3
             }
         }
 
+        // Kiểm tra thông tin sinh viên trước khi thêm/cập nhật
         public bool KiemTraThongTin(SinhVien sv, out string thongBao)
         {
             if (string.IsNullOrWhiteSpace(sv.MSSV))
@@ -156,6 +157,7 @@ namespace Lab3
 
 
 
+        // Tạo MSSV ngẫu nhiên dựa vào lớp
         public string TaoMSSV(string lop)
         {
             Random rnd = new Random();
@@ -167,13 +169,32 @@ namespace Lab3
             string bb = "10";
 
             // Sinh số random từ 1 đến 999, rồi format thành 3 chữ số
-            int soNgauNhien = rnd.Next(1, 1000);
-            string ccc = soNgauNhien.ToString("D3");
+            string ccc = rnd.Next(1, 1000).ToString("D3");
 
             return aa + bb + ccc;
         }
 
+        // Tìm kiếm sinh viên theo nhiều điều kiện
+        public List<SinhVien> TimKiemNhieuDieuKien(
+      string mssv, string ten, string lop, string diaChi,
+      string hoVaTenLot = null, string ngaySinh = null,
+      string soCMND = null, string soDT = null)
+        {
+            var ketQua = dsSinhVien.Where(sv =>
+                (string.IsNullOrEmpty(mssv) || sv.MSSV.ToLower().Contains(mssv.ToLower())) &&
+                (string.IsNullOrEmpty(ten) || sv.Ten.ToLower().Contains(ten.ToLower())) &&
+                (string.IsNullOrEmpty(lop) || sv.Lop.ToLower().Contains(lop.ToLower())) &&
+                (string.IsNullOrEmpty(diaChi) || sv.DiaChi.ToLower().Contains(diaChi.ToLower())) &&
+                (string.IsNullOrEmpty(hoVaTenLot) || sv.HoVaTenLot.ToLower().Contains(hoVaTenLot.ToLower())) &&
+                (string.IsNullOrEmpty(ngaySinh) || sv.NgaySinh.ToShortDateString() == ngaySinh) &&
+                (string.IsNullOrEmpty(soCMND) || sv.SoCMND.ToString().Contains(soCMND)) &&
+                (string.IsNullOrEmpty(soDT) || sv.SDT.ToString().Contains(soDT))
+            ).ToList();
 
+            return ketQua;
+        }
+
+        // Đọc/Ghi file TXT
         public void DocTuFile(string filename)
         {
             string t;
@@ -221,7 +242,58 @@ namespace Lab3
             }
         }
 
+        // Đọc/Ghi file XML
+        public void DocTuFileXML(string filename)
+        {
+            XmlSerializer serializer = new XmlSerializer(typeof(List<SinhVien>));
+            using (FileStream fs = new FileStream(filename, FileMode.Open))
+            {
+                dsSinhVien = (List<SinhVien>)serializer.Deserialize(fs);
+            }
 
 
+        }
+
+        public void GhiVaoFileXML(string filename)
+        {
+            XmlSerializer serializer = new XmlSerializer(typeof(List<SinhVien>));
+            using (FileStream fs = new FileStream(filename, FileMode.Create))
+            {
+                serializer.Serialize(fs, dsSinhVien);
+            }
+        }
+
+        //Đọc/Ghi file JSON
+        public void DocTuFileJSON(string tenFile)
+        {
+            try
+            {
+                if (File.Exists(tenFile))
+                {
+                    string json = File.ReadAllText(tenFile);
+                    dsSinhVien = JsonConvert.DeserializeObject<List<SinhVien>>(json);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi đọc JSON: " + ex.Message);
+            }
+        }
+
+
+
+
+        public void GhiVaoFileJSON(string tenFile)
+        {
+            try
+            {
+                string json = JsonConvert.SerializeObject(dsSinhVien, Formatting.Indented);
+                File.WriteAllText(tenFile, json);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi ghi JSON: " + ex.Message);
+            }
+        }
     }
 }
