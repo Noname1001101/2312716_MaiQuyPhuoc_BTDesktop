@@ -168,8 +168,8 @@ namespace Lab3
             // Gom SV cần cập nhật (tick hoặc chọn)
             var itemsToUpdate = lvSinhVien.CheckedItems.Cast<ListViewItem>()
                                 .Concat(lvSinhVien.SelectedItems.Cast<ListViewItem>())
-                                .Distinct()
-                                .ToList();
+                                .Distinct() //Nếu vừa tick vừa chọn → chỉ tính 1 lần(không bị lặp).
+                                .ToList(); // Chuyển thành danh sách List<ListViewItem> để dễ dùng về sau
 
             if (itemsToUpdate.Count == 0)
             {
@@ -216,8 +216,8 @@ namespace Lab3
             // Gom SV được tick hoặc chọn (loại trùng)
             var itemsToDelete = lvSinhVien.CheckedItems.Cast<ListViewItem>()
                                  .Concat(lvSinhVien.SelectedItems.Cast<ListViewItem>())
-                                 .Distinct()
-                                 .ToList();
+                                 .Distinct() //Nếu vừa tick vừa chọn → chỉ tính 1 lần(không bị lặp).
+                                 .ToList(); // Chuyển thành danh sách List<ListViewItem> để dễ dùng về sau
 
 
             if (itemsToDelete.Count == 0)
@@ -304,7 +304,7 @@ namespace Lab3
               "Bạn có chắc muốn thoát chương trình không?",
               "",
               MessageBoxButtons.YesNo,
-              MessageBoxIcon.Question
+              MessageBoxIcon.Warning
             );
 
             if (result == DialogResult.Yes)
@@ -313,15 +313,37 @@ namespace Lab3
             }
         }
 
-        // Khi chọn lớp thì tạo MSSV
+
+
+        // Khi chọn lớp trong ComboBox
         private void cboLop_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string lop = cboLop.Text.Trim();
-            if (!string.IsNullOrEmpty(lop))
+            if (!string.IsNullOrWhiteSpace(cboLop.Text))
             {
-                txtMSSV.Text = qlsv.TaoMSSV(lop);
+                int namNhapHoc = qlsv.TinhNamNhapHoc(cboLop.Text);
+
+                // Giữ nguyên ngày + tháng, chỉ đổi năm
+                DateTime oldDate = dtpNgaySinh.Value;
+                dtpNgaySinh.Value = new DateTime(namNhapHoc, oldDate.Month, oldDate.Day);
+
+                // Sinh MSSV
+                txtMSSV.Text = qlsv.TaoMSSV(cboLop.Text);
             }
         }
+
+
+        private void txtMSSV_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(cboLop.Text))
+            {
+                MessageBox.Show("Bạn phải nhập thông tin [LỚP] trước khi tạo [MSSV]!",
+                                "Thông báo",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+            }
+        }
+
+
 
 
         // Đọc file XML/TXT/JSON từ menu
@@ -394,18 +416,6 @@ namespace Lab3
         }
 
 
-        // Click vào MSSV thì bắt buộc nhập lớp trước
-        private void txtMSSV_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(cboLop.Text))
-            {
-                MessageBox.Show("Bạn phải nhập thông tin lớp trước khi tạo MSSV!",
-                                "Thông báo",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Warning);
-            }
-
-        }
     }
 
 }

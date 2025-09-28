@@ -1,183 +1,103 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfSinhVien xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <SinhVien>
-    <MSSV>SV001</MSSV>
-    <HoVaTenLot>Nguyễn Văn</HoVaTenLot>
+    <MSSV>2910070</MSSV>
+    <HoVaTenLot>Nguyen Huu</HoVaTenLot>
+    <Ten>Phuoc</Ten>
+    <NgaySinh>2004-01-05</NgaySinh>
+    <Lop>CTK53</Lop>
+    <SoCMND>301234567</SoCMND>
+    <SDT>0901111222</SDT>
+    <DiaChi>Da Lat</DiaChi>
+  </SinhVien>
+  <SinhVien>
+    <MSSV>2910339</MSSV>
+    <HoVaTenLot>Tran Van</HoVaTenLot>
+    <Ten>Tam</Ten>
+    <NgaySinh>2004-02-10</NgaySinh>
+    <Lop>CTK53</Lop>
+    <SoCMND>301234568</SoCMND>
+    <SDT>0902222333</SDT>
+    <DiaChi>Quy Nhon</DiaChi>
+  </SinhVien>
+  <SinhVien>
+    <MSSV>2910371</MSSV>
+    <HoVaTenLot>Le Thi</HoVaTenLot>
+    <Ten>My</Ten>
+    <NgaySinh>2004-03-12</NgaySinh>
+    <Lop>CTK53</Lop>
+    <SoCMND>301234569</SoCMND>
+    <SDT>0903333444</SDT>
+    <DiaChi>Gia Lai</DiaChi>
+  </SinhVien>
+  <SinhVien>
+    <MSSV>3010539</MSSV>
+    <HoVaTenLot>Pham Minh</HoVaTenLot>
+    <Ten>Khoa</Ten>
+    <NgaySinh>2004-04-20</NgaySinh>
+    <Lop>CTK54</Lop>
+    <SoCMND>301234570</SoCMND>
+    <SDT>0904444555</SDT>
+    <DiaChi>Long An</DiaChi>
+  </SinhVien>
+  <SinhVien>
+    <MSSV>3010725</MSSV>
+    <HoVaTenLot>Vo Hoang</HoVaTenLot>
     <Ten>An</Ten>
-    <NgaySinh>2003-05-12T00:00:00</NgaySinh>
-    <SoCMND>123456789</SoCMND>
-    <GioiTinh xsi:nil="true" />
-    <Lop>CTK45</Lop>
-    <SDT>0912345678</SDT>
-    <DiaChi>TP.HCM</DiaChi>
-    <MHDK />
+    <NgaySinh>2004-05-15</NgaySinh>
+    <Lop>CTK54</Lop>
+    <SoCMND>301234571</SoCMND>
+    <SDT>0905555666</SDT>
+    <DiaChi>Hue</DiaChi>
   </SinhVien>
   <SinhVien>
-    <MSSV>SV002</MSSV>
-    <HoVaTenLot>Trần Thị</HoVaTenLot>
-    <Ten>Bích</Ten>
-    <NgaySinh>2002-11-23T00:00:00</NgaySinh>
-    <SoCMND>987654321</SoCMND>
-    <GioiTinh xsi:nil="true" />
-    <Lop>CTK45</Lop>
-    <SDT>0987654321</SDT>
-    <DiaChi>Hà Nội</DiaChi>
-    <MHDK />
+    <MSSV>3010922</MSSV>
+    <HoVaTenLot>Dang Bao</HoVaTenLot>
+    <Ten>Ngoc</Ten>
+    <NgaySinh>2004-06-11</NgaySinh>
+    <Lop>CTK54</Lop>
+    <SoCMND>301234572</SoCMND>
+    <SDT>0906666777</SDT>
+    <DiaChi>Da Nang</DiaChi>
   </SinhVien>
   <SinhVien>
-    <MSSV>SV003</MSSV>
-    <HoVaTenLot>Lê Hoàng</HoVaTenLot>
-    <Ten>Minh</Ten>
-    <NgaySinh>2003-01-08T00:00:00</NgaySinh>
-    <SoCMND>135792468</SoCMND>
-    <GioiTinh xsi:nil="true" />
-    <Lop>CTK46</Lop>
-    <SDT>0901234567</SDT>
-    <DiaChi>Đà Nẵng</DiaChi>
-    <MHDK />
+    <MSSV>3110131</MSSV>
+    <HoVaTenLot>Nguyen Thi</HoVaTenLot>
+    <Ten>Linh</Ten>
+    <NgaySinh>2004-07-19</NgaySinh>
+    <Lop>CTK55</Lop>
+    <SoCMND>301234573</SoCMND>
+    <SDT>0907777888</SDT>
+    <DiaChi>Ha Noi</DiaChi>
   </SinhVien>
   <SinhVien>
-    <MSSV>SV004</MSSV>
-    <HoVaTenLot>Phạm Ngọc</HoVaTenLot>
-    <Ten>Hà</Ten>
-    <NgaySinh>2002-09-19T00:00:00</NgaySinh>
-    <SoCMND>246813579</SoCMND>
-    <GioiTinh xsi:nil="true" />
-    <Lop>CTK46</Lop>
-    <SDT>0934567890</SDT>
-    <DiaChi>Cần Thơ</DiaChi>
-    <MHDK />
+    <MSSV>3110342</MSSV>
+    <HoVaTenLot>Tran Duc</HoVaTenLot>
+    <Ten>Hieu</Ten>
+    <NgaySinh>2004-08-25</NgaySinh>
+    <Lop>CTK55</Lop>
+    <SoCMND>301234574</SoCMND>
+    <SDT>0908888999</SDT>
+    <DiaChi>Hai Phong</DiaChi>
   </SinhVien>
   <SinhVien>
-    <MSSV>SV005</MSSV>
-    <HoVaTenLot>Đỗ Thị</HoVaTenLot>
-    <Ten>Thu</Ten>
-    <NgaySinh>2003-07-30T00:00:00</NgaySinh>
-    <SoCMND>112233445</SoCMND>
-    <GioiTinh xsi:nil="true" />
-    <Lop>CTK47</Lop>
-    <SDT>0978123456</SDT>
-    <DiaChi>Hải Phòng</DiaChi>
-    <MHDK />
+    <MSSV>3110567</MSSV>
+    <HoVaTenLot>Le Van</HoVaTenLot>
+    <Ten>Phong</Ten>
+    <NgaySinh>2004-09-30</NgaySinh>
+    <Lop>CTK55</Lop>
+    <SoCMND>301234575</SoCMND>
+    <SDT>0909999000</SDT>
+    <DiaChi>Can Tho</DiaChi>
   </SinhVien>
   <SinhVien>
-    <MSSV>SV006</MSSV>
-    <HoVaTenLot>Võ Thành</HoVaTenLot>
-    <Ten>Công</Ten>
-    <NgaySinh>2001-03-04T00:00:00</NgaySinh>
-    <SoCMND>334455667</SoCMND>
-    <GioiTinh xsi:nil="true" />
-    <Lop>CTK44</Lop>
-    <SDT>0911222333</SDT>
-    <DiaChi>Huế</DiaChi>
-    <MHDK />
-  </SinhVien>
-  <SinhVien>
-    <MSSV>SV007</MSSV>
-    <HoVaTenLot>Nguyễn Thị</HoVaTenLot>
-    <Ten>Hồng</Ten>
-    <NgaySinh>2002-07-15T00:00:00</NgaySinh>
-    <SoCMND>556677889</SoCMND>
-    <GioiTinh xsi:nil="true" />
-    <Lop>CTK45</Lop>
-    <SDT>0988776655</SDT>
-    <DiaChi>Quảng Ngãi</DiaChi>
-    <MHDK />
-  </SinhVien>
-  <SinhVien>
-    <MSSV>SV008</MSSV>
-    <HoVaTenLot>Trần Văn</HoVaTenLot>
-    <Ten>Hòa</Ten>
-    <NgaySinh>2003-10-21T00:00:00</NgaySinh>
-    <SoCMND>778899001</SoCMND>
-    <GioiTinh xsi:nil="true" />
-    <Lop>CTK46</Lop>
-    <SDT>0905566778</SDT>
-    <DiaChi>Nha Trang</DiaChi>
-    <MHDK />
-  </SinhVien>
-  <SinhVien>
-    <MSSV>SV009</MSSV>
-    <HoVaTenLot>Lê Thị</HoVaTenLot>
-    <Ten>Mai</Ten>
-    <NgaySinh>2001-12-09T00:00:00</NgaySinh>
-    <SoCMND>990011223</SoCMND>
-    <GioiTinh xsi:nil="true" />
-    <Lop>CTK44</Lop>
-    <SDT>0977334455</SDT>
-    <DiaChi>Đà Lạt</DiaChi>
-    <MHDK />
-  </SinhVien>
-  <SinhVien>
-    <MSSV>SV010</MSSV>
-    <HoVaTenLot>Phan Văn</HoVaTenLot>
-    <Ten>Tùng</Ten>
-    <NgaySinh>2002-04-11T00:00:00</NgaySinh>
-    <SoCMND>223344556</SoCMND>
-    <GioiTinh xsi:nil="true" />
-    <Lop>CTK45</Lop>
-    <SDT>0911998877</SDT>
-    <DiaChi>Bình Định</DiaChi>
-    <MHDK />
-  </SinhVien>
-  <SinhVien>
-    <MSSV>SV011</MSSV>
-    <HoVaTenLot>Hoàng Anh</HoVaTenLot>
-    <Ten>Tuấn</Ten>
-    <NgaySinh>2003-08-28T00:00:00</NgaySinh>
-    <SoCMND>445566778</SoCMND>
-    <GioiTinh xsi:nil="true" />
-    <Lop>CTK47</Lop>
-    <SDT>0933221100</SDT>
-    <DiaChi>Đắk Lắk</DiaChi>
-    <MHDK />
-  </SinhVien>
-  <SinhVien>
-    <MSSV>SV012</MSSV>
-    <HoVaTenLot>Nguyễn Thị</HoVaTenLot>
-    <Ten>Lan</Ten>
-    <NgaySinh>2001-06-02T00:00:00</NgaySinh>
-    <SoCMND>667788990</SoCMND>
-    <GioiTinh xsi:nil="true" />
-    <Lop>CTK44</Lop>
-    <SDT>0988112233</SDT>
-    <DiaChi>Hà Nam</DiaChi>
-    <MHDK />
-  </SinhVien>
-  <SinhVien>
-    <MSSV>SV013</MSSV>
-    <HoVaTenLot>Đinh Công</HoVaTenLot>
-    <Ten>Toàn</Ten>
-    <NgaySinh>2002-05-17T00:00:00</NgaySinh>
-    <SoCMND>889900112</SoCMND>
-    <GioiTinh xsi:nil="true" />
-    <Lop>CTK45</Lop>
-    <SDT>0977445566</SDT>
-    <DiaChi>Thanh Hóa</DiaChi>
-    <MHDK />
-  </SinhVien>
-  <SinhVien>
-    <MSSV>SV014</MSSV>
-    <HoVaTenLot>Lê Ngọc</HoVaTenLot>
-    <Ten>Quỳnh</Ten>
-    <NgaySinh>2003-09-29T00:00:00</NgaySinh>
-    <SoCMND>101112131</SoCMND>
-    <GioiTinh xsi:nil="true" />
-    <Lop>CTK47</Lop>
-    <SDT>0908776655</SDT>
-    <DiaChi>Ninh Bình</DiaChi>
-    <MHDK />
-  </SinhVien>
-  <SinhVien>
-    <MSSV>SV015</MSSV>
-    <HoVaTenLot>Trần Văn</HoVaTenLot>
-    <Ten>Quang</Ten>
-    <NgaySinh>2002-01-06T00:00:00</NgaySinh>
-    <SoCMND>121314151</SoCMND>
-    <GioiTinh xsi:nil="true" />
-    <Lop>CTK46</Lop>
-    <SDT>0913445566</SDT>
-    <DiaChi>Bắc Ninh</DiaChi>
-    <MHDK />
+    <MSSV>3110788</MSSV>
+    <HoVaTenLot>Hoang Gia</HoVaTenLot>
+    <Ten>Quyen</Ten>
+    <NgaySinh>2004-10-22</NgaySinh>
+    <Lop>CTK55</Lop>
+    <SoCMND>301234576</SoCMND>
+    <SDT>0911111222</SDT>
+    <DiaChi>Bac Ninh</DiaChi>
   </SinhVien>
 </ArrayOfSinhVien>

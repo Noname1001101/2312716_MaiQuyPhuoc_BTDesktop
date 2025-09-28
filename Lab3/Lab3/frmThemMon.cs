@@ -11,12 +11,12 @@ namespace Lab3
             InitializeComponent();
         }
 
-        private void bntThem_Click(object sender, EventArgs e)
+        private void bntThemMon_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(txtThemMon.Text))
             {
                 MonMoi = txtThemMon.Text.Trim();
-                this.DialogResult = DialogResult.OK; // báo lại form chính biết là OK
+                this.DialogResult = DialogResult.OK;
                 this.Close();
             }
             else

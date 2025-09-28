@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
             this.label1 = new System.Windows.Forms.Label();
             this.txtMSSV = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -294,19 +294,19 @@
             this.mennuThemMon,
             this.menuXoaMon});
             this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(150, 52);
+            this.contextMenuStrip2.Size = new System.Drawing.Size(211, 80);
             // 
             // mennuThemMon
             // 
             this.mennuThemMon.Name = "mennuThemMon";
-            this.mennuThemMon.Size = new System.Drawing.Size(149, 24);
+            this.mennuThemMon.Size = new System.Drawing.Size(210, 24);
             this.mennuThemMon.Text = "Thêm môn";
             this.mennuThemMon.Click += new System.EventHandler(this.mennuThemMon_Click);
             // 
             // menuXoaMon
             // 
             this.menuXoaMon.Name = "menuXoaMon";
-            this.menuXoaMon.Size = new System.Drawing.Size(149, 24);
+            this.menuXoaMon.Size = new System.Drawing.Size(210, 24);
             this.menuXoaMon.Text = "Xóa môn";
             this.menuXoaMon.Click += new System.EventHandler(this.menuXoaMon_Click);
             // 
@@ -380,10 +380,10 @@
             this.lvSinhVien.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lvSinhVien.FullRowSelect = true;
             this.lvSinhVien.GridLines = true;
-            listViewGroup2.Header = "ListViewGroup";
-            listViewGroup2.Name = "MSSV";
+            listViewGroup1.Header = "ListViewGroup";
+            listViewGroup1.Name = "MSSV";
             this.lvSinhVien.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup2});
+            listViewGroup1});
             this.lvSinhVien.HideSelection = false;
             this.lvSinhVien.Location = new System.Drawing.Point(3, 18);
             this.lvSinhVien.Name = "lvSinhVien";

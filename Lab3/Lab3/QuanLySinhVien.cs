@@ -91,88 +91,125 @@ namespace Lab3
         }
 
         // Kiểm tra thông tin sinh viên trước khi thêm/cập nhật
+        //public bool KiemTraThongTin(SinhVien sv, out string thongBao)
+        //{
+        //    if (string.IsNullOrWhiteSpace(sv.MSSV))
+        //    {
+        //        thongBao = "Vui lòng nhập MSSV!";
+        //        return false;
+        //    }
+        //    if (string.IsNullOrWhiteSpace(sv.HoVaTenLot))
+        //    {
+        //        thongBao = "Vui lòng nhập Họ và tên lót!";
+        //        return false;
+        //    }
+
+        //    if (sv.NgaySinh == DateTime.MinValue)
+        //    {
+        //        thongBao = "Vui lòng nhập Ngày sinh!";
+        //        return false;
+        //    }
+
+        //    if (sv.NgaySinh > DateTime.Now)
+        //    {
+        //        thongBao = "Ngày sinh không hợp lệ (lớn hơn ngày hiện tại)!";
+        //        return false;
+        //    }
+
+        //    if (string.IsNullOrWhiteSpace(sv.SoCMND))
+        //    {
+        //        thongBao = "Vui lòng nhập Số CMND!";
+        //        return false;
+        //    }
+
+        //    if (string.IsNullOrWhiteSpace(sv.Ten))
+        //    {
+        //        thongBao = "Vui lòng nhập Tên!";
+        //        return false;
+        //    }
+        //    if (sv.GioiTinh == null)
+        //    {
+        //        thongBao = "Vui lòng chọn giới tính!";
+        //        return false;
+        //    }
+
+        //    if (string.IsNullOrWhiteSpace(sv.Lop))
+        //    {
+        //        thongBao = "Vui lòng nhập Lớp!";
+        //        return false;
+        //    }
+
+        //    if (string.IsNullOrWhiteSpace(sv.SDT))
+        //    {
+        //        thongBao = "Vui lòng nhập SĐT!";
+        //        return false;
+        //    }
+
+        //    if (string.IsNullOrWhiteSpace(sv.DiaChi))
+        //    {
+        //        thongBao = "Vui lòng nhập Địa Chỉ!";
+        //        return false;
+        //    }
+
+        //    thongBao = ""; // không có lỗi
+        //    return true;
+        //}
+
         public bool KiemTraThongTin(SinhVien sv, out string thongBao)
         {
-            if (string.IsNullOrWhiteSpace(sv.MSSV))
+            var kiemTra = new (bool Condition, string Message)[]
             {
-                thongBao = "Vui lòng nhập MSSV!";
-                return false;
-            }
-            if (string.IsNullOrWhiteSpace(sv.HoVaTenLot))
+        (string.IsNullOrWhiteSpace(sv.MSSV), "Vui lòng nhập MSSV!"),
+        (string.IsNullOrWhiteSpace(sv.HoVaTenLot), "Vui lòng nhập Họ và tên lót!"),
+        (string.IsNullOrWhiteSpace(sv.Ten), "Vui lòng nhập Tên!"),
+        (sv.NgaySinh == DateTime.MinValue, "Vui lòng nhập Ngày sinh!"),
+        (sv.NgaySinh > DateTime.Now, "Ngày sinh không hợp lệ (lớn hơn ngày hiện tại)!"),
+        (string.IsNullOrWhiteSpace(sv.SoCMND), "Vui lòng nhập Số CMND!"),
+        (sv.GioiTinh == null, "Vui lòng chọn giới tính!"),
+        (string.IsNullOrWhiteSpace(sv.Lop), "Vui lòng nhập Lớp!"),
+        (string.IsNullOrWhiteSpace(sv.SDT), "Vui lòng nhập SĐT!"),
+        (string.IsNullOrWhiteSpace(sv.DiaChi), "Vui lòng nhập Địa chỉ!"),
+            };
+
+            foreach (var check in kiemTra)
             {
-                thongBao = "Vui lòng nhập Họ và tên lót!";
-                return false;
+                if (check.Condition)
+                {
+                    thongBao = check.Message;
+                    return false;
+                }
             }
 
-            if (sv.NgaySinh == DateTime.MinValue)
-            {
-                thongBao = "Vui lòng nhập Ngày sinh!";
-                return false;
-            }
-
-            if (sv.NgaySinh > DateTime.Now)
-            {
-                thongBao = "Ngày sinh không hợp lệ (lớn hơn ngày hiện tại)!";
-                return false;
-            }
-
-            if (string.IsNullOrWhiteSpace(sv.SoCMND))
-            {
-                thongBao = "Vui lòng nhập Số CMND!";
-                return false;
-            }
-
-            if (string.IsNullOrWhiteSpace(sv.Ten))
-            {
-                thongBao = "Vui lòng nhập Tên!";
-                return false;
-            }
-            if (sv.GioiTinh == null)
-            {
-                thongBao = "Vui lòng chọn giới tính!";
-                return false;
-            }
-
-            if (string.IsNullOrWhiteSpace(sv.Lop))
-            {
-                thongBao = "Vui lòng nhập Lớp!";
-                return false;
-            }
-
-            if (string.IsNullOrWhiteSpace(sv.SDT))
-            {
-                thongBao = "Vui lòng nhập SĐT!";
-                return false;
-            }
-
-            if (string.IsNullOrWhiteSpace(sv.DiaChi))
-            {
-                thongBao = "Vui lòng nhập Địa Chỉ!";
-                return false;
-            }
-
-            thongBao = ""; // không có lỗi
+            thongBao = ""; // Không có lỗi
             return true;
+        }
+
+        public int TinhNamNhapHoc(string lop)
+        {
+            // Lấy số khóa từ 2 chữ số cuối (VD: CTK47 -> "47")
+            string number = lop.Substring(lop.Length - 2);
+            int khoa = int.Parse(number);
+            return 1976 + khoa;
         }
 
 
 
-        // Tạo MSSV ngẫu nhiên dựa vào lớp
+        // Tạo MSSV dựa vào lớp
         public string TaoMSSV(string lop)
         {
             Random rnd = new Random();
+            int namNhapHoc = TinhNamNhapHoc(lop);
 
-            // Lấy 2 số cuối của lớp (ví dụ CTK47 -> "47")
-            string aa = lop.Substring(lop.Length - 2);
-
-            // BB = 10
+            string aa = (namNhapHoc % 100).ToString("D2");
             string bb = "10";
-
-            // Sinh số random từ 1 đến 999, rồi format thành 3 chữ số
             string ccc = rnd.Next(1, 1000).ToString("D3");
 
             return aa + bb + ccc;
         }
+
+
+
+
 
         // Tìm kiếm sinh viên theo nhiều điều kiện
         public List<SinhVien> TimKiemNhieuDieuKien(
@@ -183,7 +220,7 @@ namespace Lab3
             var ketQua = dsSinhVien.Where(sv =>
                 (string.IsNullOrEmpty(mssv) || sv.MSSV.ToLower().Contains(mssv.ToLower())) &&
                 (string.IsNullOrEmpty(ten) || sv.Ten.ToLower().Contains(ten.ToLower())) &&
-                (string.IsNullOrEmpty(lop) || sv.Lop.ToLower().Contains(lop.ToLower())) &&
+                (string.IsNullOrEmpty(lop) || sv.Lop.ToLower().Contains(lop.Trim().ToLower())) &&
                 (string.IsNullOrEmpty(diaChi) || sv.DiaChi.ToLower().Contains(diaChi.ToLower())) &&
                 (string.IsNullOrEmpty(hoVaTenLot) || sv.HoVaTenLot.ToLower().Contains(hoVaTenLot.ToLower())) &&
                 (string.IsNullOrEmpty(ngaySinh) || sv.NgaySinh.ToShortDateString() == ngaySinh) &&
@@ -193,6 +230,9 @@ namespace Lab3
 
             return ketQua;
         }
+
+
+
 
         // Đọc/Ghi file TXT
         public void DocTuFile(string filename)
@@ -206,15 +246,15 @@ namespace Lab3
                 {
                     s = t.Split(',');
                     sv = new SinhVien();
-                    sv.MSSV = s[0];
-                    sv.HoVaTenLot = s[1];
-                    sv.Ten = s[2];
+                    sv.MSSV = s[0].Trim();
+                    sv.HoVaTenLot = s[1].Trim();
+                    sv.Ten = s[2].Trim();
                     //sv.NgaySinh = DateTime.Parse(s[3]); //format ngày sinh theo MM / dd / yyyy
                     sv.NgaySinh = DateTime.ParseExact(s[3].Trim(), "dd/MM/yyyy", CultureInfo.InvariantCulture); // format ngày sinh theo dd/MM/yyyy
-                    sv.Lop = s[4];
-                    sv.SoCMND = s[5];
-                    sv.SDT = s[6];
-                    sv.DiaChi = s[7];
+                    sv.Lop = s[4].Trim();
+                    sv.SoCMND = s[5].Trim();
+                    sv.SDT = s[6].Trim();
+                    sv.DiaChi = s[7].Trim();
                     this.Them(sv);
                 }
             }
@@ -245,9 +285,13 @@ namespace Lab3
         // Đọc/Ghi file XML
         public void DocTuFileXML(string filename)
         {
+            // Tạo bộ giải tuần tự (serializer) cho kiểu dữ liệu List<SinhVien>
             XmlSerializer serializer = new XmlSerializer(typeof(List<SinhVien>));
+
+            // Mở file XML bằng FileStream
             using (FileStream fs = new FileStream(filename, FileMode.Open))
             {
+                // Deserialize (giải mã XML → List<SinhVien>)
                 dsSinhVien = (List<SinhVien>)serializer.Deserialize(fs);
             }
 

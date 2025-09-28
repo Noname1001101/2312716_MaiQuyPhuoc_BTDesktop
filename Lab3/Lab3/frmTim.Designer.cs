@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtSDT = new System.Windows.Forms.MaskedTextBox();
+            this.cboLop = new System.Windows.Forms.ComboBox();
+            this.txtSoCMND = new System.Windows.Forms.MaskedTextBox();
+            this.txtMSSV = new System.Windows.Forms.MaskedTextBox();
+            this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.txtTen = new System.Windows.Forms.TextBox();
             this.txtHoVaTenLot = new System.Windows.Forms.TextBox();
@@ -41,11 +46,6 @@
             this.cbTen = new System.Windows.Forms.CheckBox();
             this.cbMSSV = new System.Windows.Forms.CheckBox();
             this.bntTim = new System.Windows.Forms.Button();
-            this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
-            this.txtMSSV = new System.Windows.Forms.MaskedTextBox();
-            this.txtSoCMND = new System.Windows.Forms.MaskedTextBox();
-            this.cboLop = new System.Windows.Forms.ComboBox();
-            this.txtSDT = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,6 +74,59 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tìm theo";
+            // 
+            // txtSDT
+            // 
+            this.txtSDT.Location = new System.Drawing.Point(461, 139);
+            this.txtSDT.Mask = "0000.000.000";
+            this.txtSDT.Name = "txtSDT";
+            this.txtSDT.Size = new System.Drawing.Size(173, 26);
+            this.txtSDT.TabIndex = 24;
+            // 
+            // cboLop
+            // 
+            this.cboLop.FormattingEnabled = true;
+            this.cboLop.Items.AddRange(new object[] {
+            "CTK47",
+            "TNK46",
+            "THK45",
+            "KLK44",
+            "DKK43",
+            "HDK42",
+            "HHK41",
+            "VLK40"});
+            this.cboLop.Location = new System.Drawing.Point(461, 50);
+            this.cboLop.Name = "cboLop";
+            this.cboLop.Size = new System.Drawing.Size(173, 28);
+            this.cboLop.TabIndex = 23;
+            this.cboLop.SelectedIndexChanged += new System.EventHandler(this.cboLop_SelectedIndexChanged);
+            // 
+            // txtSoCMND
+            // 
+            this.txtSoCMND.Location = new System.Drawing.Point(145, 180);
+            this.txtSoCMND.Mask = "000000000";
+            this.txtSoCMND.Name = "txtSoCMND";
+            this.txtSoCMND.Size = new System.Drawing.Size(173, 26);
+            this.txtSoCMND.TabIndex = 22;
+            this.txtSoCMND.ValidatingType = typeof(int);
+            // 
+            // txtMSSV
+            // 
+            this.txtMSSV.Location = new System.Drawing.Point(145, 48);
+            this.txtMSSV.Mask = "0000000";
+            this.txtMSSV.Name = "txtMSSV";
+            this.txtMSSV.Size = new System.Drawing.Size(173, 26);
+            this.txtMSSV.TabIndex = 21;
+            this.txtMSSV.ValidatingType = typeof(int);
+            // 
+            // dtpNgaySinh
+            // 
+            this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNgaySinh.Location = new System.Drawing.Point(145, 141);
+            this.dtpNgaySinh.Name = "dtpNgaySinh";
+            this.dtpNgaySinh.Size = new System.Drawing.Size(173, 26);
+            this.dtpNgaySinh.TabIndex = 20;
+            this.dtpNgaySinh.ValueChanged += new System.EventHandler(this.dtpNgaySinh_ValueChanged);
             // 
             // txtDiaChi
             // 
@@ -187,57 +240,6 @@
             this.bntTim.Text = "Tìm";
             this.bntTim.UseVisualStyleBackColor = true;
             this.bntTim.Click += new System.EventHandler(this.btnTim_Click);
-            // 
-            // dtpNgaySinh
-            // 
-            this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgaySinh.Location = new System.Drawing.Point(145, 141);
-            this.dtpNgaySinh.Name = "dtpNgaySinh";
-            this.dtpNgaySinh.Size = new System.Drawing.Size(173, 26);
-            this.dtpNgaySinh.TabIndex = 20;
-            // 
-            // txtMSSV
-            // 
-            this.txtMSSV.Location = new System.Drawing.Point(145, 48);
-            this.txtMSSV.Mask = "0000000";
-            this.txtMSSV.Name = "txtMSSV";
-            this.txtMSSV.Size = new System.Drawing.Size(173, 26);
-            this.txtMSSV.TabIndex = 21;
-            this.txtMSSV.ValidatingType = typeof(int);
-            // 
-            // txtSoCMND
-            // 
-            this.txtSoCMND.Location = new System.Drawing.Point(145, 180);
-            this.txtSoCMND.Mask = "000000000";
-            this.txtSoCMND.Name = "txtSoCMND";
-            this.txtSoCMND.Size = new System.Drawing.Size(173, 26);
-            this.txtSoCMND.TabIndex = 22;
-            this.txtSoCMND.ValidatingType = typeof(int);
-            // 
-            // cboLop
-            // 
-            this.cboLop.FormattingEnabled = true;
-            this.cboLop.Items.AddRange(new object[] {
-            "CTK47",
-            "TNK46",
-            "THK45",
-            "KLK44",
-            "DKK43",
-            "HDK42",
-            "HHK41",
-            "VLK40"});
-            this.cboLop.Location = new System.Drawing.Point(461, 50);
-            this.cboLop.Name = "cboLop";
-            this.cboLop.Size = new System.Drawing.Size(173, 28);
-            this.cboLop.TabIndex = 23;
-            // 
-            // txtSDT
-            // 
-            this.txtSDT.Location = new System.Drawing.Point(461, 139);
-            this.txtSDT.Mask = "0000.000.000";
-            this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(173, 26);
-            this.txtSDT.TabIndex = 24;
             // 
             // frmTim
             // 

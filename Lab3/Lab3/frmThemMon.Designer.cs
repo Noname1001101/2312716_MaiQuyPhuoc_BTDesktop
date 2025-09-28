@@ -30,7 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.txtThemMon = new System.Windows.Forms.TextBox();
-            this.bntThem = new System.Windows.Forms.Button();
+            this.bntThemMon = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -45,29 +45,29 @@
             // 
             // txtThemMon
             // 
-            this.txtThemMon.Location = new System.Drawing.Point(218, 54);
+            this.txtThemMon.Location = new System.Drawing.Point(193, 54);
             this.txtThemMon.Name = "txtThemMon";
-            this.txtThemMon.Size = new System.Drawing.Size(309, 22);
+            this.txtThemMon.Size = new System.Drawing.Size(334, 22);
             this.txtThemMon.TabIndex = 1;
             // 
-            // bntThem
+            // bntThemMon
             // 
-            this.bntThem.AutoSize = true;
-            this.bntThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bntThem.Location = new System.Drawing.Point(533, 50);
-            this.bntThem.Name = "bntThem";
-            this.bntThem.Size = new System.Drawing.Size(78, 30);
-            this.bntThem.TabIndex = 2;
-            this.bntThem.Text = "Thêm";
-            this.bntThem.UseVisualStyleBackColor = true;
-            this.bntThem.Click += new System.EventHandler(this.bntThem_Click);
+            this.bntThemMon.AutoSize = true;
+            this.bntThemMon.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bntThemMon.Location = new System.Drawing.Point(533, 50);
+            this.bntThemMon.Name = "bntThemMon";
+            this.bntThemMon.Size = new System.Drawing.Size(78, 30);
+            this.bntThemMon.TabIndex = 2;
+            this.bntThemMon.Text = "Thêm";
+            this.bntThemMon.UseVisualStyleBackColor = true;
+            this.bntThemMon.Click += new System.EventHandler(this.bntThemMon_Click);
             // 
             // frmThemMon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(614, 161);
-            this.Controls.Add(this.bntThem);
+            this.Controls.Add(this.bntThemMon);
             this.Controls.Add(this.txtThemMon);
             this.Controls.Add(this.label1);
             this.Name = "frmThemMon";
@@ -81,6 +81,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtThemMon;
-        private System.Windows.Forms.Button bntThem;
+        private System.Windows.Forms.Button bntThemMon;
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Lab3;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace MyForm // giữ namespace của bạn (nếu khác thì đổi cho đúng)
@@ -35,6 +36,37 @@ namespace MyForm // giữ namespace của bạn (nếu khác thì đổi cho đ�
                 hoVaTenLot, ngaySinh, soCMND, soDT
             );
 
+            frmSinhVien frm = (frmSinhVien)this.Owner;
+            frm.HienKetQuaTimKiem(ketQua);
+        }
+
+        private void cboLop_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            // Lấy lớp đang chọn
+            string lopChon = cboLop.Text.Trim();
+
+            // Lọc danh sách sinh viên theo lớp
+            var ketQua = qlsv.dsSinhVien
+                             .Where(sv => sv.Lop.Equals(lopChon, StringComparison.OrdinalIgnoreCase))
+                             .ToList();
+
+            // Gọi hàm hiển thị lại ListView (giống lúc tìm kiếm)
+            frmSinhVien frm = (frmSinhVien)this.Owner;
+            frm.HienKetQuaTimKiem(ketQua);
+        }
+
+        private void dtpNgaySinh_ValueChanged(object sender, EventArgs e)
+        {
+            // Lấy ngày được chọn trong DateTimePicker
+            DateTime ngayChon = dtpNgaySinh.Value.Date; // .Date để bỏ phần giờ phút giây
+
+            // Lọc danh sách sinh viên theo ngày sinh
+            var ketQua = qlsv.dsSinhVien
+                             .Where(sv => sv.NgaySinh.Date == ngayChon)
+                             .ToList();
+
+            // Gọi hàm hiển thị lại ListView
             frmSinhVien frm = (frmSinhVien)this.Owner;
             frm.HienKetQuaTimKiem(ketQua);
         }
