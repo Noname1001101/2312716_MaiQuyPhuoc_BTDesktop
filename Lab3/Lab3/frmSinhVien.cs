@@ -109,7 +109,6 @@ namespace Lab3
             //qlsv.DocTuFile("DanhSachSV.txt");
             //LoadListView();
 
-
         }
 
         // Nút Thêm mới
@@ -238,9 +237,9 @@ namespace Lab3
 
             var result = MessageBox.Show(
                 $"Bạn có chắc muốn xóa ({itemsToDelete.Count}) sinh viên:\n\n{svInfo}",
-                "Xác nhận xóa",
+                "",
                 MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question);
+                MessageBoxIcon.Warning);
 
             if (result == DialogResult.No) return;
 

@@ -3,11 +3,11 @@
   "WorkspaceRootPath": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab3\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{492363D5-116A-4859-A0D8-C993A2C24723}|Lab3\\Lab3.csproj|D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab3\\lab3\\frmsinhvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{492363D5-116A-4859-A0D8-C993A2C24723}|Lab3\\Lab3.csproj|d:\\2312716_maiquyphuoc_baitapdesktop\\lab3\\lab3\\frmsinhvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{492363D5-116A-4859-A0D8-C993A2C24723}|Lab3\\Lab3.csproj|solutionrelative:lab3\\frmsinhvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{492363D5-116A-4859-A0D8-C993A2C24723}|Lab3\\Lab3.csproj|d:\\2312716_maiquyphuoc_baitapdesktop\\lab3\\lab3\\quanlysinhvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{492363D5-116A-4859-A0D8-C993A2C24723}|Lab3\\Lab3.csproj|D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab3\\lab3\\quanlysinhvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{492363D5-116A-4859-A0D8-C993A2C24723}|Lab3\\Lab3.csproj|solutionrelative:lab3\\quanlysinhvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -36,7 +36,7 @@
               "RelativeDocumentMoniker": "Lab3\\frmSinhVien.cs",
               "ToolTip": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab3\\Lab3\\frmSinhVien.cs",
               "RelativeToolTip": "Lab3\\frmSinhVien.cs",
-              "ViewState": "AgIAAOoAAAAAAAAAAAAAAO8AAABNAAAAAAAAAA==",
+              "ViewState": "AgIAAOQAAAAAAAAAAAAAAPAAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-25T03:29:26.516Z",
               "EditorCaption": ""
@@ -51,8 +51,7 @@
               "RelativeToolTip": "Lab3\\QuanLySinhVien.cs",
               "ViewState": "AgIAABgBAAAAAAAAAAAIwCsBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-25T03:29:18.969Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-25T03:29:18.969Z"
             },
             {
               "$type": "Document",
@@ -63,8 +62,7 @@
               "ToolTip": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab3\\Lab3\\frmSinhVien.cs [Design]",
               "RelativeToolTip": "Lab3\\frmSinhVien.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-25T07:55:34.926Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-09-25T07:55:34.926Z"
             }
           ]
         },
