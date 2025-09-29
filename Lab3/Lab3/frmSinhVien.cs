@@ -128,6 +128,7 @@ namespace Lab3
             qlsv.GhiVaoFile("DanhSachSV.txt"); // lưu ra file
             qlsv.GhiVaoFileXML("DanhSachSV.xml");
             qlsv.GhiVaoFileJSON("DanhSachSV.json");
+
             LoadListView();
 
 
@@ -139,6 +140,7 @@ namespace Lab3
             {
                 SinhVien sv = GetSinhVienLV(lvSinhVien.SelectedItems[0]);
                 ThietLapThongTin(sv);
+                txtSoCMND.ReadOnly = true;
 
             }
             else
@@ -150,6 +152,7 @@ namespace Lab3
                 cboLop.SelectedIndex = -1;
                 txtSoCMND.Clear();
                 txtSDT.Clear();
+                txtSoCMND.ReadOnly = false;
             }
         }
 
@@ -183,12 +186,16 @@ namespace Lab3
             foreach (var item in itemsToUpdate)
             {
                 string mssv = item.SubItems[0].Text.Trim(); // MSSV gốc
+                string soCMND = item.SubItems[5].Text.Trim();
 
                 SoSanh ss = (obj, sv) => ((SinhVien)sv).MSSV.CompareTo(obj.ToString());
+
 
                 // Update, dùng MSSV gốc làm khóa
                 if (!qlsv.CapNhat(svMoi, mssv, ss))
                     MessageBox.Show($"Không tìm thấy sinh viên {mssv} để cập nhật.");
+
+
             }
 
             // Lưu lại file
