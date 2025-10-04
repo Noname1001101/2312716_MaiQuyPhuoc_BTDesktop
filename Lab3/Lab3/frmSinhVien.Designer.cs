@@ -263,7 +263,8 @@
             "DKK43",
             "HDK42",
             "HHK41",
-            "VLK40"});
+            "VLK40",
+            "FFF60"});
             this.cboLop.Location = new System.Drawing.Point(576, 129);
             this.cboLop.Name = "cboLop";
             this.cboLop.Size = new System.Drawing.Size(246, 24);
