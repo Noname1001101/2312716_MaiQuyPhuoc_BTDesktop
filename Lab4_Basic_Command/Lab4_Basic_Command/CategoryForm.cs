@@ -21,7 +21,7 @@ namespace Lab4_Basic_Command
 
             SqlCommand sqlCommand = sqlConnection.CreateCommand();
 
-            string query = "SELECT ID, Name, Type FROM Category";
+            string query = "SELECT CategoryID, Name, Type FROM Category";
 
             sqlCommand.CommandText = query;
 
@@ -40,7 +40,7 @@ namespace Lab4_Basic_Command
 
             while (reader.Read())
             {
-                ListViewItem item = new ListViewItem(reader["ID"].ToString());
+                ListViewItem item = new ListViewItem(reader["CategoryID"].ToString());
 
                 lvCategory.Items.Add(item);
 
@@ -102,47 +102,7 @@ namespace Lab4_Basic_Command
             bntDelete.Enabled = true;
         }
 
-        //private void bntUpdate_Click(object sender, EventArgs e)
-        //{
-        //    string connectionString = "server=DESKTOP-LSEMTND\\SQLEXPRESS; database=QuanLyNhaHang; Integrated Security=true;";
-        //    SqlConnection sqlConnection = new SqlConnection(connectionString);
-
-        //    SqlCommand sqlCommand = sqlConnection.CreateCommand();
-
-        //    sqlCommand.CommandText = "UPDATE Category SET Name = N'" + txtName.Text +
-        //                             "', [Type] = " + txtType.Text +
-        //                             " WHERE ID = " + txtID.Text;
-        //    sqlConnection.Open();
-
-        //    int numOfRowEffected = sqlCommand.ExecuteNonQuery();
-
-        //    sqlConnection.Close();
-
-        //    if (numOfRowEffected == 1)
-        //    {
-        //        ListViewItem item = lvCategory.SelectedItems[0];
-
-        //        item.SubItems[1].Text = txtName.Text.Trim() + " - Cập nhật";
-
-        //        item.SubItems[2].Text = txtType.Text;
-
-        //        txtID.Text = "";
-        //        txtName.Text = "";
-        //        txtType.Text = "";
-
-        //        bntUpdate.Enabled = false;
-        //        bntDelete.Enabled = false;
-
-        //        MessageBox.Show("Cập nhật nhóm món ăn thành công");
-        //    }
-
-        //    else
-        //    {
-        //        MessageBox.Show("Đã có lỗi xảy ra. Vui lòng thử lại");
-        //    }
-        //}
-
-
+   
         private void bntUpdate_Click(object sender, EventArgs e)
         {
             string connectionString = "server=DESKTOP-LSEMTND\\SQLEXPRESS; database=QuanLyNhaHang; Integrated Security=true;";
@@ -155,7 +115,7 @@ namespace Lab4_Basic_Command
 
             sqlCommand.CommandText = "UPDATE Category SET Name = N'" + cleanName +
                                      "', [Type] = " + txtType.Text +
-                                     " WHERE ID = " + txtID.Text;
+                                     " WHERE CategoryID = " + txtID.Text;
 
 
             sqlConnection.Open();
@@ -194,7 +154,7 @@ namespace Lab4_Basic_Command
 
             SqlCommand sqlCommand = sqlConnection.CreateCommand();
 
-            sqlCommand.CommandText = "DELETE FROM Category WHERE ID = " + txtID.Text;
+            sqlCommand.CommandText = "DELETE FROM Category WHERE CategoryID = " + txtID.Text;
 
             sqlConnection.Open();
 
