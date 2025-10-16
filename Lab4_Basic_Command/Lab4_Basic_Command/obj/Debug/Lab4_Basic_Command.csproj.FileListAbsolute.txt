@@ -12,3 +12,4 @@ D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab4_Basic_Command\Lab4_Basic_Command\obj\D
 D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab4_Basic_Command\Lab4_Basic_Command\obj\Debug\Lab4_Basic_Command.BillsForm.resources
 D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab4_Basic_Command\Lab4_Basic_Command\obj\Debug\Lab4_Basic_Command.BillDetailsForm.resources
 D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab4_Basic_Command\Lab4_Basic_Command\obj\Debug\Lab4_Basic_Command.AccountManagerForm.resources
+D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab4_Basic_Command\Lab4_Basic_Command\obj\Debug\Lab4_Basic_Command.AccountAddUpdateForm.resources

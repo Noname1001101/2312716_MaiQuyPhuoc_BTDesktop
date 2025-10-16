@@ -84,6 +84,7 @@
             this.bntThem.TabIndex = 3;
             this.bntThem.Text = "Thêm";
             this.bntThem.UseVisualStyleBackColor = true;
+            this.bntThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // bntCapNhap
             // 
@@ -95,6 +96,7 @@
             this.bntCapNhap.TabIndex = 4;
             this.bntCapNhap.Text = "Cập nhật";
             this.bntCapNhap.UseVisualStyleBackColor = true;
+            this.bntCapNhap.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
             // bntResetMK
             // 

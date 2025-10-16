@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab4_Basic_Command\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F4B946EC-FFA5-44D6-90C7-C2D2FB05C89B}|Lab4_Basic_Command\\Lab4_Basic_Command.csproj|d:\\2312716_maiquyphuoc_baitapdesktop\\lab4_basic_command\\lab4_basic_command\\accountmanagerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F4B946EC-FFA5-44D6-90C7-C2D2FB05C89B}|Lab4_Basic_Command\\Lab4_Basic_Command.csproj|solutionrelative:lab4_basic_command\\accountmanagerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{F4B946EC-FFA5-44D6-90C7-C2D2FB05C89B}|Lab4_Basic_Command\\Lab4_Basic_Command.csproj|d:\\2312716_maiquyphuoc_baitapdesktop\\lab4_basic_command\\lab4_basic_command\\accountaddupdateform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4B946EC-FFA5-44D6-90C7-C2D2FB05C89B}|Lab4_Basic_Command\\Lab4_Basic_Command.csproj|solutionrelative:lab4_basic_command\\accountaddupdateform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4B946EC-FFA5-44D6-90C7-C2D2FB05C89B}|Lab4_Basic_Command\\Lab4_Basic_Command.csproj|d:\\2312716_maiquyphuoc_baitapdesktop\\lab4_basic_command\\lab4_basic_command\\accountaddupdateform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F4B946EC-FFA5-44D6-90C7-C2D2FB05C89B}|Lab4_Basic_Command\\Lab4_Basic_Command.csproj|solutionrelative:lab4_basic_command\\accountaddupdateform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F4B946EC-FFA5-44D6-90C7-C2D2FB05C89B}|Lab4_Basic_Command\\Lab4_Basic_Command.csproj|d:\\2312716_maiquyphuoc_baitapdesktop\\lab4_basic_command\\lab4_basic_command\\accountmanagerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F4B946EC-FFA5-44D6-90C7-C2D2FB05C89B}|Lab4_Basic_Command\\Lab4_Basic_Command.csproj|solutionrelative:lab4_basic_command\\accountmanagerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4B946EC-FFA5-44D6-90C7-C2D2FB05C89B}|Lab4_Basic_Command\\Lab4_Basic_Command.csproj|d:\\2312716_maiquyphuoc_baitapdesktop\\lab4_basic_command\\lab4_basic_command\\accountmanagerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F4B946EC-FFA5-44D6-90C7-C2D2FB05C89B}|Lab4_Basic_Command\\Lab4_Basic_Command.csproj|solutionrelative:lab4_basic_command\\accountmanagerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 330,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,28 +34,53 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "AccountManagerForm.cs [Design]",
               "DocumentMoniker": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab4_Basic_Command\\Lab4_Basic_Command\\AccountManagerForm.cs",
               "RelativeDocumentMoniker": "Lab4_Basic_Command\\AccountManagerForm.cs",
               "ToolTip": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab4_Basic_Command\\Lab4_Basic_Command\\AccountManagerForm.cs [Design]",
               "RelativeToolTip": "Lab4_Basic_Command\\AccountManagerForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-14T10:14:28.986Z",
+              "WhenOpened": "2025-10-16T02:16:28.051Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "AccountManagerForm.cs",
               "DocumentMoniker": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab4_Basic_Command\\Lab4_Basic_Command\\AccountManagerForm.cs",
               "RelativeDocumentMoniker": "Lab4_Basic_Command\\AccountManagerForm.cs",
               "ToolTip": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab4_Basic_Command\\Lab4_Basic_Command\\AccountManagerForm.cs",
               "RelativeToolTip": "Lab4_Basic_Command\\AccountManagerForm.cs",
-              "ViewState": "AgIAADYAAAAAAAAAAAAQwEgAAAA2AAAAAAAAAA==",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAAAFQAAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-14T10:06:05.25Z",
+              "WhenOpened": "2025-10-16T02:16:30.481Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AccountAddUpdateForm.cs",
+              "DocumentMoniker": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab4_Basic_Command\\Lab4_Basic_Command\\AccountAddUpdateForm.cs",
+              "RelativeDocumentMoniker": "Lab4_Basic_Command\\AccountAddUpdateForm.cs",
+              "ToolTip": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab4_Basic_Command\\Lab4_Basic_Command\\AccountAddUpdateForm.cs",
+              "RelativeToolTip": "Lab4_Basic_Command\\AccountAddUpdateForm.cs",
+              "ViewState": "AgIAAIQAAAAAAAAAAAAAAJEAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T02:11:28.71Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AccountAddUpdateForm.cs [Design]",
+              "DocumentMoniker": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab4_Basic_Command\\Lab4_Basic_Command\\AccountAddUpdateForm.cs",
+              "RelativeDocumentMoniker": "Lab4_Basic_Command\\AccountAddUpdateForm.cs",
+              "ToolTip": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab4_Basic_Command\\Lab4_Basic_Command\\AccountAddUpdateForm.cs [Design]",
+              "RelativeToolTip": "Lab4_Basic_Command\\AccountAddUpdateForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T02:03:27.824Z",
+              "EditorCaption": " [Design]"
             }
           ]
         },

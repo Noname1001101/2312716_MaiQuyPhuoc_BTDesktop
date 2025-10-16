@@ -13,10 +13,11 @@ namespace Lab4_Basic_Command
         public AccountManagerForm()
         {
             InitializeComponent();
-            LoadAccountGroups();   // nạp dữ liệu nhóm tài khoản vào combobox
-            LoadAccounts();         // nạp danh sách tài khoản
+            LoadAccountGroups();
+            LoadAccounts();
         }
 
+        // 🔹 Nạp danh sách nhóm tài khoản vào combobox
         private void LoadAccountGroups()
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -29,15 +30,15 @@ namespace Lab4_Basic_Command
                 cboNhomTK.DataSource = dt;
                 cboNhomTK.DisplayMember = "GroupName";
                 cboNhomTK.ValueMember = "GroupID";
-                cboNhomTK.SelectedIndex = -1; // ban đầu chưa chọn nhóm
+                cboNhomTK.SelectedIndex = -1;
             }
 
-            // Gắn sự kiện để mỗi lần chọn thay đổi sẽ reload danh sách
             cboNhomTK.SelectedIndexChanged += (s, e) => LoadAccounts();
             chkActive.CheckedChanged += (s, e) => LoadAccounts();
         }
 
-        private void LoadAccounts()
+        // 🔹 Nạp danh sách tài khoản
+        public void LoadAccounts()
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -52,11 +53,8 @@ namespace Lab4_Basic_Command
                     JOIN AccountGroup g ON a.GroupID = g.GroupID
                     WHERE (1=1)";
 
-                // lọc theo nhóm nếu có chọn
                 if (cboNhomTK.SelectedIndex >= 0)
                     query += " AND a.GroupID = @GroupID";
-
-                // lọc theo trạng thái nếu có tick Active
                 if (chkActive.Checked)
                     query += " AND a.IsActive = 1";
 
@@ -73,5 +71,29 @@ namespace Lab4_Basic_Command
                 lblTongTK.Text = $"Tổng số tài khoản: {dt.Rows.Count}";
             }
         }
+
+        // 🔹 Nút Thêm
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            AccountAddUpdateForm f = new AccountAddUpdateForm(this);
+            f.isEditMode = false; // thêm mới
+            f.ShowDialog();
+        }
+
+
+        // 🔹 Nút Sửa
+        private void btnCapNhat_Click(object sender, EventArgs e)
+        {
+            if (dgvAccount.CurrentRow != null)
+            {
+                string username = dgvAccount.CurrentRow.Cells["Tên đăng nhập"].Value.ToString();
+
+                AccountAddUpdateForm f = new AccountAddUpdateForm(this);
+                f.isEditMode = true; // chế độ sửa
+                f.LoadAccountInfo(username);
+                f.ShowDialog();
+            }
+        }
+
     }
 }
