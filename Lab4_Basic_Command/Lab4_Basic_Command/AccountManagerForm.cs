@@ -95,5 +95,99 @@ namespace Lab4_Basic_Command
             }
         }
 
+        private void bntResetMK_Click(object sender, EventArgs e)
+        {
+            if (dgvAccount.CurrentRow == null)
+            {
+                MessageBox.Show("Vui lòng chọn tài khoản cần reset!",
+                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string username = dgvAccount.CurrentRow.Cells["Tên đăng nhập"].Value.ToString();
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+
+                // 🔹 Kiểm tra mật khẩu hiện tại
+                string checkQuery = "SELECT Password FROM Account WHERE Username = @Username";
+                SqlCommand checkCmd = new SqlCommand(checkQuery, conn);
+                checkCmd.Parameters.AddWithValue("@Username", username);
+
+                object resultPass = checkCmd.ExecuteScalar();
+
+                if (resultPass != null && resultPass.ToString() == "1")
+                {
+                    MessageBox.Show("Tài khoản này đã được reset mật khẩu trước đó!",
+                        "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                // 🔹 Hỏi xác nhận reset
+                DialogResult result = MessageBox.Show(
+                    $"Bạn có chắc muốn reset mật khẩu cho tài khoản '{username}' không?",
+                    "Xác nhận",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    // 🔹 Cập nhật lại mật khẩu về 1
+                    string updateQuery = "UPDATE Account SET Password = @Password WHERE Username = @Username";
+                    SqlCommand updateCmd = new SqlCommand(updateQuery, conn);
+                    updateCmd.Parameters.AddWithValue("@Password", "1");
+                    updateCmd.Parameters.AddWithValue("@Username", username);
+                    updateCmd.ExecuteNonQuery();
+
+                    MessageBox.Show("Đã reset mật khẩu thành công!\nMật khẩu mới là: 1",
+                        "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+
+        private void tsmiXoaTK_Click(object sender, EventArgs e)
+        {
+           
+            if (dgvAccount.CurrentRow == null)
+            {
+                MessageBox.Show("Vui lòng chọn tài khoản cần xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string username = dgvAccount.CurrentRow.Cells["Tên đăng nhập"].Value.ToString();
+
+            DialogResult result = MessageBox.Show(
+                $"Bạn có chắc muốn xóa tài khoản '{username}' không?\n(Tất cả vai trò của tài khoản này sẽ bị hủy kích hoạt.)",
+                "Xác nhận",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string query = @"UPDATE ar
+                                    SET ar.IsActive = 0
+                                    FROM AccountRole ar
+                                    INNER JOIN Account a ON ar.AccountID = a.AccountID
+                                    WHERE a.Username = @Username;
+                                    ";
+
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@Username", username);
+                    int rows = cmd.ExecuteNonQuery();
+
+                    MessageBox.Show($"Đã xóa tài khoản và hủy kích hoạt {rows} vai trò.",
+                        "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+                LoadAccounts();
+            }
+        }
+
     }
 }
+
+
