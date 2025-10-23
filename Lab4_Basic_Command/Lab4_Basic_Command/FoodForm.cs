@@ -1,19 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace Lab4_Basic_Command
 {
     public partial class FoodForm : Form
     {
-        private string connectionString = "server=DESKTOP-LSEMTND\\SQLEXPRESS; database=QuanLyNhaHang; Integrated Security=true;";
+        // ✅ Đổi tên database thành RestaurantManagement
+        private string connectionString = "server=DESKTOP-LSEMTND\\SQLEXPRESS; database=RestaurantManagement; Integrated Security=true;";
+
         public FoodForm()
         {
             InitializeComponent();
@@ -21,34 +17,29 @@ namespace Lab4_Basic_Command
 
         public void LoadFood(int categoryID)
         {
-            //string connectionString = "server=DESKTOP-LSEMTND\\SQLEXPRESS; database=QuanLyNhaHang; Integrated Security=true;";
+            using (SqlConnection sqlConnection = new SqlConnection(connectionString))
+            {
+                sqlConnection.Open();
 
-            SqlConnection sqlConnection = new SqlConnection(connectionString);
+                // ✅ Lấy tên nhóm món ăn (Category)
+                SqlCommand sqlCommand = sqlConnection.CreateCommand();
+                sqlCommand.CommandText = "SELECT Name FROM Category WHERE ID = @catID";
+                sqlCommand.Parameters.AddWithValue("@catID", categoryID);
 
-            SqlCommand sqlCommand = sqlConnection.CreateCommand();
+                object result = sqlCommand.ExecuteScalar();
+                string catName = (result != null) ? result.ToString() : "Không xác định";
 
-            sqlCommand.CommandText = "SELECT Name FROM Category WHERE CategoryID = " + categoryID;
+                this.Text = "Danh sách các món ăn thuộc nhóm: " + catName;
 
-            sqlConnection.Open();
+                // ✅ Lấy danh sách món ăn trong nhóm
+                sqlCommand.CommandText = "SELECT ID, Name, Unit, FoodCategoryID, Price, Notes FROM Food WHERE FoodCategoryID = @catID";
+                SqlDataAdapter da = new SqlDataAdapter(sqlCommand);
 
-            string catName = sqlCommand.ExecuteScalar().ToString();
+                DataTable dt = new DataTable("Food");
+                da.Fill(dt);
 
-            this.Text = "Danh sách các món ăn thuộc nhóm: " + catName;
-
-            sqlCommand.CommandText = "SELECT * FROM Food WHERE CategoryID = " + categoryID;    
-
-            SqlDataAdapter da = new SqlDataAdapter(sqlCommand);
-
-            DataTable dt = new DataTable("Food");
-
-            da.Fill(dt);
-
-            dgvFood.DataSource = dt;
-
-            sqlConnection.Close();
-            sqlConnection.Dispose();
-            da.Dispose();
-
+                dgvFood.DataSource = dt;
+            }
         }
 
         private void bntSave_Click(object sender, EventArgs e)
@@ -61,10 +52,9 @@ namespace Lab4_Basic_Command
                 conn.Open();
 
                 // Adapter để cập nhật dữ liệu
-                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Food", conn);
+                SqlDataAdapter da = new SqlDataAdapter("SELECT ID, Name, Unit, FoodCategoryID, Price, Notes FROM Food", conn);
                 SqlCommandBuilder builder = new SqlCommandBuilder(da);
 
-                // Tự động tạo các lệnh Insert/Update/Delete
                 da.InsertCommand = builder.GetInsertCommand();
                 da.UpdateCommand = builder.GetUpdateCommand();
                 da.DeleteCommand = builder.GetDeleteCommand();
@@ -91,14 +81,14 @@ namespace Lab4_Basic_Command
 
             if (MessageBox.Show("Bạn có chắc muốn xóa món này?", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                int foodID = Convert.ToInt32(dgvFood.CurrentRow.Cells["FoodID"].Value);
+                int foodID = Convert.ToInt32(dgvFood.CurrentRow.Cells["IDFood"].Value);
 
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
 
                     SqlCommand cmd = conn.CreateCommand();
-                    cmd.CommandText = "DELETE FROM Food WHERE FoodID = @id";
+                    cmd.CommandText = "DELETE FROM Food WHERE ID = @id";
                     cmd.Parameters.AddWithValue("@id", foodID);
 
                     int rows = cmd.ExecuteNonQuery();
@@ -116,6 +106,4 @@ namespace Lab4_Basic_Command
             }
         }
     }
-
 }
-

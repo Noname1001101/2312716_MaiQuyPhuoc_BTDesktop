@@ -36,14 +36,20 @@
             this.bntCapNhap = new System.Windows.Forms.Button();
             this.bntResetMK = new System.Windows.Forms.Button();
             this.dgvAccount = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblTongTK = new System.Windows.Forms.Label();
+            this.colAccountName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPassword = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTell = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDateCreated = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiXoaTK = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiXemDSVT = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblTongTK = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAccount)).BeginInit();
-            this.groupBox1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -119,14 +125,94 @@
             // 
             this.dgvAccount.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvAccount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAccount.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colAccountName,
+            this.colFullName,
+            this.colPassword,
+            this.colEmail,
+            this.colTell,
+            this.colDateCreated});
             this.dgvAccount.ContextMenuStrip = this.contextMenuStrip1;
             this.dgvAccount.Location = new System.Drawing.Point(12, 161);
             this.dgvAccount.Name = "dgvAccount";
+            this.dgvAccount.ReadOnly = true;
             this.dgvAccount.RowHeadersWidth = 51;
             this.dgvAccount.RowTemplate.Height = 24;
             this.dgvAccount.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAccount.Size = new System.Drawing.Size(776, 337);
+            this.dgvAccount.Size = new System.Drawing.Size(845, 337);
             this.dgvAccount.TabIndex = 6;
+            // 
+            // colAccountName
+            // 
+            this.colAccountName.DataPropertyName = "AccountName";
+            this.colAccountName.HeaderText = "Tên đăng nhập";
+            this.colAccountName.MinimumWidth = 6;
+            this.colAccountName.Name = "colAccountName";
+            this.colAccountName.ReadOnly = true;
+            // 
+            // colFullName
+            // 
+            this.colFullName.DataPropertyName = "FullName";
+            this.colFullName.HeaderText = "Họ tên";
+            this.colFullName.MinimumWidth = 6;
+            this.colFullName.Name = "colFullName";
+            this.colFullName.ReadOnly = true;
+            // 
+            // colPassword
+            // 
+            this.colPassword.DataPropertyName = "Password";
+            this.colPassword.HeaderText = "Mật khẩu";
+            this.colPassword.MinimumWidth = 6;
+            this.colPassword.Name = "colPassword";
+            this.colPassword.ReadOnly = true;
+            this.colPassword.Visible = false;
+            // 
+            // colEmail
+            // 
+            this.colEmail.DataPropertyName = "Email";
+            this.colEmail.HeaderText = "Email";
+            this.colEmail.MinimumWidth = 6;
+            this.colEmail.Name = "colEmail";
+            this.colEmail.ReadOnly = true;
+            // 
+            // colTell
+            // 
+            this.colTell.DataPropertyName = "Tell";
+            this.colTell.HeaderText = "SĐT";
+            this.colTell.MinimumWidth = 6;
+            this.colTell.Name = "colTell";
+            this.colTell.ReadOnly = true;
+            // 
+            // colDateCreated
+            // 
+            this.colDateCreated.DataPropertyName = "DateCreated";
+            this.colDateCreated.HeaderText = "Ngày tạo";
+            this.colDateCreated.MinimumWidth = 6;
+            this.colDateCreated.Name = "colDateCreated";
+            this.colDateCreated.ReadOnly = true;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiXoaTK,
+            this.tsmiXemDSVT});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(225, 52);
+            // 
+            // tsmiXoaTK
+            // 
+            this.tsmiXoaTK.Name = "tsmiXoaTK";
+            this.tsmiXoaTK.Size = new System.Drawing.Size(224, 24);
+            this.tsmiXoaTK.Text = "Xóa tài khoản";
+            this.tsmiXoaTK.Click += new System.EventHandler(this.tsmiXoaTK_Click);
+            // 
+            // tsmiXemDSVT
+            // 
+            this.tsmiXemDSVT.Name = "tsmiXemDSVT";
+            this.tsmiXemDSVT.Size = new System.Drawing.Size(224, 24);
+            this.tsmiXemDSVT.Text = "Xem danh sách vai trò";
+            this.tsmiXemDSVT.Click += new System.EventHandler(this.tsmiXemDSVT_Click);
             // 
             // groupBox1
             // 
@@ -138,7 +224,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(776, 143);
+            this.groupBox1.Size = new System.Drawing.Size(845, 143);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
@@ -153,42 +239,20 @@
             this.lblTongTK.TabIndex = 8;
             this.lblTongTK.Text = "Tổng số tài khoản:";
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiXoaTK,
-            this.tsmiXemDSVT});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(225, 80);
-            // 
-            // tsmiXoaTK
-            // 
-            this.tsmiXoaTK.Name = "tsmiXoaTK";
-            this.tsmiXoaTK.Size = new System.Drawing.Size(224, 24);
-            this.tsmiXoaTK.Text = "Xóa tài khoản";
-            this.tsmiXoaTK.Click += new System.EventHandler(this.tsmiXoaTK_Click);
-            // 
-            // tsmiXemDSVT
-            // 
-            this.tsmiXemDSVT.Name = "tsmiXemDSVT";
-            this.tsmiXemDSVT.Size = new System.Drawing.Size(224, 24);
-            this.tsmiXemDSVT.Text = "Xem danh sách vai trò";
-            // 
             // AccountManagerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 534);
+            this.ClientSize = new System.Drawing.Size(865, 534);
             this.Controls.Add(this.lblTongTK);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvAccount);
             this.Name = "AccountManagerForm";
             this.Text = "AccountManager";
             ((System.ComponentModel.ISupportInitialize)(this.dgvAccount)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -208,5 +272,11 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem tsmiXoaTK;
         private System.Windows.Forms.ToolStripMenuItem tsmiXemDSVT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colAccountName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colFullName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPassword;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colEmail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTell;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDateCreated;
     }
 }

@@ -2,36 +2,39 @@
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
-
 namespace Lab4_Basic_Command
 {
     public partial class CategoryForm : Form
     {
+        // 🔹 Khai báo sẵn chuỗi kết nối, tránh lặp đi lặp lại
+        private readonly string connectionString =
+            "server=DESKTOP-LSEMTND\\SQLEXPRESS; database=RestaurantManagement; Integrated Security=true;";
+
         public CategoryForm()
         {
             InitializeComponent();
         }
 
+        private void CategoryForm_Load(object sender, EventArgs e)
+        {
+            cboLoai.Items.Clear();
+            cboLoai.Items.Add("Thức uống"); // index 0
+            cboLoai.Items.Add("Đồ ăn");     // index 1
+        }
+
         private void bntLoad_Click(object sender, EventArgs e)
         {
-            string connectionString = "server=DESKTOP-LSEMTND\\SQLEXPRESS; database=QuanLyNhaHang; Integrated Security=true;";
+            using (SqlConnection sqlConnection = new SqlConnection(connectionString))
+            using (SqlCommand sqlCommand = sqlConnection.CreateCommand())
+            {
+                sqlCommand.CommandText = "SELECT ID, MaMonAn, Name, Type FROM Category";
+                sqlConnection.Open();
 
-
-            SqlConnection sqlConnection = new SqlConnection(connectionString);
-
-            SqlCommand sqlCommand = sqlConnection.CreateCommand();
-
-            string query = "SELECT CategoryID, Name, Type FROM Category";
-
-            sqlCommand.CommandText = query;
-
-            sqlConnection.Open();
-
-            SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
-
-            this.DisplayCategory(sqlDataReader);
-
-            sqlConnection.Close();
+                using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                {
+                    DisplayCategory(reader);
+                }
+            }
         }
 
         private void DisplayCategory(SqlDataReader reader)
@@ -40,163 +43,242 @@ namespace Lab4_Basic_Command
 
             while (reader.Read())
             {
-                ListViewItem item = new ListViewItem(reader["CategoryID"].ToString());
-
-                lvCategory.Items.Add(item);
+                var item = new ListViewItem(reader["MaMonAn"].ToString())
+                {
+                    Tag = reader["ID"] // ✅ lưu ID thật ở đây
+                };
 
                 item.SubItems.Add(reader["Name"].ToString());
                 item.SubItems.Add(reader["Type"].ToString());
-
-                // Đầu tiên giãn theo header
-                lvCategory.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
-
-
-
+                lvCategory.Items.Add(item);
             }
+
+            lvCategory.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
 
         private void bntAdd_Click(object sender, EventArgs e)
         {
-            string connectionString = "server=DESKTOP-LSEMTND\\SQLEXPRESS; database=QuanLyNhaHang; Integrated Security=true;";
-            SqlConnection sqlConnection = new SqlConnection(connectionString);
-
-            SqlCommand sqlCommand = sqlConnection.CreateCommand();
-
-            sqlCommand.CommandText = "INSERT INTO Category(Name, [Type])" +
-                "VALUES (N'" + txtName.Text + "', " + txtType.Text + ")";
-
-
-
-            sqlConnection.Open();
-
-            int numOfRowEffected = sqlCommand.ExecuteNonQuery();
-
-            sqlConnection.Close();
-
-            if (numOfRowEffected == 1)
+            if (cboLoai.SelectedIndex == -1)
             {
-                MessageBox.Show("Thêm nhóm món ăn thành công");
-
-
-                bntLoad.PerformClick();
-
-                txtName.Text = "";
-                txtType.Text = "";
-            }
-            else
-            {
-                MessageBox.Show("Đã có lỗi xảy ra. Vui lòng thử lại");
+                MessageBox.Show("Vui lòng chọn loại (Thức uống hoặc Đồ ăn).",
+                                "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
 
+            string name = txtName.Text.Trim();
+            int typeValue = cboLoai.SelectedIndex;
+
+            if (string.IsNullOrEmpty(name))
+            {
+                MessageBox.Show("Vui lòng nhập tên nhóm món ăn!");
+                return;
+            }
+
+            using (SqlConnection sqlConnection = new SqlConnection(connectionString))
+            {
+                sqlConnection.Open();
+
+                // 🔹 Lấy ID tiếp theo
+                int nextId;
+                using (SqlCommand getMaxCmd = new SqlCommand("SELECT ISNULL(MAX(ID), 0) + 1 FROM Category", sqlConnection))
+                {
+                    nextId = (int)getMaxCmd.ExecuteScalar();
+                }
+
+                string newCode = "M" + nextId.ToString("00");
+
+                // 🔹 Dùng tham số để tránh lỗi SQL injection
+                using (SqlCommand sqlCommand = sqlConnection.CreateCommand())
+                {
+                    sqlCommand.CommandText = "INSERT INTO Category(MaMonAn, Name, [Type]) VALUES (@code, @name, @type)";
+                    sqlCommand.Parameters.AddWithValue("@code", newCode);
+                    sqlCommand.Parameters.AddWithValue("@name", name);
+                    sqlCommand.Parameters.AddWithValue("@type", typeValue);
+
+                    int rows = sqlCommand.ExecuteNonQuery();
+
+                    if (rows == 1)
+                    {
+                        MessageBox.Show($"Thêm nhóm món ăn thành công (Mã: {newCode})");
+                        bntLoad.PerformClick();
+                        txtName.Clear();
+                        cboLoai.SelectedIndex = -1;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Đã có lỗi xảy ra. Vui lòng thử lại");
+                    }
+                }
+            }
         }
 
-        private void lvCategory_Click(object sender, EventArgs e)
-        {
-            ListViewItem item = lvCategory.SelectedItems[0];
-
-            txtID.Text = item.SubItems[0].Text;
-            txtName.Text = item.SubItems[1].Text;
-            txtType.Text = item.SubItems[2].Text == "0" ? "Thức uống" : "Đồ ăn";
-
-            bntUpdate.Enabled = true;
-            bntDelete.Enabled = true;
-        }
-
-   
         private void bntUpdate_Click(object sender, EventArgs e)
         {
-            string connectionString = "server=DESKTOP-LSEMTND\\SQLEXPRESS; database=QuanLyNhaHang; Integrated Security=true;";
-            SqlConnection sqlConnection = new SqlConnection(connectionString);
+            if (lvCategory.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Vui lòng chọn nhóm món ăn cần cập nhật!");
+                return;
+            }
 
-            SqlCommand sqlCommand = sqlConnection.CreateCommand();
+            if (cboLoai.SelectedIndex == -1)
+            {
+                MessageBox.Show("Vui lòng chọn loại (Thức uống hoặc Đồ ăn).",
+                                "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
-            // Loại bỏ " - cập nhật" nếu có trong tên để lưu dữ liệu sạch vào DB
+            int id = Convert.ToInt32(lvCategory.SelectedItems[0].Tag);
+            int typeValue = cboLoai.SelectedIndex;
             string cleanName = txtName.Text.Replace(" - cập nhật", "").Trim();
 
-            sqlCommand.CommandText = "UPDATE Category SET Name = N'" + cleanName +
-                                     "', [Type] = " + txtType.Text +
-                                     " WHERE CategoryID = " + txtID.Text;
-
-
-            sqlConnection.Open();
-
-            int numOfRowEffected = sqlCommand.ExecuteNonQuery();
-
-            if (numOfRowEffected == 1)
+            using (SqlConnection sqlConnection = new SqlConnection(connectionString))
+            using (SqlCommand sqlCommand = sqlConnection.CreateCommand())
             {
-                ListViewItem item = lvCategory.SelectedItems[0];
+                sqlCommand.CommandText = "UPDATE Category SET Name = @name, [Type] = @type WHERE ID = @id";
+                sqlCommand.Parameters.AddWithValue("@name", cleanName);
+                sqlCommand.Parameters.AddWithValue("@type", typeValue);
+                sqlCommand.Parameters.AddWithValue("@id", id);
 
-                // Cập nhật lại tên và loại trong ListView, thêm chữ "- cập nhật" chỉ để hiển thị tạm thời
-                item.SubItems[1].Text = cleanName + " - cập nhật";
-                item.SubItems[2].Text = txtType.Text;
+                sqlConnection.Open();
+                int rows = sqlCommand.ExecuteNonQuery();
 
-                // Xóa textbox và disable nút
-                txtID.Text = "";
-                txtName.Text = "";
-                txtType.Text = "";
+                if (rows == 1)
+                {
+                    ListViewItem item = lvCategory.SelectedItems[0];
+                    item.SubItems[1].Text = cleanName + " - cập nhật";
+                    item.SubItems[2].Text = typeValue.ToString();
 
-                bntUpdate.Enabled = false;
-                bntDelete.Enabled = false;
+                    txtMaMonAn.Clear();
+                    txtName.Clear();
+                    cboLoai.SelectedIndex = -1;
 
-                MessageBox.Show("Cập nhật nhóm món ăn thành công");
-            }
-            else
-            {
-                MessageBox.Show("Đã có lỗi xảy ra. Vui lòng thử lại");
+                    bntUpdate.Enabled = bntDelete.Enabled = false;
+
+                    MessageBox.Show("Cập nhật nhóm món ăn thành công!");
+                }
+                else
+                {
+                    MessageBox.Show("Đã có lỗi xảy ra. Vui lòng thử lại.");
+                }
             }
         }
 
         private void bntDelete_Click(object sender, EventArgs e)
         {
-            string connectionString = "server=DESKTOP-LSEMTND\\SQLEXPRESS; database=QuanLyNhaHang; Integrated Security=true;";
-
-            SqlConnection sqlConnection = new SqlConnection(connectionString);
-
-            SqlCommand sqlCommand = sqlConnection.CreateCommand();
-
-            sqlCommand.CommandText = "DELETE FROM Category WHERE CategoryID = " + txtID.Text;
-
-            sqlConnection.Open();
-
-            int numOfRowEffected = sqlCommand.ExecuteNonQuery();
-
-            sqlConnection.Close();
-
-            if (numOfRowEffected == 1)
+            if (lvCategory.SelectedItems.Count == 0)
             {
-                ListViewItem item = lvCategory.SelectedItems[0];
-                lvCategory.Items.Remove(item);
-
-                txtID.Text = "";
-                txtName.Text = "";
-                txtType.Text = "";
-
-                bntUpdate.Enabled = false;
-                bntDelete.Enabled = false;
-                MessageBox.Show("Xóa nhóm món ăn thành công");
+                MessageBox.Show("Vui lòng chọn nhóm món ăn cần xóa!");
+                return;
             }
-            else
+
+            int id = Convert.ToInt32(lvCategory.SelectedItems[0].Tag);
+            string name = lvCategory.SelectedItems[0].SubItems[1].Text;
+
+            // 🔹 Hiện thông báo xác nhận
+            DialogResult confirm = MessageBox.Show(
+                $"Bạn có chắc muốn xóa nhóm món ăn '{name}' và toàn bộ các món thuộc nhóm này không?",
+                "Xác nhận xóa",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
+            );
+
+            if (confirm == DialogResult.No)
+                return; // Người dùng chọn "Không", dừng lại
+
+            using (SqlConnection sqlConnection = new SqlConnection(connectionString))
             {
-                MessageBox.Show("Đã có lỗi xảy ra. Vui lòng thử lại");
+                sqlConnection.Open();
+
+                // 🔹 Bắt đầu transaction để đảm bảo an toàn
+                SqlTransaction transaction = sqlConnection.BeginTransaction();
+
+                try
+                {
+                    // 1️ Xóa toàn bộ món ăn trong nhóm trước
+                    SqlCommand deleteFoodCmd = new SqlCommand("DELETE FROM Food WHERE FoodCategoryID = @id", sqlConnection, transaction);
+                    deleteFoodCmd.Parameters.AddWithValue("@id", id);
+                    deleteFoodCmd.ExecuteNonQuery();
+
+                    // 2️ Sau đó xóa nhóm món ăn
+                    SqlCommand deleteCategoryCmd = new SqlCommand("DELETE FROM Category WHERE ID = @id", sqlConnection, transaction);
+                    deleteCategoryCmd.Parameters.AddWithValue("@id", id);
+                    int numOfRowDeleted = deleteCategoryCmd.ExecuteNonQuery();
+
+                    transaction.Commit();
+
+                    if (numOfRowDeleted == 1)
+                    {
+                        MessageBox.Show($"Đã xóa nhóm '{name}' và các món ăn thuộc nhóm thành công!");
+                        bntLoad.PerformClick();
+                        txtMaMonAn.Clear();
+                        txtName.Clear();
+                        cboLoai.SelectedIndex = -1;
+                        bntUpdate.Enabled = false;
+                        bntDelete.Enabled = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không tìm thấy nhóm món ăn để xóa!");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    transaction.Rollback();
+                    MessageBox.Show("Đã xảy ra lỗi khi xóa: " + ex.Message);
+                }
             }
         }
+
 
         private void tsmDelete_Click(object sender, EventArgs e)
         {
-            if (lvCategory.SelectedItems.Count > 0)
+            if (lvCategory.SelectedItems.Count == 0)
             {
-                bntDelete.PerformClick();
+                MessageBox.Show("Vui lòng chọn nhóm món ăn để xóa các món thuộc nhóm đó!");
+                return;
+            }
+
+            int categoryId = Convert.ToInt32(lvCategory.SelectedItems[0].Tag);
+            string categoryName = lvCategory.SelectedItems[0].SubItems[1].Text;
+
+            var confirm = MessageBox.Show(
+                $"Bạn có chắc muốn xóa tất cả món ăn trong nhóm '{categoryName}' không?\n(Nhóm món ăn vẫn được giữ lại)",
+                "Xác nhận xóa món ăn trong nhóm",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
+            );
+
+            if (confirm == DialogResult.Yes)
+            {
+                using (SqlConnection sqlConnection = new SqlConnection(connectionString))
+                using (SqlCommand sqlCommand = sqlConnection.CreateCommand())
+                {
+                    sqlCommand.CommandText = "DELETE FROM Food WHERE FoodCategoryID = @catId";
+                    sqlCommand.Parameters.AddWithValue("@catId", categoryId);
+
+                    sqlConnection.Open();
+                    int rowsDeleted = sqlCommand.ExecuteNonQuery();
+                    sqlConnection.Close();
+
+                    MessageBox.Show(
+                        $"Đã xóa {rowsDeleted} món ăn thuộc nhóm '{categoryName}'.",
+                        "Thành công",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information
+                    );
+                }
             }
         }
 
+
         private void tsmViewFood_Click(object sender, EventArgs e)
         {
-            if (txtID.Text != "")
-            {
-                FoodForm foodForm = new FoodForm();
-                foodForm.Show(this);
-                foodForm.LoadFood(Convert.ToInt32(txtID.Text));
-            }    
+            if (lvCategory.SelectedItems.Count == 0) return;
+
+            int id = Convert.ToInt32(lvCategory.SelectedItems[0].Tag);
+            FoodForm foodForm = new FoodForm();
+            foodForm.Show(this);
+            foodForm.LoadFood(id);
         }
     }
 }

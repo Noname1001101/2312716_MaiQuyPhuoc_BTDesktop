@@ -34,11 +34,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dtpDenNgay = new System.Windows.Forms.DateTimePicker();
             this.dgvBills = new System.Windows.Forms.DataGridView();
-            this.billID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalBeforeDiscount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalDiscount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalPaid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTableID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCheckoutDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDiscount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTax = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAccount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiRefresh = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBills)).BeginInit();
@@ -48,7 +52,7 @@
             // dtpTuNgay
             // 
             this.dtpTuNgay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpTuNgay.Location = new System.Drawing.Point(122, 12);
+            this.dtpTuNgay.Location = new System.Drawing.Point(169, 16);
             this.dtpTuNgay.Name = "dtpTuNgay";
             this.dtpTuNgay.Size = new System.Drawing.Size(266, 24);
             this.dtpTuNgay.TabIndex = 0;
@@ -68,7 +72,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(412, 16);
+            this.label2.Location = new System.Drawing.Point(569, 16);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 20);
             this.label2.TabIndex = 2;
@@ -77,7 +81,7 @@
             // dtpDenNgay
             // 
             this.dtpDenNgay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpDenNgay.Location = new System.Drawing.Point(531, 12);
+            this.dtpDenNgay.Location = new System.Drawing.Point(706, 16);
             this.dtpDenNgay.Name = "dtpDenNgay";
             this.dtpDenNgay.Size = new System.Drawing.Size(271, 24);
             this.dtpDenNgay.TabIndex = 3;
@@ -85,14 +89,17 @@
             // 
             // dgvBills
             // 
-            this.dgvBills.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvBills.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBills.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.billID,
-            this.date,
-            this.totalBeforeDiscount,
-            this.totalDiscount,
-            this.totalPaid});
+            this.colID,
+            this.colTableID,
+            this.colCheckoutDate,
+            this.colName,
+            this.colDiscount,
+            this.colTax,
+            this.colAmount,
+            this.colStatus,
+            this.colAccount});
             this.dgvBills.ContextMenuStrip = this.contextMenuStrip1;
             this.dgvBills.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvBills.Location = new System.Drawing.Point(0, 56);
@@ -101,49 +108,91 @@
             this.dgvBills.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dgvBills.RowHeadersWidth = 51;
             this.dgvBills.RowTemplate.Height = 24;
-            this.dgvBills.Size = new System.Drawing.Size(883, 394);
+            this.dgvBills.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvBills.Size = new System.Drawing.Size(1053, 394);
             this.dgvBills.TabIndex = 10;
             this.dgvBills.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBills_CellDoubleClick);
             // 
-            // billID
+            // colID
             // 
-            this.billID.DataPropertyName = "BillID";
-            this.billID.HeaderText = "Mã hóa đơn";
-            this.billID.MinimumWidth = 6;
-            this.billID.Name = "billID";
-            this.billID.ReadOnly = true;
+            this.colID.DataPropertyName = "ID";
+            this.colID.HeaderText = "Mã hóa đơn";
+            this.colID.MinimumWidth = 6;
+            this.colID.Name = "colID";
+            this.colID.ReadOnly = true;
+            this.colID.Width = 111;
             // 
-            // date
+            // colTableID
             // 
-            this.date.DataPropertyName = "Date";
-            this.date.HeaderText = "Ngày";
-            this.date.MinimumWidth = 6;
-            this.date.Name = "date";
-            this.date.ReadOnly = true;
+            this.colTableID.DataPropertyName = "TableID";
+            this.colTableID.HeaderText = "Mã bàn";
+            this.colTableID.MinimumWidth = 6;
+            this.colTableID.Name = "colTableID";
+            this.colTableID.ReadOnly = true;
+            this.colTableID.Width = 111;
             // 
-            // totalBeforeDiscount
+            // colCheckoutDate
             // 
-            this.totalBeforeDiscount.DataPropertyName = "TotalBeforeDiscount";
-            this.totalBeforeDiscount.HeaderText = "Tổng số tiền chưa giảm giá";
-            this.totalBeforeDiscount.MinimumWidth = 6;
-            this.totalBeforeDiscount.Name = "totalBeforeDiscount";
-            this.totalBeforeDiscount.ReadOnly = true;
+            this.colCheckoutDate.DataPropertyName = "CheckoutDate";
+            this.colCheckoutDate.HeaderText = "Ngày";
+            this.colCheckoutDate.MinimumWidth = 6;
+            this.colCheckoutDate.Name = "colCheckoutDate";
+            this.colCheckoutDate.ReadOnly = true;
+            this.colCheckoutDate.Width = 111;
             // 
-            // totalDiscount
+            // colName
             // 
-            this.totalDiscount.DataPropertyName = "TotalDiscount";
-            this.totalDiscount.HeaderText = "Tổng số tiền giảm giá";
-            this.totalDiscount.MinimumWidth = 6;
-            this.totalDiscount.Name = "totalDiscount";
-            this.totalDiscount.ReadOnly = true;
+            this.colName.DataPropertyName = "Name";
+            this.colName.HeaderText = "Hóa đơn";
+            this.colName.MinimumWidth = 6;
+            this.colName.Name = "colName";
+            this.colName.ReadOnly = true;
+            this.colName.Width = 111;
             // 
-            // totalPaid
+            // colDiscount
             // 
-            this.totalPaid.DataPropertyName = "TotalPaid";
-            this.totalPaid.HeaderText = "Thực Thu";
-            this.totalPaid.MinimumWidth = 6;
-            this.totalPaid.Name = "totalPaid";
-            this.totalPaid.ReadOnly = true;
+            this.colDiscount.DataPropertyName = "Discount";
+            this.colDiscount.HeaderText = "Tổng tiền trước giảm";
+            this.colDiscount.MinimumWidth = 6;
+            this.colDiscount.Name = "colDiscount";
+            this.colDiscount.ReadOnly = true;
+            this.colDiscount.Width = 112;
+            // 
+            // colTax
+            // 
+            this.colTax.DataPropertyName = "Tax";
+            this.colTax.HeaderText = "Tổng tiền sau giảm";
+            this.colTax.MinimumWidth = 6;
+            this.colTax.Name = "colTax";
+            this.colTax.ReadOnly = true;
+            this.colTax.Width = 111;
+            // 
+            // colAmount
+            // 
+            this.colAmount.DataPropertyName = "Amount";
+            this.colAmount.HeaderText = "Thực thu";
+            this.colAmount.MinimumWidth = 6;
+            this.colAmount.Name = "colAmount";
+            this.colAmount.ReadOnly = true;
+            this.colAmount.Width = 111;
+            // 
+            // colStatus
+            // 
+            this.colStatus.DataPropertyName = "Status";
+            this.colStatus.HeaderText = "Trạng thái";
+            this.colStatus.MinimumWidth = 6;
+            this.colStatus.Name = "colStatus";
+            this.colStatus.ReadOnly = true;
+            this.colStatus.Width = 111;
+            // 
+            // colAccount
+            // 
+            this.colAccount.DataPropertyName = "Account";
+            this.colAccount.HeaderText = "Tài khoản";
+            this.colAccount.MinimumWidth = 6;
+            this.colAccount.Name = "colAccount";
+            this.colAccount.ReadOnly = true;
+            this.colAccount.Width = 111;
             // 
             // contextMenuStrip1
             // 
@@ -164,7 +213,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(883, 450);
+            this.ClientSize = new System.Drawing.Size(1053, 450);
             this.Controls.Add(this.dgvBills);
             this.Controls.Add(this.dtpDenNgay);
             this.Controls.Add(this.label2);
@@ -187,12 +236,16 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dtpDenNgay;
         private System.Windows.Forms.DataGridView dgvBills;
-        private System.Windows.Forms.DataGridViewTextBoxColumn billID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn totalBeforeDiscount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn totalDiscount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn totalPaid;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem tsmiRefresh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTableID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCheckoutDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDiscount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTax;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colAmount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colAccount;
     }
 }

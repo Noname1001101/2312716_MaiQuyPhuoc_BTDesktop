@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -8,153 +7,234 @@ namespace Lab4_Basic_Command
 {
     public partial class BillsForm : Form
     {
-        private string connectionString = "server=DESKTOP-LSEMTND\\SQLEXPRESS; database=QuanLyNhaHang; Integrated Security=true;";
+        // Chuỗi kết nối đến SQL Server
+        private readonly string connectionString =
+            "server=DESKTOP-LSEMTND\\SQLEXPRESS; database=RestaurantManagement; Integrated Security=true;";
 
-        public BillsForm()
+        private int currentTableID; // ✅ lưu mã bàn được chọn
+        public BillsForm(int tableID)
         {
             InitializeComponent();
+            currentTableID = tableID;
         }
 
+        // Khi form mở lên, tự động nạp khoảng ngày và danh sách hóa đơn
         private void BillsForm_Load(object sender, EventArgs e)
         {
-            // Khi form mở, hiển thị toàn bộ dữ liệu Bills
-            LoadBills();
+            LoadBillsByTable(currentTableID); // ✅ hiển thị hóa đơn theo bàn
+            //LoadDateRange();
+            //LoadBills();
         }
 
-        //private void LoadBills(DateTime? fromDate = null, DateTime? toDate = null)
+   
+        /// Lấy ngày nhỏ nhất và lớn nhất trong bảng Bills để hiển thị lên DateTimePicker
+       
+        private void LoadDateRange()
+        {
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    con.Open();
+                    string sql = "SELECT MIN(CheckoutDate), MAX(CheckoutDate) FROM Bills WHERE CheckoutDate IS NOT NULL";
+                    SqlCommand cmd = new SqlCommand(sql, con);
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    if (reader.Read() && !reader.IsDBNull(0) && !reader.IsDBNull(1))
+                    {
+                        dtpTuNgay.Value = reader.GetDateTime(0).Date;
+                        dtpDenNgay.Value = reader.GetDateTime(1).Date;
+                    }
+                    else
+                    {
+                        // Nếu bảng Bills chưa có dữ liệu, đặt mặc định 1 tháng gần nhất
+                        dtpTuNgay.Value = DateTime.Now.AddMonths(-1);
+                        dtpDenNgay.Value = DateTime.Now;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi tải ngày: " + ex.Message, "Lỗi",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+
+        /// Tải danh sách hóa đơn theo khoảng ngày
+
+        private void LoadBills()
+        {
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    con.Open();
+
+                    string sql = @"
+                        SELECT *
+                        FROM Bills
+                        WHERE CheckoutDate BETWEEN @fromDate AND @toDate
+                        ORDER BY ID ASC";
+
+                    SqlCommand cmd = new SqlCommand(sql, con);
+                    cmd.Parameters.AddWithValue("@fromDate", dtpTuNgay.Value.Date);
+                    cmd.Parameters.AddWithValue("@toDate", dtpDenNgay.Value.Date.AddDays(1).AddSeconds(-1));
+
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+
+                    dgvBills.DataSource = dt; // Cho phép tự sinh cột
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi tải dữ liệu: " + ex.Message, "Lỗi",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        //private void LoadBills(int tableID)
         //{
-        //    using (SqlConnection conn = new SqlConnection(connectionString))
+        //    using (SqlConnection con = new SqlConnection(connectionString))
         //    {
-        //        string sql = @"
-        //    SELECT 
-        //        BillID AS [Mã hóa đơn],
-        //        [Date] AS [Ngày],
-        //        TotalBeforeDiscount AS [Tổng tiền trước giảm],
-        //        TotalDiscount AS [Tổng giảm giá],
-        //        TotalPaid AS [Thực thu]
-        //    FROM Bills";
-
-        //        // nếu có truyền khoảng ngày thì thêm điều kiện
-        //        if (fromDate.HasValue && toDate.HasValue)
+        //        try
         //        {
-        //            sql += " WHERE CAST([Date] AS DATE) BETWEEN @fromDate AND @toDate";
+        //            con.Open();
+
+        //            string sql = @"
+        //        SELECT 
+        //            b.ID ,
+        //            t.Name ,
+        //            b.CheckoutDate ,
+        //            b.Amount ,
+        //            b.Discount ,
+        //            b.Tax AS ,
+        //            b.Status ,
+        //            b.Account
+        //        FROM Bills b
+        //        JOIN [Table] t ON b.TableID = t.ID
+        //        WHERE b.TableID = @tableID 
+        //          AND b.CheckoutDate BETWEEN @fromDate AND @toDate
+        //        ORDER BY b.ID DESC";
+
+        //            SqlCommand cmd = new SqlCommand(sql, con);
+        //            cmd.Parameters.AddWithValue("@tableID", tableID);
+        //            cmd.Parameters.AddWithValue("@fromDate", dtpTuNgay.Value.Date);
+        //            cmd.Parameters.AddWithValue("@toDate", dtpDenNgay.Value.Date.AddDays(1).AddSeconds(-1));
+
+        //            SqlDataAdapter da = new SqlDataAdapter(cmd);
+        //            DataTable dt = new DataTable();
+        //            da.Fill(dt);
+        //            dgvBills.DataSource = dt;
         //        }
-
-        //        sql += " ORDER BY BillID ASC";
-
-        //        SqlCommand cmd = new SqlCommand(sql, conn);
-        //        if (fromDate.HasValue && toDate.HasValue)
+        //        catch (Exception ex)
         //        {
-        //            cmd.Parameters.Add("@fromDate", SqlDbType.Date).Value = fromDate.Value;
-        //            cmd.Parameters.Add("@toDate", SqlDbType.Date).Value = toDate.Value;
+        //            MessageBox.Show("Lỗi khi tải dữ liệu: " + ex.Message,
+        //                            "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
         //        }
-
-        //        SqlDataAdapter da = new SqlDataAdapter(cmd);
-        //        DataTable dt = new DataTable();
-        //        da.Fill(dt);
-
-        //        dgvBills.Columns.Clear();
-        //        dgvBills.DataSource = dt;
-        //        dgvBills.AllowUserToAddRows = false;
-        //        dgvBills.Columns["Ngày"].DefaultCellStyle.Format = "dd/MM/yyyy";
-        //        dgvBills.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
-
-
-        //        // cập nhật tiêu đề form
-        //        if (fromDate.HasValue && toDate.HasValue)
-        //            this.Text = $"Danh sách hóa đơn từ {fromDate:dd/MM/yyyy} đến {toDate:dd/MM/yyyy}";
-        //        else
-        //            this.Text = "Danh sách tất cả hóa đơn";
         //    }
         //}
 
-        private void LoadBills(DateTime? fromDate = null, DateTime? toDate = null)
+        private void LoadBillsByTable(int tableID)
         {
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlConnection con = new SqlConnection(connectionString))
             {
-                string sql = @"
-        SELECT 
-            b.BillID AS [Mã hóa đơn],
-            b.[Date] AS [Ngày],
-            ISNULL(SUM(bd.Quantity * f.UntilPrice), 0) AS [Tổng tiền trước giảm],
-            b.TotalDiscount AS [Tổng giảm giá],
-            ISNULL(SUM(bd.Quantity * f.UntilPrice), 0) - b.TotalDiscount AS [Thực thu]
-        FROM Bills b
-        LEFT JOIN BillDetails bd ON b.BillID = bd.BillID
-        LEFT JOIN Food f ON bd.FoodID = f.FoodID
-        WHERE 1 = 1";
-
-                if (fromDate.HasValue && toDate.HasValue)
-                    sql += " AND CAST(b.[Date] AS DATE) BETWEEN @fromDate AND @toDate";
-
-                sql += " GROUP BY b.BillID, b.[Date], b.TotalDiscount ORDER BY b.BillID";
-
-                SqlCommand cmd = new SqlCommand(sql, conn);
-                if (fromDate.HasValue && toDate.HasValue)
+                try
                 {
-                    cmd.Parameters.Add("@fromDate", SqlDbType.Date).Value = fromDate.Value;
-                    cmd.Parameters.Add("@toDate", SqlDbType.Date).Value = toDate.Value;
+                    con.Open();
+
+                    string sql = @"
+                    SELECT 
+                        b.ID,
+                        t.ID AS TableID,
+                        b.CheckoutDate,
+                        b.Name AS BillName,
+                        b.Amount,
+                        b.Discount,
+                        b.Tax,
+                        b.Status,
+                        b.Account
+                    FROM Bills b
+                    JOIN [Table] t ON b.TableID = t.ID
+                    WHERE b.TableID = @tableID
+                    ORDER BY b.ID DESC";
+
+
+                    SqlCommand cmd = new SqlCommand(sql, con);
+                    cmd.Parameters.AddWithValue("@tableID", tableID);
+
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+
+                    
+                    dgvBills.DataSource = dt;
                 }
-
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-
-                dgvBills.Columns.Clear();
-                dgvBills.DataSource = dt;
-                dgvBills.AllowUserToAddRows = false;
-                dgvBills.Columns["Ngày"].DefaultCellStyle.Format = "dd/MM/yyyy";
-                dgvBills.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
-                dgvBills.Columns["Tổng tiền trước giảm"].DefaultCellStyle.Format = "N0";
-                dgvBills.Columns["Tổng giảm giá"].DefaultCellStyle.Format = "N0";
-                dgvBills.Columns["Thực thu"].DefaultCellStyle.Format = "N0";
-
-                if (fromDate.HasValue && toDate.HasValue)
-                    this.Text = $"Danh sách hóa đơn từ {fromDate:dd/MM/yyyy} đến {toDate:dd/MM/yyyy}";
-                else
-                    this.Text = "Danh sách tất cả hóa đơn";
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi tải dữ liệu: " + ex.Message,
+                                    "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
 
 
-        // Khi thay đổi Từ ngày
+        // Khi người dùng đổi ngày, tự động tải lại hóa đơn
         private void dtpTuNgay_ValueChanged(object sender, EventArgs e)
         {
-            if (dtpTuNgay.Value.Date <= dtpDenNgay.Value.Date)
-                LoadBills(dtpTuNgay.Value.Date, dtpDenNgay.Value.Date);
+            if (dtpTuNgay.Value <= dtpDenNgay.Value)
+                //LoadBills(currentTableID); // lọc theo ngày + bàn
+                LoadBills();
             else
-                MessageBox.Show("Từ ngày phải nhỏ hơn hoặc bằng Đến ngày.", "Lỗi ngày", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Từ ngày phải nhỏ hơn hoặc bằng Đến ngày.", "Lỗi ngày",
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
-        // Khi thay đổi Đến ngày
         private void dtpDenNgay_ValueChanged(object sender, EventArgs e)
         {
-            if (dtpTuNgay.Value.Date <= dtpDenNgay.Value.Date)
-                LoadBills(dtpTuNgay.Value.Date, dtpDenNgay.Value.Date);
+            if (dtpTuNgay.Value <= dtpDenNgay.Value)
+                //LoadBills(currentTableID); // lọc theo ngày + bàn
+                LoadBills();
             else
-                MessageBox.Show("Từ ngày phải nhỏ hơn hoặc bằng Đến ngày.", "Lỗi ngày", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Từ ngày phải nhỏ hơn hoặc bằng Đến ngày.", "Lỗi ngày",
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
+        // Nút Refresh – tải lại toàn bộ hóa đơn, không lọc theo ngày
         private void tsmiRefresh_Click(object sender, EventArgs e)
         {
-            // Gọi lại hàm load toàn bộ dữ liệu
-            LoadBills();
+            try
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    con.Open();
+                    string sql = "SELECT * FROM Bills ORDER BY ID ASC";
 
-            // Cập nhật lại khoảng ngày hiển thị nếu cần
-            this.Text = "Danh sách tất cả hóa đơn";
+                    SqlDataAdapter da = new SqlDataAdapter(sql, con);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+
+                    dgvBills.DataSource = dt;
+                }
+
+                Console.WriteLine("Đã tải lại toàn bộ hóa đơn.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải lại dữ liệu: " + ex.Message,
+                                "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
+        // Khi double-click vào hóa đơn, mở form chi tiết
         private void dgvBills_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0) // kiểm tra dòng hợp lệ
+            if (e.RowIndex >= 0 && dgvBills.Rows[e.RowIndex].Cells["colID"] != null)
             {
-                // Lấy BillID của dòng được double-click
-                int billID = Convert.ToInt32(dgvBills.Rows[e.RowIndex].Cells["Mã hóa đơn"].Value);
-
-                // Mở form chi tiết hóa đơn
+                int billID = Convert.ToInt32(dgvBills.Rows[e.RowIndex].Cells["colID"].Value);
                 BillDetailsForm detailsForm = new BillDetailsForm(billID);
                 detailsForm.ShowDialog();
             }

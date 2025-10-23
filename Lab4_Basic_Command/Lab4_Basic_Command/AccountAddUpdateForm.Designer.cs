@@ -37,13 +37,14 @@
             this.cboNhom = new System.Windows.Forms.ComboBox();
             this.chkActive = new System.Windows.Forms.CheckBox();
             this.bntLuu = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtTenDN
             // 
             this.txtTenDN.Location = new System.Drawing.Point(173, 38);
             this.txtTenDN.Name = "txtTenDN";
-            this.txtTenDN.Size = new System.Drawing.Size(154, 22);
+            this.txtTenDN.Size = new System.Drawing.Size(164, 22);
             this.txtTenDN.TabIndex = 0;
             // 
             // label1
@@ -70,14 +71,14 @@
             // 
             this.txtMK.Location = new System.Drawing.Point(173, 79);
             this.txtMK.Name = "txtMK";
-            this.txtMK.Size = new System.Drawing.Size(154, 22);
+            this.txtMK.Size = new System.Drawing.Size(164, 22);
             this.txtMK.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(375, 40);
+            this.label3.Location = new System.Drawing.Point(419, 38);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(86, 20);
             this.label3.TabIndex = 4;
@@ -85,17 +86,17 @@
             // 
             // txtHoTen
             // 
-            this.txtHoTen.Location = new System.Drawing.Point(467, 40);
+            this.txtHoTen.Location = new System.Drawing.Point(525, 36);
             this.txtHoTen.Name = "txtHoTen";
-            this.txtHoTen.Size = new System.Drawing.Size(154, 22);
+            this.txtHoTen.Size = new System.Drawing.Size(170, 22);
             this.txtHoTen.TabIndex = 5;
             // 
             // cboNhom
             // 
             this.cboNhom.FormattingEnabled = true;
-            this.cboNhom.Location = new System.Drawing.Point(467, 79);
+            this.cboNhom.Location = new System.Drawing.Point(525, 83);
             this.cboNhom.Name = "cboNhom";
-            this.cboNhom.Size = new System.Drawing.Size(121, 24);
+            this.cboNhom.Size = new System.Drawing.Size(170, 24);
             this.cboNhom.TabIndex = 6;
             // 
             // chkActive
@@ -112,19 +113,30 @@
             // bntLuu
             // 
             this.bntLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bntLuu.Location = new System.Drawing.Point(327, 185);
+            this.bntLuu.Location = new System.Drawing.Point(319, 177);
             this.bntLuu.Name = "bntLuu";
-            this.bntLuu.Size = new System.Drawing.Size(75, 32);
+            this.bntLuu.Size = new System.Drawing.Size(114, 52);
             this.bntLuu.TabIndex = 8;
             this.bntLuu.Text = "Lưu";
             this.bntLuu.UseVisualStyleBackColor = true;
             this.bntLuu.Click += new System.EventHandler(this.btnLuu_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(375, 83);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(130, 20);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Nhóm tài khoản:";
             // 
             // AccountAddUpdateForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 241);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.bntLuu);
             this.Controls.Add(this.chkActive);
             this.Controls.Add(this.cboNhom);
@@ -153,5 +165,6 @@
         private System.Windows.Forms.ComboBox cboNhom;
         private System.Windows.Forms.CheckBox chkActive;
         private System.Windows.Forms.Button bntLuu;
+        private System.Windows.Forms.Label label4;
     }
 }

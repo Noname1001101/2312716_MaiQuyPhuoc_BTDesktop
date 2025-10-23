@@ -39,13 +39,13 @@
             this.tsmViewFood = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtID = new System.Windows.Forms.TextBox();
+            this.txtMaMonAn = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtType = new System.Windows.Forms.TextBox();
             this.bntAdd = new System.Windows.Forms.Button();
             this.bntUpdate = new System.Windows.Forms.Button();
             this.bntDelete = new System.Windows.Forms.Button();
+            this.cboLoai = new System.Windows.Forms.ComboBox();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,11 +73,10 @@
             this.lvCategory.Location = new System.Drawing.Point(-1, 186);
             this.lvCategory.MultiSelect = false;
             this.lvCategory.Name = "lvCategory";
-            this.lvCategory.Size = new System.Drawing.Size(608, 333);
+            this.lvCategory.Size = new System.Drawing.Size(635, 333);
             this.lvCategory.TabIndex = 1;
             this.lvCategory.UseCompatibleStateImageBehavior = false;
             this.lvCategory.View = System.Windows.Forms.View.Details;
-            this.lvCategory.Click += new System.EventHandler(this.lvCategory_Click);
             // 
             // chID
             // 
@@ -134,13 +133,13 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Tên nhóm thức ăn:";
             // 
-            // txtID
+            // txtMaMonAn
             // 
-            this.txtID.Location = new System.Drawing.Point(180, 25);
-            this.txtID.Name = "txtID";
-            this.txtID.ReadOnly = true;
-            this.txtID.Size = new System.Drawing.Size(233, 22);
-            this.txtID.TabIndex = 4;
+            this.txtMaMonAn.Location = new System.Drawing.Point(180, 25);
+            this.txtMaMonAn.Name = "txtMaMonAn";
+            this.txtMaMonAn.ReadOnly = true;
+            this.txtMaMonAn.Size = new System.Drawing.Size(233, 22);
+            this.txtMaMonAn.TabIndex = 4;
             // 
             // txtName
             // 
@@ -158,13 +157,6 @@
             this.label3.Size = new System.Drawing.Size(46, 20);
             this.label3.TabIndex = 6;
             this.label3.Text = "Loại:";
-            // 
-            // txtType
-            // 
-            this.txtType.Location = new System.Drawing.Point(180, 94);
-            this.txtType.Name = "txtType";
-            this.txtType.Size = new System.Drawing.Size(233, 22);
-            this.txtType.TabIndex = 7;
             // 
             // bntAdd
             // 
@@ -204,18 +196,29 @@
             this.bntDelete.UseVisualStyleBackColor = true;
             this.bntDelete.Click += new System.EventHandler(this.bntDelete_Click);
             // 
+            // cboLoai
+            // 
+            this.cboLoai.FormattingEnabled = true;
+            this.cboLoai.Items.AddRange(new object[] {
+            "0 - Thức uống",
+            "1 - Đồ ăn"});
+            this.cboLoai.Location = new System.Drawing.Point(180, 94);
+            this.cboLoai.Name = "cboLoai";
+            this.cboLoai.Size = new System.Drawing.Size(233, 24);
+            this.cboLoai.TabIndex = 11;
+            // 
             // CategoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(608, 519);
+            this.ClientSize = new System.Drawing.Size(634, 519);
+            this.Controls.Add(this.cboLoai);
             this.Controls.Add(this.bntDelete);
             this.Controls.Add(this.bntUpdate);
             this.Controls.Add(this.bntAdd);
-            this.Controls.Add(this.txtType);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtName);
-            this.Controls.Add(this.txtID);
+            this.Controls.Add(this.txtMaMonAn);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lvCategory);
@@ -237,16 +240,16 @@
         private System.Windows.Forms.ColumnHeader chType;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.TextBox txtMaMonAn;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtType;
         private System.Windows.Forms.Button bntAdd;
         private System.Windows.Forms.Button bntUpdate;
         private System.Windows.Forms.Button bntDelete;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem tsmDelete;
         private System.Windows.Forms.ToolStripMenuItem tsmViewFood;
+        private System.Windows.Forms.ComboBox cboLoai;
     }
 }
 

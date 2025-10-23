@@ -7,8 +7,10 @@ namespace Lab4_Basic_Command
 {
     public partial class BillDetailsForm : Form
     {
+    
+        private string connectionString =
+            "server=DESKTOP-LSEMTND\\SQLEXPRESS; database=RestaurantManagement; Integrated Security=true;";
         private int billID;
-        private string connectionString = "server=DESKTOP-LSEMTND\\SQLEXPRESS; database=QuanLyNhaHang; Integrated Security=true;";
 
         public BillDetailsForm(int billID)
         {
@@ -23,49 +25,42 @@ namespace Lab4_Basic_Command
 
         private void LoadBillDetails()
         {
-            string query = @"
-        SELECT 
-            f.Food AS [Tên món],
-            f.Unitofmeasure AS [Đơn vị tính],
-            bd.Quantity AS [Số lượng],
-            f.UntilPrice AS [Đơn giá],
-            (bd.Quantity * f.UntilPrice) AS [Thành tiền],
-            f.Note AS [Ghi chú],
-            c.Name AS [Nhóm món]
-        FROM BillDetails bd
-        JOIN Food f ON bd.FoodID = f.FoodID
-        JOIN Category c ON f.CategoryID = c.CategoryID
-        WHERE bd.BillID = @BillID";
-
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                SqlDataAdapter da = new SqlDataAdapter(query, conn);
-                da.SelectCommand.Parameters.AddWithValue("@BillID", billID);
-
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                dgvBillDetails.DataSource = dt;
-
-                if (dt.Rows.Count > 0)
+                try
                 {
-                    string categoryName = dt.Rows[0]["Nhóm món"].ToString();
-                    this.Text = "Danh sách các món ăn thuộc nhóm: " + categoryName;
+                    conn.Open();
+
+                    string query = @"
+                    SELECT 
+                    f.Name,
+                    f.Unit,
+                    bd.Quantity,
+                    f.Price,
+                    (bd.Quantity * f.Price) AS Total,
+                    f.Notes,
+                    c.Name AS CategoryName
+                    FROM BillDetails bd
+                    INNER JOIN Food f ON bd.FoodID = f.ID
+                    INNER JOIN Category c ON f.FoodCategoryID = c.ID
+                    WHERE bd.InvoiceID = @BillID";
+
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@BillID", billID);
+
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+
+                    dgvBillDetails.AutoGenerateColumns = false;
+                    dgvBillDetails.DataSource = dt;
                 }
-                else
+                catch (Exception ex)
                 {
-                    this.Text = "Hóa đơn không có món ăn nào.";
+                    MessageBox.Show("Lỗi khi tải chi tiết hóa đơn: " + ex.Message,
+                                    "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
-                // Ẩn cột “Nhóm món” khỏi DataGridView
-                if (dgvBillDetails.Columns.Contains("Nhóm món"))
-                    dgvBillDetails.Columns["Nhóm món"].Visible = false;
-
-                dgvBillDetails.Columns["Đơn giá"].DefaultCellStyle.Format = "N0";
-                dgvBillDetails.Columns["Thành tiền"].DefaultCellStyle.Format = "N0";
-                dgvBillDetails.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             }
         }
-
     }
 }
-
