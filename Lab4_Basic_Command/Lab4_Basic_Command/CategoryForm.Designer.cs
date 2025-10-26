@@ -71,12 +71,12 @@
             this.lvCategory.FullRowSelect = true;
             this.lvCategory.HideSelection = false;
             this.lvCategory.Location = new System.Drawing.Point(-1, 186);
-            this.lvCategory.MultiSelect = false;
             this.lvCategory.Name = "lvCategory";
             this.lvCategory.Size = new System.Drawing.Size(635, 333);
             this.lvCategory.TabIndex = 1;
             this.lvCategory.UseCompatibleStateImageBehavior = false;
             this.lvCategory.View = System.Windows.Forms.View.Details;
+            this.lvCategory.SelectedIndexChanged += new System.EventHandler(this.lvCategory_SelectedIndexChanged);
             // 
             // chID
             // 
@@ -225,6 +225,7 @@
             this.Controls.Add(this.bntLoad);
             this.Name = "CategoryForm";
             this.Text = "Quản lý nhóm món ăn";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.CategoryForm_MouseDown);
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

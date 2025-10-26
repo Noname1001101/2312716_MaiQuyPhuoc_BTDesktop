@@ -12,10 +12,15 @@ namespace Lab4_Basic_Command
             "server=DESKTOP-LSEMTND\\SQLEXPRESS; database=RestaurantManagement; Integrated Security=true;";
 
         private int currentTableID; // ✅ lưu mã bàn được chọn
+        private DateTime prevFromDate;
+        private DateTime prevToDate;
+
+
         public BillsForm(int tableID)
         {
             InitializeComponent();
             currentTableID = tableID;
+
         }
 
         // Khi form mở lên, tự động nạp khoảng ngày và danh sách hóa đơn
@@ -24,6 +29,8 @@ namespace Lab4_Basic_Command
             LoadBillsByTable(currentTableID); // ✅ hiển thị hóa đơn theo bàn
             //LoadDateRange();
             //LoadBills();
+            prevFromDate = dtpTuNgay.Value;
+            prevToDate = dtpDenNgay.Value;
         }
 
    
@@ -95,50 +102,10 @@ namespace Lab4_Basic_Command
             }
         }
 
-        //private void LoadBills(int tableID)
-        //{
-        //    using (SqlConnection con = new SqlConnection(connectionString))
-        //    {
-        //        try
-        //        {
-        //            con.Open();
-
-        //            string sql = @"
-        //        SELECT 
-        //            b.ID ,
-        //            t.Name ,
-        //            b.CheckoutDate ,
-        //            b.Amount ,
-        //            b.Discount ,
-        //            b.Tax AS ,
-        //            b.Status ,
-        //            b.Account
-        //        FROM Bills b
-        //        JOIN [Table] t ON b.TableID = t.ID
-        //        WHERE b.TableID = @tableID 
-        //          AND b.CheckoutDate BETWEEN @fromDate AND @toDate
-        //        ORDER BY b.ID DESC";
-
-        //            SqlCommand cmd = new SqlCommand(sql, con);
-        //            cmd.Parameters.AddWithValue("@tableID", tableID);
-        //            cmd.Parameters.AddWithValue("@fromDate", dtpTuNgay.Value.Date);
-        //            cmd.Parameters.AddWithValue("@toDate", dtpDenNgay.Value.Date.AddDays(1).AddSeconds(-1));
-
-        //            SqlDataAdapter da = new SqlDataAdapter(cmd);
-        //            DataTable dt = new DataTable();
-        //            da.Fill(dt);
-        //            dgvBills.DataSource = dt;
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            MessageBox.Show("Lỗi khi tải dữ liệu: " + ex.Message,
-        //                            "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //        }
-        //    }
-        //}
-
         private void LoadBillsByTable(int tableID)
         {
+
+
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 try
@@ -150,7 +117,7 @@ namespace Lab4_Basic_Command
                         b.ID,
                         t.ID AS TableID,
                         b.CheckoutDate,
-                        b.Name AS BillName,
+                        b.Name,
                         b.Amount,
                         b.Discount,
                         b.Tax,
@@ -169,7 +136,7 @@ namespace Lab4_Basic_Command
                     DataTable dt = new DataTable();
                     da.Fill(dt);
 
-                    
+
                     dgvBills.DataSource = dt;
                 }
                 catch (Exception ex)
@@ -182,26 +149,50 @@ namespace Lab4_Basic_Command
 
 
 
+
+
+
+
+
         // Khi người dùng đổi ngày, tự động tải lại hóa đơn
         private void dtpTuNgay_ValueChanged(object sender, EventArgs e)
         {
             if (dtpTuNgay.Value <= dtpDenNgay.Value)
-                //LoadBills(currentTableID); // lọc theo ngày + bàn
+            {
                 LoadBills();
+                prevFromDate = dtpTuNgay.Value; // ✅ lưu giá trị hợp lệ mới
+            }
             else
-                MessageBox.Show("Từ ngày phải nhỏ hơn hoặc bằng Đến ngày.", "Lỗi ngày",
+            {
+                // ❌ ngắt tạm sự kiện để không gọi lại
+                dtpTuNgay.ValueChanged -= dtpTuNgay_ValueChanged;
+                MessageBox.Show("❌ 'Từ ngày' phải nhỏ hơn hoặc bằng 'Đến ngày'.", "Lỗi ngày",
                                 MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                dtpTuNgay.Value = prevFromDate; // ✅ khôi phục giá trị cũ
+                dtpTuNgay.ValueChanged += dtpTuNgay_ValueChanged;
+            }
         }
+
+
 
         private void dtpDenNgay_ValueChanged(object sender, EventArgs e)
         {
             if (dtpTuNgay.Value <= dtpDenNgay.Value)
-                //LoadBills(currentTableID); // lọc theo ngày + bàn
+            {
                 LoadBills();
+                prevToDate = dtpDenNgay.Value; // ✅ lưu giá trị hợp lệ mới
+            }
             else
-                MessageBox.Show("Từ ngày phải nhỏ hơn hoặc bằng Đến ngày.", "Lỗi ngày",
-                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            {
+                //dtpDenNgay.ValueChanged -= dtpDenNgay_ValueChanged;
+                //MessageBox.Show("❌ 'Đến ngày' phải lớn hơn hoặc bằng 'Từ ngày'.", "Lỗi ngày",
+                //                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                dtpDenNgay.Value = prevToDate;
+                dtpDenNgay.ValueChanged += dtpDenNgay_ValueChanged;
+            }
         }
+
+
 
         // Nút Refresh – tải lại toàn bộ hóa đơn, không lọc theo ngày
         private void tsmiRefresh_Click(object sender, EventArgs e)

@@ -33,7 +33,7 @@
             this.cboNhomTK = new System.Windows.Forms.ComboBox();
             this.chkActive = new System.Windows.Forms.CheckBox();
             this.bntThem = new System.Windows.Forms.Button();
-            this.bntCapNhap = new System.Windows.Forms.Button();
+            this.bntCapNhat = new System.Windows.Forms.Button();
             this.bntResetMK = new System.Windows.Forms.Button();
             this.dgvAccount = new System.Windows.Forms.DataGridView();
             this.colAccountName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,6 +43,7 @@
             this.colTell = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDateCreated = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmiRefresh = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiXoaTK = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiXemDSVT = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -89,7 +90,7 @@
             // 
             this.bntThem.AutoSize = true;
             this.bntThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bntThem.Location = new System.Drawing.Point(44, 92);
+            this.bntThem.Location = new System.Drawing.Point(44, 86);
             this.bntThem.Name = "bntThem";
             this.bntThem.Size = new System.Drawing.Size(108, 40);
             this.bntThem.TabIndex = 3;
@@ -97,23 +98,24 @@
             this.bntThem.UseVisualStyleBackColor = true;
             this.bntThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
-            // bntCapNhap
+            // bntCapNhat
             // 
-            this.bntCapNhap.AutoSize = true;
-            this.bntCapNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bntCapNhap.Location = new System.Drawing.Point(209, 92);
-            this.bntCapNhap.Name = "bntCapNhap";
-            this.bntCapNhap.Size = new System.Drawing.Size(105, 40);
-            this.bntCapNhap.TabIndex = 4;
-            this.bntCapNhap.Text = "Cập nhật";
-            this.bntCapNhap.UseVisualStyleBackColor = true;
-            this.bntCapNhap.Click += new System.EventHandler(this.btnCapNhat_Click);
+            this.bntCapNhat.AutoSize = true;
+            this.bntCapNhat.Enabled = false;
+            this.bntCapNhat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bntCapNhat.Location = new System.Drawing.Point(237, 86);
+            this.bntCapNhat.Name = "bntCapNhat";
+            this.bntCapNhat.Size = new System.Drawing.Size(114, 40);
+            this.bntCapNhat.TabIndex = 4;
+            this.bntCapNhat.Text = "Cập nhật";
+            this.bntCapNhat.UseVisualStyleBackColor = true;
+            this.bntCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
             // bntResetMK
             // 
             this.bntResetMK.AutoSize = true;
             this.bntResetMK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bntResetMK.Location = new System.Drawing.Point(375, 92);
+            this.bntResetMK.Location = new System.Drawing.Point(445, 86);
             this.bntResetMK.Name = "bntResetMK";
             this.bntResetMK.Size = new System.Drawing.Size(140, 40);
             this.bntResetMK.TabIndex = 5;
@@ -141,6 +143,7 @@
             this.dgvAccount.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAccount.Size = new System.Drawing.Size(845, 337);
             this.dgvAccount.TabIndex = 6;
+            this.dgvAccount.SelectionChanged += new System.EventHandler(this.dgvAccount_SelectionChanged);
             // 
             // colAccountName
             // 
@@ -195,10 +198,18 @@
             // 
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiRefresh,
             this.tsmiXoaTK,
             this.tsmiXemDSVT});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(225, 52);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(225, 76);
+            // 
+            // tsmiRefresh
+            // 
+            this.tsmiRefresh.Name = "tsmiRefresh";
+            this.tsmiRefresh.Size = new System.Drawing.Size(224, 24);
+            this.tsmiRefresh.Text = "Refresh";
+            this.tsmiRefresh.Click += new System.EventHandler(this.tsmiRefresh_Click);
             // 
             // tsmiXoaTK
             // 
@@ -217,7 +228,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.bntResetMK);
-            this.groupBox1.Controls.Add(this.bntCapNhap);
+            this.groupBox1.Controls.Add(this.bntCapNhat);
             this.groupBox1.Controls.Add(this.chkActive);
             this.groupBox1.Controls.Add(this.bntThem);
             this.groupBox1.Controls.Add(this.cboNhomTK);
@@ -227,7 +238,7 @@
             this.groupBox1.Size = new System.Drawing.Size(845, 143);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.groupBox1.Text = "Chức năng";
             // 
             // lblTongTK
             // 
@@ -243,12 +254,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(865, 534);
+            this.ClientSize = new System.Drawing.Size(862, 532);
             this.Controls.Add(this.lblTongTK);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvAccount);
             this.Name = "AccountManagerForm";
             this.Text = "AccountManager";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.AccountManagerForm_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAccount)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
@@ -264,7 +276,7 @@
         private System.Windows.Forms.ComboBox cboNhomTK;
         private System.Windows.Forms.CheckBox chkActive;
         private System.Windows.Forms.Button bntThem;
-        private System.Windows.Forms.Button bntCapNhap;
+        private System.Windows.Forms.Button bntCapNhat;
         private System.Windows.Forms.Button bntResetMK;
         private System.Windows.Forms.DataGridView dgvAccount;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -278,5 +290,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colEmail;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTell;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDateCreated;
+        private System.Windows.Forms.ToolStripMenuItem tsmiRefresh;
     }
 }

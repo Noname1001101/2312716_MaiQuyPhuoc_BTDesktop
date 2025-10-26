@@ -22,6 +22,25 @@ namespace Lab4_Basic_Command
             cboLoai.Items.Add("Đồ ăn");     // index 1
         }
 
+        private void lvCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lvCategory.SelectedItems.Count == 0)
+                return;
+
+            ListViewItem item = lvCategory.SelectedItems[0];
+
+            // Gán dữ liệu lên các ô textbox và combobox
+            txtMaMonAn.Text = item.SubItems[0].Text;  // Mã món
+            txtName.Text = item.SubItems[1].Text;     // Tên nhóm món
+            int typeValue = int.Parse(item.SubItems[2].Text); // Loại (0 hoặc 1)
+            cboLoai.SelectedIndex = typeValue;        // Chọn loại tương ứng
+
+            // Bật nút cập nhật và xóa
+            bntUpdate.Enabled = true;
+            bntDelete.Enabled = true;
+        }
+
+
         private void bntLoad_Click(object sender, EventArgs e)
         {
             using (SqlConnection sqlConnection = new SqlConnection(connectionString))
@@ -163,63 +182,144 @@ namespace Lab4_Basic_Command
             }
         }
 
+        //private void bntDelete_Click(object sender, EventArgs e)
+        //{
+        //    if (lvCategory.SelectedItems.Count == 0)
+        //    {
+        //        MessageBox.Show("Vui lòng chọn nhóm món ăn cần xóa!");
+        //        return;
+        //    }
+
+        //    int id = Convert.ToInt32(lvCategory.SelectedItems[0].Tag);
+        //    string name = lvCategory.SelectedItems[0].SubItems[1].Text;
+
+        //    // 🔹 Hiện thông báo xác nhận
+        //    DialogResult confirm = MessageBox.Show(
+        //        $"Bạn có chắc muốn xóa nhóm món ăn '{name}' và toàn bộ các món thuộc nhóm này không?",
+        //        "Xác nhận xóa",
+        //        MessageBoxButtons.YesNo,
+        //        MessageBoxIcon.Warning
+        //    );
+
+        //    if (confirm == DialogResult.No)
+        //        return; // Người dùng chọn "Không", dừng lại
+
+        //    using (SqlConnection sqlConnection = new SqlConnection(connectionString))
+        //    {
+        //        sqlConnection.Open();
+
+        //        // 🔹 Bắt đầu transaction để đảm bảo an toàn
+        //        SqlTransaction transaction = sqlConnection.BeginTransaction();
+
+        //        try
+        //        {
+        //            // 1️ Xóa toàn bộ món ăn trong nhóm trước
+        //            SqlCommand deleteFoodCmd = new SqlCommand("DELETE FROM Food WHERE FoodCategoryID = @id", sqlConnection, transaction);
+        //            deleteFoodCmd.Parameters.AddWithValue("@id", id);
+        //            deleteFoodCmd.ExecuteNonQuery();
+
+        //            // 2️ Sau đó xóa nhóm món ăn
+        //            SqlCommand deleteCategoryCmd = new SqlCommand("DELETE FROM Category WHERE ID = @id", sqlConnection, transaction);
+        //            deleteCategoryCmd.Parameters.AddWithValue("@id", id);
+        //            int numOfRowDeleted = deleteCategoryCmd.ExecuteNonQuery();
+
+        //            transaction.Commit();
+
+        //            if (numOfRowDeleted == 1)
+        //            {
+        //                MessageBox.Show($"Đã xóa nhóm '{name}' và các món ăn thuộc nhóm thành công!");
+        //                bntLoad.PerformClick();
+        //                txtMaMonAn.Clear();
+        //                txtName.Clear();
+        //                cboLoai.SelectedIndex = -1;
+        //                bntUpdate.Enabled = false;
+        //                bntDelete.Enabled = false;
+        //            }
+        //            else
+        //            {
+        //                MessageBox.Show("Không tìm thấy nhóm món ăn để xóa!");
+        //            }
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            transaction.Rollback();
+        //            MessageBox.Show("Đã xảy ra lỗi khi xóa: " + ex.Message);
+        //        }
+        //    }
+        //}
+
         private void bntDelete_Click(object sender, EventArgs e)
         {
             if (lvCategory.SelectedItems.Count == 0)
             {
-                MessageBox.Show("Vui lòng chọn nhóm món ăn cần xóa!");
+                MessageBox.Show("Vui lòng chọn ít nhất một nhóm món ăn cần xóa!");
                 return;
             }
 
-            int id = Convert.ToInt32(lvCategory.SelectedItems[0].Tag);
-            string name = lvCategory.SelectedItems[0].SubItems[1].Text;
+            // ✅ Lưu danh sách tên nhóm sẽ bị xóa để hiển thị sau
+            string deletedNames = "";
 
-            // 🔹 Hiện thông báo xác nhận
             DialogResult confirm = MessageBox.Show(
-                $"Bạn có chắc muốn xóa nhóm món ăn '{name}' và toàn bộ các món thuộc nhóm này không?",
-                "Xác nhận xóa",
+                $"Bạn có chắc muốn xóa {lvCategory.SelectedItems.Count} nhóm món ăn đã chọn cùng toàn bộ món thuộc các nhóm đó không?",
+                "Xác nhận xóa nhiều nhóm",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Warning
             );
 
             if (confirm == DialogResult.No)
-                return; // Người dùng chọn "Không", dừng lại
+                return;
 
             using (SqlConnection sqlConnection = new SqlConnection(connectionString))
             {
                 sqlConnection.Open();
-
-                // 🔹 Bắt đầu transaction để đảm bảo an toàn
                 SqlTransaction transaction = sqlConnection.BeginTransaction();
 
                 try
                 {
-                    // 1️ Xóa toàn bộ món ăn trong nhóm trước
-                    SqlCommand deleteFoodCmd = new SqlCommand("DELETE FROM Food WHERE FoodCategoryID = @id", sqlConnection, transaction);
-                    deleteFoodCmd.Parameters.AddWithValue("@id", id);
-                    deleteFoodCmd.ExecuteNonQuery();
+                    foreach (ListViewItem item in lvCategory.SelectedItems)
+                    {
+                        int id = Convert.ToInt32(item.Tag);
+                        string name = item.SubItems[1].Text;
+                        deletedNames += $"- {name}\n";
 
-                    // 2️ Sau đó xóa nhóm món ăn
-                    SqlCommand deleteCategoryCmd = new SqlCommand("DELETE FROM Category WHERE ID = @id", sqlConnection, transaction);
-                    deleteCategoryCmd.Parameters.AddWithValue("@id", id);
-                    int numOfRowDeleted = deleteCategoryCmd.ExecuteNonQuery();
+                        // 1. Xóa các món ăn thuộc nhóm
+                        SqlCommand deleteFoodCmd = new SqlCommand(
+                            "DELETE FROM Food WHERE FoodCategoryID = @id",
+                            sqlConnection, transaction
+                        );
+                        deleteFoodCmd.Parameters.AddWithValue("@id", id);
+                        deleteFoodCmd.ExecuteNonQuery();
 
+                        // 2. Xóa nhóm món ăn
+                        SqlCommand deleteCategoryCmd = new SqlCommand(
+                            "DELETE FROM Category WHERE ID = @id",
+                            sqlConnection, transaction
+                        );
+                        deleteCategoryCmd.Parameters.AddWithValue("@id", id);
+                        deleteCategoryCmd.ExecuteNonQuery();
+                    }
+
+                    // ✅ Hoàn tất transaction
                     transaction.Commit();
 
-                    if (numOfRowDeleted == 1)
-                    {
-                        MessageBox.Show($"Đã xóa nhóm '{name}' và các món ăn thuộc nhóm thành công!");
-                        bntLoad.PerformClick();
-                        txtMaMonAn.Clear();
-                        txtName.Clear();
-                        cboLoai.SelectedIndex = -1;
-                        bntUpdate.Enabled = false;
-                        bntDelete.Enabled = false;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Không tìm thấy nhóm món ăn để xóa!");
-                    }
+                    // Cập nhật lại danh sách
+                    bntLoad.PerformClick();
+
+                    // Xóa nội dung trên form
+                    txtMaMonAn.Clear();
+                    txtName.Clear();
+                    cboLoai.SelectedIndex = -1;
+
+                    bntUpdate.Enabled = false;
+                    bntDelete.Enabled = false;
+
+                    // ✅ Hiển thị thông báo danh sách đã xóa
+                    MessageBox.Show(
+                        $"Đã xóa thành công {lvCategory.SelectedItems.Count} nhóm món ăn:\n\n{deletedNames}",
+                        "Đã xóa",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information
+                    );
                 }
                 catch (Exception ex)
                 {
@@ -228,6 +328,7 @@ namespace Lab4_Basic_Command
                 }
             }
         }
+
 
 
         private void tsmDelete_Click(object sender, EventArgs e)
@@ -280,5 +381,25 @@ namespace Lab4_Basic_Command
             foodForm.Show(this);
             foodForm.LoadFood(id);
         }
+
+        private void CategoryForm_MouseDown(object sender, MouseEventArgs e)
+        {
+            // Nếu click mà không phải bên trong ListView
+            if (!lvCategory.Bounds.Contains(e.Location))
+            {
+                // Xóa chọn trong ListView
+                lvCategory.SelectedItems.Clear();
+
+                // Xóa dữ liệu trong các ô nhập
+                txtMaMonAn.Clear();
+                txtName.Clear();
+                cboLoai.SelectedIndex = -1;
+
+                // Vô hiệu hóa nút cập nhật và xóa
+                bntUpdate.Enabled = false;
+                bntDelete.Enabled = false;
+            }
+        }
+
     }
 }

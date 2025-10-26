@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Lab4_Basic_Command
@@ -103,35 +104,51 @@ namespace Lab4_Basic_Command
         // 🔹 Nút Reset mật khẩu
         private void bntResetMK_Click(object sender, EventArgs e)
         {
-            if (dgvAccount.CurrentRow == null)
+            // Kiểm tra có chọn ít nhất 1 dòng không
+            if (dgvAccount.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Vui lòng chọn tài khoản cần reset!", "Thông báo",
+                MessageBox.Show("Vui lòng chọn ít nhất một tài khoản để reset mật khẩu!", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            string username = dgvAccount.CurrentRow.Cells["colAccountName"].Value.ToString();
+            // Gom danh sách tên tài khoản được chọn
+            var selectedUsernames = dgvAccount.SelectedRows
+                .Cast<DataGridViewRow>()
+                .Select(r => r.Cells["colAccountName"].Value.ToString())
+                .ToList();
+
+            // Xác nhận người dùng
+            string listNames = string.Join(", ", selectedUsernames);
+            DialogResult result = MessageBox.Show(
+                $"Bạn có chắc muốn reset mật khẩu về '1' cho các tài khoản sau:  {listNames}",
+                "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result != DialogResult.Yes)
+                return;
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
-                DialogResult result = MessageBox.Show(
-                    $"Bạn có chắc muốn reset mật khẩu cho '{username}' không?",
-                    "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                if (result == DialogResult.Yes)
+                foreach (string username in selectedUsernames)
                 {
                     string query = "UPDATE Account SET Password = @Password WHERE AccountName = @Username";
                     SqlCommand cmd = new SqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("@Password", "1");
                     cmd.Parameters.AddWithValue("@Username", username);
                     cmd.ExecuteNonQuery();
-
-                    MessageBox.Show("Đã reset mật khẩu về: 1", "Thông báo",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
+
+            // Hiển thị danh sách đã reset
+            string resetList = string.Join("\n• ", selectedUsernames);
+            MessageBox.Show($"Đã reset mật khẩu về '1' cho các tài khoản:\n\n• {resetList}",
+                "Kết quả", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            // Cập nhật lại bảng
+            LoadAccounts();
         }
+
 
         // 🔹 Vô hiệu hóa tài khoản
         private void tsmiXoaTK_Click(object sender, EventArgs e)
@@ -186,5 +203,29 @@ namespace Lab4_Basic_Command
             frm.ShowDialog();
         }
 
+        private void tsmiRefresh_Click(object sender, EventArgs e)
+        {
+            // 🔹 Xóa chọn trong combobox và bỏ tick checkbox
+            cboNhomTK.SelectedIndex = -1;
+            chkActive.Checked = false;
+
+            // 🔹 Gọi lại hàm load toàn bộ tài khoản
+            LoadAccounts();
+        }
+
+        private void dgvAccount_SelectionChanged(object sender, EventArgs e)
+        {
+            bntCapNhat.Enabled = dgvAccount.SelectedRows.Count > 0;
+
+        }
+
+        private void AccountManagerForm_MouseDown(object sender, MouseEventArgs e)
+        {
+            // Nếu click ra ngoài DataGridView
+            if (!dgvAccount.Bounds.Contains(e.Location))
+            {
+                dgvAccount.ClearSelection();
+            }
+        }
     }
 }

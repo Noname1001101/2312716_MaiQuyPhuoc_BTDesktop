@@ -48,6 +48,7 @@ namespace Lab4_Basic_Command
         }
 
         public void LoadAccountInfo(string username)
+
         {
             editingUsername = username;
 
@@ -83,7 +84,6 @@ namespace Lab4_Basic_Command
 
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Username", username);
-
                 SqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read())
                 {
@@ -225,7 +225,7 @@ namespace Lab4_Basic_Command
             }
         }
 
-
+        #region Hàm lưu cũ
         // Hàm liền mạch
         //private void btnLuu_Click(object sender, EventArgs e)
         //{
@@ -302,7 +302,7 @@ namespace Lab4_Basic_Command
         //        this.Close();
         //    }
         //}
-
+        #endregion
 
 
     }
