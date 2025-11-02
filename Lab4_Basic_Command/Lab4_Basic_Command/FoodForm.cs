@@ -40,11 +40,7 @@ namespace Lab4_Basic_Command
 
                 dgvFood.DataSource = dt;
 
-                //debug
-                //foreach (DataGridViewColumn col in dgvFood.Columns)
-                //{
-                //    Console.WriteLine(col.Name);
-                //}
+               
 
             }
         }

@@ -38,9 +38,10 @@
             this.colTableID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCheckoutDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDiscount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTax = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTax = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDiscount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colThucThu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAccount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -95,9 +96,10 @@
             this.colTableID,
             this.colCheckoutDate,
             this.colName,
-            this.colDiscount,
-            this.colTax,
             this.colAmount,
+            this.colTax,
+            this.colDiscount,
+            this.colThucThu,
             this.colStatus,
             this.colAccount});
             this.dgvBills.ContextMenuStrip = this.contextMenuStrip1;
@@ -109,9 +111,10 @@
             this.dgvBills.RowHeadersWidth = 51;
             this.dgvBills.RowTemplate.Height = 24;
             this.dgvBills.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBills.Size = new System.Drawing.Size(1053, 394);
+            this.dgvBills.Size = new System.Drawing.Size(1198, 394);
             this.dgvBills.TabIndex = 10;
             this.dgvBills.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBills_CellDoubleClick);
+            this.dgvBills.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvBills_CellFormatting);
             // 
             // colID
             // 
@@ -149,32 +152,41 @@
             this.colName.ReadOnly = true;
             this.colName.Width = 111;
             // 
-            // colDiscount
+            // colAmount
             // 
-            this.colDiscount.DataPropertyName = "Discount";
-            this.colDiscount.HeaderText = "Tổng tiền trước giảm";
-            this.colDiscount.MinimumWidth = 6;
-            this.colDiscount.Name = "colDiscount";
-            this.colDiscount.ReadOnly = true;
-            this.colDiscount.Width = 112;
+            this.colAmount.DataPropertyName = "Amount";
+            this.colAmount.HeaderText = "Tổng tiền trước giảm";
+            this.colAmount.MinimumWidth = 6;
+            this.colAmount.Name = "colAmount";
+            this.colAmount.ReadOnly = true;
+            this.colAmount.Width = 112;
             // 
             // colTax
             // 
             this.colTax.DataPropertyName = "Tax";
-            this.colTax.HeaderText = "Tổng tiền sau giảm";
+            this.colTax.HeaderText = "Thuế";
             this.colTax.MinimumWidth = 6;
             this.colTax.Name = "colTax";
             this.colTax.ReadOnly = true;
-            this.colTax.Width = 111;
+            this.colTax.Width = 125;
             // 
-            // colAmount
+            // colDiscount
             // 
-            this.colAmount.DataPropertyName = "Amount";
-            this.colAmount.HeaderText = "Thực thu";
-            this.colAmount.MinimumWidth = 6;
-            this.colAmount.Name = "colAmount";
-            this.colAmount.ReadOnly = true;
-            this.colAmount.Width = 111;
+            this.colDiscount.DataPropertyName = "Discount";
+            this.colDiscount.HeaderText = " Giảm giá";
+            this.colDiscount.MinimumWidth = 6;
+            this.colDiscount.Name = "colDiscount";
+            this.colDiscount.ReadOnly = true;
+            this.colDiscount.Width = 111;
+            // 
+            // colThucThu
+            // 
+            this.colThucThu.DataPropertyName = "FinalTotal";
+            this.colThucThu.HeaderText = "Thực thu";
+            this.colThucThu.MinimumWidth = 6;
+            this.colThucThu.Name = "colThucThu";
+            this.colThucThu.ReadOnly = true;
+            this.colThucThu.Width = 125;
             // 
             // colStatus
             // 
@@ -213,7 +225,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1053, 450);
+            this.ClientSize = new System.Drawing.Size(1198, 450);
             this.Controls.Add(this.dgvBills);
             this.Controls.Add(this.dtpDenNgay);
             this.Controls.Add(this.label2);
@@ -242,9 +254,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colTableID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCheckoutDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn colName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDiscount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTax;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAmount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTax;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDiscount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colThucThu;
         private System.Windows.Forms.DataGridViewTextBoxColumn colStatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAccount;
     }

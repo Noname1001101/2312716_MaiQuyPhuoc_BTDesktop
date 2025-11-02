@@ -1,0 +1,67 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab5\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C8D55889-0561-4FC1-B9F8-B37C5D72AB47}|Lab5\\Lab5.csproj|d:\\2312716_maiquyphuoc_baitapdesktop\\lab5\\lab5\\orderdetailsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8D55889-0561-4FC1-B9F8-B37C5D72AB47}|Lab5\\Lab5.csproj|solutionrelative:lab5\\orderdetailsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8D55889-0561-4FC1-B9F8-B37C5D72AB47}|Lab5\\Lab5.csproj|d:\\2312716_maiquyphuoc_baitapdesktop\\lab5\\lab5\\orderdetailsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C8D55889-0561-4FC1-B9F8-B37C5D72AB47}|Lab5\\Lab5.csproj|solutionrelative:lab5\\orderdetailsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 330,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "OrderDetailsForm.cs",
+              "DocumentMoniker": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab5\\Lab5\\OrderDetailsForm.cs",
+              "RelativeDocumentMoniker": "Lab5\\OrderDetailsForm.cs",
+              "ToolTip": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab5\\Lab5\\OrderDetailsForm.cs",
+              "RelativeToolTip": "Lab5\\OrderDetailsForm.cs",
+              "ViewState": "AgIAAF8AAAAAAAAAAAAgwHUAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-31T03:26:43.693Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "OrderDetailsForm.cs [Design]",
+              "DocumentMoniker": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab5\\Lab5\\OrderDetailsForm.cs",
+              "RelativeDocumentMoniker": "Lab5\\OrderDetailsForm.cs",
+              "ToolTip": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab5\\Lab5\\OrderDetailsForm.cs [Design]",
+              "RelativeToolTip": "Lab5\\OrderDetailsForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-31T03:26:41.951Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 330,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

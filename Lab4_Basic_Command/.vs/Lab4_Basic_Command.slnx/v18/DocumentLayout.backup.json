@@ -3,20 +3,12 @@
   "WorkspaceRootPath": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab4_Basic_Command\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F4B946EC-FFA5-44D6-90C7-C2D2FB05C89B}|Lab4_Basic_Command\\Lab4_Basic_Command.csproj|D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab4_Basic_Command\\lab4_basic_command\\billdetailsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F4B946EC-FFA5-44D6-90C7-C2D2FB05C89B}|Lab4_Basic_Command\\Lab4_Basic_Command.csproj|solutionrelative:lab4_basic_command\\billdetailsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{F4B946EC-FFA5-44D6-90C7-C2D2FB05C89B}|Lab4_Basic_Command\\Lab4_Basic_Command.csproj|d:\\2312716_maiquyphuoc_baitapdesktop\\lab4_basic_command\\lab4_basic_command\\billsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4B946EC-FFA5-44D6-90C7-C2D2FB05C89B}|Lab4_Basic_Command\\Lab4_Basic_Command.csproj|solutionrelative:lab4_basic_command\\billsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F4B946EC-FFA5-44D6-90C7-C2D2FB05C89B}|Lab4_Basic_Command\\Lab4_Basic_Command.csproj|D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab4_Basic_Command\\lab4_basic_command\\billsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{F4B946EC-FFA5-44D6-90C7-C2D2FB05C89B}|Lab4_Basic_Command\\Lab4_Basic_Command.csproj|solutionrelative:lab4_basic_command\\billsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F4B946EC-FFA5-44D6-90C7-C2D2FB05C89B}|Lab4_Basic_Command\\Lab4_Basic_Command.csproj|D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab4_Basic_Command\\lab4_basic_command\\billsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F4B946EC-FFA5-44D6-90C7-C2D2FB05C89B}|Lab4_Basic_Command\\Lab4_Basic_Command.csproj|solutionrelative:lab4_basic_command\\billsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F4B946EC-FFA5-44D6-90C7-C2D2FB05C89B}|Lab4_Basic_Command\\Lab4_Basic_Command.csproj|d:\\2312716_maiquyphuoc_baitapdesktop\\lab4_basic_command\\lab4_basic_command\\billdetailsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F4B946EC-FFA5-44D6-90C7-C2D2FB05C89B}|Lab4_Basic_Command\\Lab4_Basic_Command.csproj|solutionrelative:lab4_basic_command\\billdetailsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 330,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,28 +26,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "BillDetailsForm.cs",
-              "DocumentMoniker": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab4_Basic_Command\\Lab4_Basic_Command\\BillDetailsForm.cs",
-              "RelativeDocumentMoniker": "Lab4_Basic_Command\\BillDetailsForm.cs",
-              "ToolTip": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab4_Basic_Command\\Lab4_Basic_Command\\BillDetailsForm.cs",
-              "RelativeToolTip": "Lab4_Basic_Command\\BillDetailsForm.cs",
-              "ViewState": "AgIAADsAAAAAAAAAAAAuwHgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-26T07:04:02.422Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "BillsForm.cs",
               "DocumentMoniker": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab4_Basic_Command\\Lab4_Basic_Command\\BillsForm.cs",
               "RelativeDocumentMoniker": "Lab4_Basic_Command\\BillsForm.cs",
               "ToolTip": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab4_Basic_Command\\Lab4_Basic_Command\\BillsForm.cs",
               "RelativeToolTip": "Lab4_Basic_Command\\BillsForm.cs",
-              "ViewState": "AgIAALUAAAAAAAAAAAAAAJUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAGEBAAAAAAAAAAAAAHYBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-25T15:43:57.619Z",
+              "WhenOpened": "2025-10-31T08:14:36.468Z",
               "EditorCaption": ""
             },
             {
@@ -67,19 +46,7 @@
               "ToolTip": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab4_Basic_Command\\Lab4_Basic_Command\\BillsForm.cs [Design]",
               "RelativeToolTip": "Lab4_Basic_Command\\BillsForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-26T07:08:23.637Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "BillDetailsForm.cs [Design]",
-              "DocumentMoniker": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab4_Basic_Command\\Lab4_Basic_Command\\BillDetailsForm.cs",
-              "RelativeDocumentMoniker": "Lab4_Basic_Command\\BillDetailsForm.cs",
-              "ToolTip": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab4_Basic_Command\\Lab4_Basic_Command\\BillDetailsForm.cs [Design]",
-              "RelativeToolTip": "Lab4_Basic_Command\\BillDetailsForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-26T07:04:24.244Z",
+              "WhenOpened": "2025-10-31T08:14:34.098Z",
               "EditorCaption": " [Design]"
             }
           ]
