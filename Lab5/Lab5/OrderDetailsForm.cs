@@ -18,13 +18,13 @@ namespace Lab4_Basic_Command
             this.billID = billID;
         }
 
-        private void OrderDetailsForm_Load(object sender, EventArgs e)
+        private void BillDetailsForm_Load(object sender, EventArgs e)
         {
-            LoadOrderDetails();
-            UpdateOrderAmount();
+            LoadBillDetails();
+            UpdateBillAmount();
         }
 
-        private void LoadOrderDetails()
+        private void LoadBillDetails()
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -53,8 +53,10 @@ namespace Lab4_Basic_Command
                     DataTable dt = new DataTable();
                     da.Fill(dt);
 
-                    dgvOrderDetails.AutoGenerateColumns = false;
-                    dgvOrderDetails.DataSource = dt;
+                    dgvBillDetails.AutoGenerateColumns = true;
+                    dgvBillDetails.DataSource = dt;
+                    UpdateTotalLabel();
+
                 }
                 catch (Exception ex)
                 {
@@ -63,13 +65,15 @@ namespace Lab4_Basic_Command
                 }
 
             }
-            UpdateOrderAmount();
+            UpdateBillAmount();
+           
+
         }
 
         /// <summary>
         /// Tự động tính lại Amount và giảm giá cho hóa đơn hiện tại.
         /// </summary>
-        private void UpdateOrderAmount()
+        private void UpdateBillAmount()
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -77,12 +81,12 @@ namespace Lab4_Basic_Command
                 {
                     conn.Open();
 
-                    // 🔹 Bước 1: Tính tổng tiền gốc
+                    // 1️⃣ Tính tổng tiền trước giảm
                     string sqlTotal = @"
-                    SELECT SUM(f.Price * bd.Quantity)
-                    FROM BillDetails bd
-                    INNER JOIN Food f ON f.ID = bd.FoodID
-                    WHERE bd.InvoiceID = @BillID";
+            SELECT SUM(f.Price * bd.Quantity)
+            FROM BillDetails bd
+            INNER JOIN Food f ON f.ID = bd.FoodID
+            WHERE bd.InvoiceID = @BillID";
 
                     SqlCommand cmdTotal = new SqlCommand(sqlTotal, conn);
                     cmdTotal.Parameters.AddWithValue("@BillID", billID);
@@ -90,23 +94,43 @@ namespace Lab4_Basic_Command
                     object result = cmdTotal.ExecuteScalar();
                     decimal totalBeforeDiscount = (result != DBNull.Value) ? Convert.ToDecimal(result) : 0;
 
-                    // 🔹 Bước 2: Áp dụng giảm 10% nếu tổng >= 300000
-                    decimal tax = (totalBeforeDiscount >= 300000) ? 0.9m : 1m;
-                    decimal totalAfterDiscount = totalBeforeDiscount * tax;
+                    // 2️⃣ Tính tỷ lệ giảm
+                    decimal discountRate = 0m;
+                    if (totalBeforeDiscount >= 1_000_000)
+                        discountRate = 0.15m;
+                    else if (totalBeforeDiscount >= 500_000)
+                        discountRate = 0.10m;
+                    else if (totalBeforeDiscount >= 300_000)
+                        discountRate = 0.05m;
 
-                    // 🔹 Bước 3: Cập nhật vào Bills
+                    // 3️⃣ Tính tiền giảm
+                    decimal discountAmount = totalBeforeDiscount * discountRate;
+                    decimal amountAfterDiscount = totalBeforeDiscount - discountAmount;
+
+                    // 4️⃣ Tính thuế VAT 10% sau giảm
+                    decimal taxRate = 0.10m;
+                    decimal taxAmount = amountAfterDiscount * taxRate;
+
+                    // Tổng phải thu
+                    decimal finalTotal = amountAfterDiscount + taxAmount;
+
+                    // 5️⃣ Update bảng Bills
                     string sqlUpdate = @"
-                    UPDATE Bills
-                    SET 
-                        Discount = @TotalBefore,
-                        Tax = @Tax,
-                        Amount = @TotalAfter
-                    WHERE ID = @BillID";
+            UPDATE Bills
+            SET 
+                Amount = @Amount,           
+                Discount = @Discount,       
+                Tax = @TaxAmount,           
+                FinalTotal = @FinalTotal,   
+                Status = 1,
+                CheckoutDate = GETDATE()
+            WHERE ID = @BillID";
 
                     SqlCommand cmdUpdate = new SqlCommand(sqlUpdate, conn);
-                    cmdUpdate.Parameters.AddWithValue("@TotalBefore", totalBeforeDiscount);
-                    cmdUpdate.Parameters.AddWithValue("@Tax", tax);
-                    cmdUpdate.Parameters.AddWithValue("@TotalAfter", totalAfterDiscount);
+                    cmdUpdate.Parameters.AddWithValue("@Amount", totalBeforeDiscount);
+                    cmdUpdate.Parameters.AddWithValue("@Discount", discountAmount);
+                    cmdUpdate.Parameters.AddWithValue("@TaxAmount", taxAmount);
+                    cmdUpdate.Parameters.AddWithValue("@FinalTotal", finalTotal);
                     cmdUpdate.Parameters.AddWithValue("@BillID", billID);
 
                     cmdUpdate.ExecuteNonQuery();
@@ -120,5 +144,22 @@ namespace Lab4_Basic_Command
         }
 
 
+
+        private void UpdateTotalLabel()
+        {
+            decimal total = 0;
+            foreach (DataGridViewRow row in dgvBillDetails.Rows)
+            {
+                if (row.Cells["colTotal"].Value != null)
+                    total += Convert.ToDecimal(row.Cells["colTotal"].Value);
+
+            }
+            lblTotalAmount.Text = $"Tổng thành tiền: {total:N0} VND";
+        }
+
+
     }
+
+
 }
+

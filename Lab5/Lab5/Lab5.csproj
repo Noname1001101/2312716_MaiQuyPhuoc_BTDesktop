@@ -64,6 +64,12 @@
     <Compile Include="AddCategoryForm.Designer.cs">
       <DependentUpon>AddCategoryForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewActivityLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewActivityLog.Designer.cs">
+      <DependentUpon>ViewActivityLog.cs</DependentUpon>
+    </Compile>
     <Compile Include="OrderDetailsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddCategoryForm.resx">
       <DependentUpon>AddCategoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewActivityLog.resx">
+      <DependentUpon>ViewActivityLog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OrderDetailsForm.resx">
       <DependentUpon>OrderDetailsForm.cs</DependentUpon>

@@ -1,16 +1,19 @@
-﻿using System;
+﻿using Lab4_Basic_Command;
+using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace Lab4_Basic_Command
+namespace Lab5
 {
     public partial class AccountForm : Form
     {
         private string connectionString =
             "server=DESKTOP-LSEMTND\\SQLEXPRESS; database=RestaurantManagement; Integrated Security=true;";
 
+        private readonly List<Button> selectedButtons = new List<Button>();
         public AccountForm()
         {
             InitializeComponent();
@@ -51,6 +54,7 @@ namespace Lab4_Basic_Command
             a.Email,
             a.Tell,
             a.DateCreated,
+            r.RoleName,
             CASE WHEN ra.Actived = 1 THEN N'Đang hoạt động' ELSE N'Ngừng' END AS [TrangThai]
         FROM Account a
         LEFT JOIN RoleAccount ra ON a.AccountName = ra.AccountName
@@ -227,5 +231,21 @@ namespace Lab4_Basic_Command
                 dgvAccount.ClearSelection();
             }
         }
+
+        private void tsmiXemNKHD_Click(object sender, EventArgs e)
+        {
+            ViewActivityLog f = new ViewActivityLog();
+            f.ShowDialog();   // Dùng ShowDialog để form hiện dạng hộp thoại
+        }
+
+        private void btnFood_Click(object sender, EventArgs e)
+        => new FoodForm().ShowDialog();
+
+        private void btnOrders_Click(object sender, EventArgs e)
+        {
+            OrdersForm billForm = new OrdersForm(); // mở toàn bộ hóa đơn, không cần bàn
+            billForm.ShowDialog();
+        }
+
     }
 }

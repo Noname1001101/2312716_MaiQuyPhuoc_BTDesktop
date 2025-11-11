@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="BusinessLogic/BusinessLogic.csproj" Id="8422eb0a-23d8-40d4-a0ca-61cb3536ad37" />
+  <Project Path="DataAccess/DataAccess.csproj" Id="15fe5a14-f2a0-452d-8c49-4557a47cdc0a" />
+  <Project Path="Lab6/RestaurantManagementProject.csproj" Id="36e14ce5-00f7-4a68-9096-b873940f45ee" />
+</Solution>

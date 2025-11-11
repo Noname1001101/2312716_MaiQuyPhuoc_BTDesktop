@@ -1,0 +1,141 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab6\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8422EB0A-23D8-40D4-A0CA-61CB3536AD37}|BusinessLogic\\BusinessLogic.csproj|d:\\2312716_maiquyphuoc_baitapdesktop\\lab6\\businesslogic\\billbl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8422EB0A-23D8-40D4-A0CA-61CB3536AD37}|BusinessLogic\\BusinessLogic.csproj|solutionrelative:businesslogic\\billbl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8422EB0A-23D8-40D4-A0CA-61CB3536AD37}|BusinessLogic\\BusinessLogic.csproj|D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab6\\businesslogic\\categorybl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8422EB0A-23D8-40D4-A0CA-61CB3536AD37}|BusinessLogic\\BusinessLogic.csproj|solutionrelative:businesslogic\\categorybl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15FE5A14-F2A0-452D-8C49-4557A47CDC0A}|DataAccess\\DataAccess.csproj|d:\\2312716_maiquyphuoc_baitapdesktop\\lab6\\dataaccess\\ultilities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15FE5A14-F2A0-452D-8C49-4557A47CDC0A}|DataAccess\\DataAccess.csproj|solutionrelative:dataaccess\\ultilities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15FE5A14-F2A0-452D-8C49-4557A47CDC0A}|DataAccess\\DataAccess.csproj|d:\\2312716_maiquyphuoc_baitapdesktop\\lab6\\dataaccess\\bill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15FE5A14-F2A0-452D-8C49-4557A47CDC0A}|DataAccess\\DataAccess.csproj|solutionrelative:dataaccess\\bill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15FE5A14-F2A0-452D-8C49-4557A47CDC0A}|DataAccess\\DataAccess.csproj|D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab6\\dataaccess\\food.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15FE5A14-F2A0-452D-8C49-4557A47CDC0A}|DataAccess\\DataAccess.csproj|solutionrelative:dataaccess\\food.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36E14CE5-00F7-4A68-9096-B873940F45EE}|Lab6\\RestaurantManagementProject.csproj|d:\\2312716_maiquyphuoc_baitapdesktop\\lab6\\lab6\\frmeditfood.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{36E14CE5-00F7-4A68-9096-B873940F45EE}|Lab6\\RestaurantManagementProject.csproj|solutionrelative:lab6\\frmeditfood.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BillBL.cs",
+              "DocumentMoniker": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab6\\BusinessLogic\\BillBL.cs",
+              "RelativeDocumentMoniker": "BusinessLogic\\BillBL.cs",
+              "ToolTip": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab6\\BusinessLogic\\BillBL.cs",
+              "RelativeToolTip": "BusinessLogic\\BillBL.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-10T01:54:11.907Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Ultilities.cs",
+              "DocumentMoniker": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab6\\DataAccess\\Ultilities.cs",
+              "RelativeDocumentMoniker": "DataAccess\\Ultilities.cs",
+              "ToolTip": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab6\\DataAccess\\Ultilities.cs",
+              "RelativeToolTip": "DataAccess\\Ultilities.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-10T01:50:45.545Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Food.cs",
+              "DocumentMoniker": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab6\\DataAccess\\Food.cs",
+              "RelativeDocumentMoniker": "DataAccess\\Food.cs",
+              "ToolTip": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab6\\DataAccess\\Food.cs",
+              "RelativeToolTip": "DataAccess\\Food.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAswBwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T16:11:16.895Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Bill.cs",
+              "DocumentMoniker": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab6\\DataAccess\\Bill.cs",
+              "RelativeDocumentMoniker": "DataAccess\\Bill.cs",
+              "ToolTip": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab6\\DataAccess\\Bill.cs",
+              "RelativeToolTip": "DataAccess\\Bill.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAcwCgAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-10T01:05:12.544Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "frmEditFood.cs [Design]",
+              "DocumentMoniker": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab6\\Lab6\\frmEditFood.cs",
+              "RelativeDocumentMoniker": "Lab6\\frmEditFood.cs",
+              "ToolTip": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab6\\Lab6\\frmEditFood.cs [Design]",
+              "RelativeToolTip": "Lab6\\frmEditFood.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T16:06:27.626Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CategoryBL.cs",
+              "DocumentMoniker": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab6\\BusinessLogic\\CategoryBL.cs",
+              "RelativeDocumentMoniker": "BusinessLogic\\CategoryBL.cs",
+              "ToolTip": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab6\\BusinessLogic\\CategoryBL.cs",
+              "RelativeToolTip": "BusinessLogic\\CategoryBL.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAAB8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T16:09:07.439Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 330,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

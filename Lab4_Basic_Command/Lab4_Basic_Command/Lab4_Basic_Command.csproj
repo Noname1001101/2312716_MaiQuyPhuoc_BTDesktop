@@ -64,11 +64,11 @@
     <Compile Include="BillDetailsForm.Designer.cs">
       <DependentUpon>BillDetailsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="BillsByDateForm.cs">
+    <Compile Include="BillByDate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BillsByDateForm.Designer.cs">
-      <DependentUpon>BillsByDateForm.cs</DependentUpon>
+    <Compile Include="BillByDate.Designer.cs">
+      <DependentUpon>BillByDate.cs</DependentUpon>
     </Compile>
     <Compile Include="BillsForm.cs">
       <SubType>Form</SubType>
@@ -123,8 +123,8 @@
     <EmbeddedResource Include="BillDetailsForm.resx">
       <DependentUpon>BillDetailsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BillsByDateForm.resx">
-      <DependentUpon>BillsByDateForm.cs</DependentUpon>
+    <EmbeddedResource Include="BillByDate.resx">
+      <DependentUpon>BillByDate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BillsForm.resx">
       <DependentUpon>BillsForm.cs</DependentUpon>

@@ -35,8 +35,9 @@
             this.colQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvOrderDetails = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOrderDetails)).BeginInit();
+            this.dgvBillDetails = new System.Windows.Forms.DataGridView();
+            this.lblTotalAmount = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBillDetails)).BeginInit();
             this.SuspendLayout();
             // 
             // colCategory
@@ -95,11 +96,11 @@
             this.colName.Name = "colName";
             this.colName.ReadOnly = true;
             // 
-            // dgvOrderDetails
+            // dgvBillDetails
             // 
-            this.dgvOrderDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvOrderDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOrderDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvBillDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvBillDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBillDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colName,
             this.colUnit,
             this.colQuantity,
@@ -107,26 +108,39 @@
             this.colTotal,
             this.colNotes,
             this.colCategory});
-            this.dgvOrderDetails.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvOrderDetails.Location = new System.Drawing.Point(0, 18);
-            this.dgvOrderDetails.Name = "dgvOrderDetails";
-            this.dgvOrderDetails.ReadOnly = true;
-            this.dgvOrderDetails.RowHeadersWidth = 51;
-            this.dgvOrderDetails.RowTemplate.Height = 24;
-            this.dgvOrderDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvOrderDetails.Size = new System.Drawing.Size(866, 450);
-            this.dgvOrderDetails.TabIndex = 0;
+            this.dgvBillDetails.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dgvBillDetails.Location = new System.Drawing.Point(0, 0);
+            this.dgvBillDetails.Name = "dgvBillDetails";
+            this.dgvBillDetails.ReadOnly = true;
+            this.dgvBillDetails.RowHeadersWidth = 51;
+            this.dgvBillDetails.RowTemplate.Height = 24;
+            this.dgvBillDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvBillDetails.Size = new System.Drawing.Size(866, 414);
+            this.dgvBillDetails.TabIndex = 0;
             // 
-            // OrderDetailsForm
+            // lblTotalAmount
+            // 
+            this.lblTotalAmount.AutoSize = true;
+            this.lblTotalAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalAmount.Location = new System.Drawing.Point(23, 439);
+            this.lblTotalAmount.Name = "lblTotalAmount";
+            this.lblTotalAmount.Size = new System.Drawing.Size(13, 20);
+            this.lblTotalAmount.TabIndex = 1;
+            this.lblTotalAmount.Text = ".";
+            // 
+            // BillDetailsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(866, 468);
-            this.Controls.Add(this.dgvOrderDetails);
-            this.Name = "OrderDetailsForm";
+            this.Controls.Add(this.lblTotalAmount);
+            this.Controls.Add(this.dgvBillDetails);
+            this.Name = "BillDetailsForm";
             this.Text = "BillDetailsForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOrderDetails)).EndInit();
+            this.Load += new System.EventHandler(this.BillDetailsForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBillDetails)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -139,6 +153,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colQuantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn colUnit;
         private System.Windows.Forms.DataGridViewTextBoxColumn colName;
-        private System.Windows.Forms.DataGridView dgvOrderDetails;
+        private System.Windows.Forms.DataGridView dgvBillDetails;
+        private System.Windows.Forms.Label lblTotalAmount;
     }
 }

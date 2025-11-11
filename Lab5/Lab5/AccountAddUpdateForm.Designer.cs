@@ -1,4 +1,4 @@
-﻿namespace Lab4_Basic_Command
+﻿namespace Lab5
 {
     partial class AccountAddUpdateForm
     {

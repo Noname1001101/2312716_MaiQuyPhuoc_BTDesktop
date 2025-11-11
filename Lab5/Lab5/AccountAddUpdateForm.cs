@@ -3,7 +3,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
-namespace Lab4_Basic_Command
+namespace Lab5
 {
     public partial class AccountAddUpdateForm : Form
     {

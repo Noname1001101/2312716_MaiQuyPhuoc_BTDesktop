@@ -1,0 +1,6 @@
+D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab6\DataAccess\bin\Debug\DataAccess.dll
+D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab6\DataAccess\bin\Debug\DataAccess.pdb
+D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab6\DataAccess\obj\Debug\DataAccess.csproj.AssemblyReference.cache
+D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab6\DataAccess\obj\Debug\DataAccess.csproj.CoreCompileInputs.cache
+D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab6\DataAccess\obj\Debug\DataAccess.dll
+D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab6\DataAccess\obj\Debug\DataAccess.pdb

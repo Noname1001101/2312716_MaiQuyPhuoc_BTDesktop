@@ -1,0 +1,15 @@
+D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab6\Lab6\bin\Debug\Lab6.exe.config
+D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab6\Lab6\bin\Debug\Lab6.exe
+D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab6\Lab6\bin\Debug\Lab6.pdb
+D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab6\Lab6\bin\Debug\BusinessLogic.dll
+D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab6\Lab6\bin\Debug\DataAccess.dll
+D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab6\Lab6\bin\Debug\BusinessLogic.pdb
+D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab6\Lab6\bin\Debug\DataAccess.pdb
+D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab6\Lab6\obj\Debug\RestaurantManagementProject.csproj.AssemblyReference.cache
+D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab6\Lab6\obj\Debug\Lab6.frmFood.resources
+D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab6\Lab6\obj\Debug\Lab6.Properties.Resources.resources
+D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab6\Lab6\obj\Debug\RestaurantManagementProject.csproj.GenerateResource.cache
+D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab6\Lab6\obj\Debug\RestaurantManagementProject.csproj.CoreCompileInputs.cache
+D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab6\Lab6\obj\Debug\Restaura.A8B340B1.Up2Date
+D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab6\Lab6\obj\Debug\Lab6.exe
+D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab6\Lab6\obj\Debug\Lab6.pdb

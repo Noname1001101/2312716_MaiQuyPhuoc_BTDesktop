@@ -1,77 +1,49 @@
-﻿using Lab4_Basic_Command;
+﻿
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Windows.Forms;
 
-namespace Lab5
+namespace Lab4_Basic_Command
 {
     public partial class OrdersForm : Form
     {
-        // Chuỗi kết nối đến SQL Server
         private readonly string connectionString =
             "server=DESKTOP-LSEMTND\\SQLEXPRESS; database=RestaurantManagement; Integrated Security=true;";
 
-        private int currentTableID; // ✅ lưu mã bàn được chọn
+        private int currentTableID;
         private DateTime prevFromDate;
         private DateTime prevToDate;
 
+        //public OrdersForm(int tableID)
+        //{
+        //    InitializeComponent();
+        //    currentTableID = tableID;
+        //}
 
         public OrdersForm()
         {
             InitializeComponent();
-      
-
+            currentTableID = -1; // giá trị -1 để hiểu là "xem tất cả"
         }
 
-        // Khi form mở lên, tự động nạp khoảng ngày và danh sách hóa đơn
-        private void OrdersForm_Load(object sender, EventArgs e)
+
+        private void BillsForm_Load(object sender, EventArgs e)
         {
-         
-            LoadDateRange();
-            LoadOrders();
+            if (currentTableID > 0)
+            LoadBillsByTable(currentTableID);
+            else
+            LoadAllBills(); 
             prevFromDate = dtpTuNgay.Value;
             prevToDate = dtpDenNgay.Value;
+            UpdateGridTotals();
+          
         }
 
-   
-        /// Lấy ngày nhỏ nhất và lớn nhất trong bảng Bills để hiển thị lên DateTimePicker
-       
-        private void LoadDateRange()
-        {
-            using (SqlConnection con = new SqlConnection(connectionString))
-            {
-                try
-                {
-                    con.Open();
-                    string sql = "SELECT MIN(CheckoutDate), MAX(CheckoutDate) FROM Bills WHERE CheckoutDate IS NOT NULL";
-                    SqlCommand cmd = new SqlCommand(sql, con);
-                    SqlDataReader reader = cmd.ExecuteReader();
-
-                    if (reader.Read() && !reader.IsDBNull(0) && !reader.IsDBNull(1))
-                    {
-                        dtpTuNgay.Value = reader.GetDateTime(0).Date;
-                        dtpDenNgay.Value = reader.GetDateTime(1).Date;
-                    }
-                    else
-                    {
-                        // Nếu bảng Bills chưa có dữ liệu, đặt mặc định 1 tháng gần nhất
-                        dtpTuNgay.Value = DateTime.Now.AddMonths(-1);
-                        dtpDenNgay.Value = DateTime.Now;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Lỗi khi tải ngày: " + ex.Message, "Lỗi",
-                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
-
-
-        /// Tải danh sách hóa đơn theo khoảng ngày
-
-        private void LoadOrders()
+        // ----------------- LOAD DỮ LIỆU THEO NGÀY -----------------
+        private void LoadBillsByDate()
         {
             using (SqlConnection con = new SqlConnection(connectionString))
             {
@@ -80,18 +52,21 @@ namespace Lab5
                     con.Open();
 
                     string sql = @"
-                        SELECT 
-                        b.ID,
-                        b.CheckoutDate,
-                        b.Name,
-                        b.Amount,
-                        b.Discount,
-                        b.Tax,
-                        b.Status,
-                        b.Account
-                        FROM Bills b
-                        WHERE CheckoutDate BETWEEN @fromDate AND @toDate
-                        ORDER BY ID ASC";
+                SELECT 
+                b.ID,
+                t.ID AS TableID,
+                b.CheckoutDate,
+                b.Name,
+                b.Amount,
+                b.Discount,
+                b.Tax,
+                (b.Amount - (b.Amount * b.Discount / 100) + (b.Amount * b.Tax / 100)) AS FinalTotal,
+                b.Status,
+                b.Account
+                FROM Bills b
+                JOIN [Table] t ON b.TableID = t.ID
+                WHERE b.CheckoutDate BETWEEN @fromDate AND @toDate
+                ORDER BY b.ID ASC";
 
                     SqlCommand cmd = new SqlCommand(sql, con);
                     cmd.Parameters.AddWithValue("@fromDate", dtpTuNgay.Value.Date);
@@ -101,7 +76,11 @@ namespace Lab5
                     DataTable dt = new DataTable();
                     da.Fill(dt);
 
-                    dgvOrders.DataSource = dt; // Cho phép tự sinh cột
+                    //dgvBills.AutoGenerateColumns = false;
+                    dgvBills.DataSource = dt;
+
+                    UpdateGridTotals();
+                   
                 }
                 catch (Exception ex)
                 {
@@ -111,20 +90,223 @@ namespace Lab5
             }
         }
 
-        // Khi người dùng đổi ngày, tự động tải lại hóa đơn
+        // ----------------- LOAD DỮ LIỆU THEO BÀN -----------------
+        private void LoadBillsByTable(int tableID)
+        {
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    con.Open();
+
+                    string sql = @"
+                    SELECT 
+                     b.ID,
+                     t.ID AS TableID,
+                     b.CheckoutDate,
+                     b.Name,
+                     b.Amount,
+                     b.Discount,
+                     b.Tax,
+                     (b.Amount - (b.Amount * b.Discount / 100) + (b.Amount * b.Tax / 100)) AS FinalTotal,
+                     b.Status,
+                     b.Account
+                     FROM Bills b
+                     JOIN [Table] t ON b.TableID = t.ID
+
+                WHERE b.TableID = @tableID
+                ORDER BY b.ID DESC";
+
+                    SqlCommand cmd = new SqlCommand(sql, con);
+                    cmd.Parameters.AddWithValue("@tableID", tableID);
+
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+
+             
+
+                    dgvBills.DataSource = dt;
+
+                    UpdateGridTotals();
+              
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi tải dữ liệu: " + ex.Message,
+                                    "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+
+
+
+        // ----------------- TÍNH CỘNG -----------------
+
+        private void UpdateGridTotals()
+        {
+            if (dgvBills.DataSource == null) return;
+
+            decimal tongTruocGiam = 0;
+            decimal tongGiam = 0;
+            decimal tongThue = 0;
+            decimal tongThucThu = 0;
+
+            foreach (DataGridViewRow row in dgvBills.Rows)
+            {
+                if (row.IsNewRow) continue;
+
+                decimal.TryParse(row.Cells["colAmount"].Value?.ToString(), out decimal truocGiam);
+                decimal.TryParse(row.Cells["colDiscount"].Value?.ToString(), out decimal giam);
+                decimal.TryParse(row.Cells["colTax"].Value?.ToString(), out decimal thue);
+
+                // Tính thực thu
+                decimal thucThu = truocGiam - giam + thue;
+
+                tongTruocGiam += truocGiam;
+                tongGiam += giam;
+                tongThue += thue;
+                tongThucThu += thucThu;
+            }
+
+           
+        }
+
+        //private void UpdateBillTotals(int billID)
+        //{
+        //    using (SqlConnection con = new SqlConnection(connectionString))
+        //    {
+        //        con.Open();
+
+        //        string sql = @"
+        //    DECLARE @taxRate FLOAT, @discountRate FLOAT;
+
+        //    -- Lấy % thuế và % giảm giá hiện đang lưu trong Bills
+        //    SELECT 
+        //        @taxRate = ISNULL(Tax, 0),
+        //        @discountRate = ISNULL(Discount, 0)
+        //    FROM Bills
+        //    WHERE ID = @billID;
+
+        //    -- Cập nhật lại các giá trị tính toán
+        //    UPDATE Bills
+        //    SET 
+        //        Amount = ISNULL((
+        //            SELECT SUM(fd.Price * bd.Quantity)
+        //            FROM BillDetails bd
+        //            JOIN Food fd ON bd.FoodID = fd.ID
+        //            WHERE bd.InvoiceID = @billID
+        //        ), 0),
+
+        //        FinalTotal = ISNULL((
+        //            SELECT SUM(fd.Price * bd.Quantity)
+        //            FROM BillDetails bd
+        //            JOIN Food fd ON bd.FoodID = fd.ID
+        //            WHERE bd.InvoiceID = @billID
+        //        ), 0)
+        //        * (1 - @discountRate / 100 + @taxRate / 100)
+        //    WHERE ID = @billID;
+        //";
+
+        //        SqlCommand cmd = new SqlCommand(sql, con);
+        //        cmd.Parameters.AddWithValue("@billID", billID);
+        //        cmd.ExecuteNonQuery();
+        //    }
+        //}
+
+
+        private void UpdateBillTotals(int billID)
+        {
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                con.Open();
+
+                string sql = @"
+        DECLARE @taxRate FLOAT = 10;  -- Thuế cố định 10%
+        DECLARE @discountRate FLOAT;
+
+        -- Lấy % giảm giá hiện đang lưu trong Bills
+        SELECT 
+            @discountRate = ISNULL(Discount, 0)
+        FROM Bills
+        WHERE ID = @billID;
+
+        -- Cập nhật lại các giá trị tính toán
+        UPDATE Bills
+        SET 
+            Tax = @taxRate,  -- Gán luôn thuế 10%
+            Amount = ISNULL((
+                SELECT SUM(fd.Price * bd.Quantity)
+                FROM BillDetails bd
+                JOIN Food fd ON bd.FoodID = fd.ID
+                WHERE bd.InvoiceID = @billID
+            ), 0),
+
+            FinalTotal = ISNULL((
+                SELECT SUM(fd.Price * bd.Quantity)
+                FROM BillDetails bd
+                JOIN Food fd ON bd.FoodID = fd.ID
+                WHERE bd.InvoiceID = @billID
+            ), 0)
+            * (1 - @discountRate / 100 + @taxRate / 100)
+        WHERE ID = @billID;
+        ";
+
+                SqlCommand cmd = new SqlCommand(sql, con);
+                cmd.Parameters.AddWithValue("@billID", billID);
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+
+        private void dgvBills_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+    // Hiển thị cột Thuế dạng %
+    if (dgvBills.Columns[e.ColumnIndex].Name == "colTax" && e.Value != null)
+        {
+                if (double.TryParse(e.Value.ToString(), out double discount))
+                {
+                    e.Value = discount.ToString("0") + "%";
+                    e.FormattingApplied = true;
+                }
+
+            }
+
+            // Hiển thị cột Giảm giá dạng %
+            else if (dgvBills.Columns[e.ColumnIndex].Name == "colDiscount" && e.Value != null)
+            {
+                if (double.TryParse(e.Value.ToString(), out double tax))
+                {
+                    e.Value = tax.ToString("0") + "%";
+                    e.FormattingApplied = true;
+                }
+
+            }
+        }
+
+
+
+
+
+
+
+
+        // ----------------- SỰ KIỆN -----------------
+
         private void dtpTuNgay_ValueChanged(object sender, EventArgs e)
         {
             if (dtpTuNgay.Value <= dtpDenNgay.Value)
             {
-                LoadOrders();
-                prevFromDate = dtpTuNgay.Value; // ✅ lưu giá trị hợp lệ mới
+                LoadBillsByDate();
+                prevFromDate = dtpTuNgay.Value;
             }
             else
             {
                 dtpTuNgay.ValueChanged -= dtpTuNgay_ValueChanged;
                 MessageBox.Show("❌ 'Từ ngày' phải nhỏ hơn hoặc bằng 'Đến ngày'.", "Lỗi ngày",
                                 MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                dtpTuNgay.Value = prevFromDate; // ✅ khôi phục giá trị cũ
+                dtpTuNgay.Value = prevFromDate;
                 dtpTuNgay.ValueChanged += dtpTuNgay_ValueChanged;
             }
         }
@@ -133,37 +315,48 @@ namespace Lab5
         {
             if (dtpTuNgay.Value <= dtpDenNgay.Value)
             {
-                LoadOrders();
-                prevToDate = dtpDenNgay.Value; // ✅ lưu giá trị hợp lệ mới
+                LoadBillsByDate();
+                prevToDate = dtpDenNgay.Value;
             }
             else
             {
-                
                 dtpDenNgay.Value = prevToDate;
                 dtpDenNgay.ValueChanged += dtpDenNgay_ValueChanged;
             }
         }
 
-
-
-        // Nút Refresh – tải lại toàn bộ hóa đơn, không lọc theo ngày
         private void tsmiRefresh_Click(object sender, EventArgs e)
         {
             try
             {
+                // Lấy tất cả các bill của bàn hiện tại
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     con.Open();
-                    string sql = "SELECT * FROM Bills ORDER BY ID ASC";
+                    string sql = "SELECT ID FROM Bills WHERE TableID = @tableID";
+                    SqlCommand cmd = new SqlCommand(sql, con);
+                    cmd.Parameters.AddWithValue("@tableID", currentTableID);
 
-                    SqlDataAdapter da = new SqlDataAdapter(sql, con);
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    var billIDs = new List<int>();
+                    while (reader.Read())
+                    {
+                        billIDs.Add(Convert.ToInt32(reader["ID"]));
+                    }
+                    reader.Close();
 
-                    dgvOrders.DataSource = dt;
+                    // Cập nhật lại từng bill trước khi load
+                    foreach (int billID in billIDs)
+                    {
+                        UpdateBillTotals(billID);
+                    }
                 }
 
-                Console.WriteLine("Đã tải lại toàn bộ hóa đơn.");
+                // Sau khi cập nhật thì load lại dữ liệu
+                LoadBillsByTable(currentTableID);
+
+                MessageBox.Show("🔄 Dữ liệu và tổng tiền đã được cập nhật mới nhất!",
+                                "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -172,15 +365,55 @@ namespace Lab5
             }
         }
 
-        // Khi double-click vào hóa đơn, mở form chi tiết
-        private void dgvOrders_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+
+        private void dgvBills_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && dgvOrders.Rows[e.RowIndex].Cells["colID"] != null)
+            if (e.RowIndex >= 0 && dgvBills.Rows[e.RowIndex].Cells["colID"] != null)
             {
-                int billID = Convert.ToInt32(dgvOrders.Rows[e.RowIndex].Cells["colID"].Value);
+                object cellValue = dgvBills.Rows[e.RowIndex].Cells["colID"].Value;
+
+                if (cellValue == null || cellValue == DBNull.Value)
+                {
+                    MessageBox.Show("⚠️ Không có mã hóa đơn hợp lệ để xem chi tiết!",
+                                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                int billID = Convert.ToInt32(cellValue);
                 OrderDetailsForm detailsForm = new OrderDetailsForm(billID);
                 detailsForm.ShowDialog();
+
             }
         }
+
+
+        private void LoadAllBills()
+        {
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                string sql = @"
+            SELECT 
+                b.ID,
+                t.ID AS TableID,
+                b.CheckoutDate,
+                b.Name,
+                b.Amount,
+                b.Discount,
+                b.Tax,
+                (b.Amount - (b.Amount * b.Discount / 100) + (b.Amount * b.Tax / 100)) AS FinalTotal,
+                b.Status,
+                b.Account
+            FROM Bills b
+            JOIN [Table] t ON b.TableID = t.ID
+            ORDER BY b.ID ASC";
+
+                SqlDataAdapter da = new SqlDataAdapter(sql, con);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dgvBills.DataSource = dt;
+            }
+        }
+
     }
 }
+

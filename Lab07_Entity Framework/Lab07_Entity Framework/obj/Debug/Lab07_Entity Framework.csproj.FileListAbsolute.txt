@@ -1,0 +1,29 @@
+D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab07_Entity Framework\Lab07_Entity Framework\bin\Debug\Lab07_Entity Framework.exe.config
+D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab07_Entity Framework\Lab07_Entity Framework\bin\Debug\Lab07_Entity Framework.exe
+D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab07_Entity Framework\Lab07_Entity Framework\bin\Debug\Lab07_Entity Framework.pdb
+D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab07_Entity Framework\Lab07_Entity Framework\bin\Debug\EntityFramework.dll
+D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab07_Entity Framework\Lab07_Entity Framework\bin\Debug\EntityFramework.SqlServer.dll
+D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab07_Entity Framework\Lab07_Entity Framework\bin\Debug\EntityFramework.xml
+D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab07_Entity Framework\Lab07_Entity Framework\bin\Debug\EntityFramework.SqlServer.xml
+D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab07_Entity Framework\Lab07_Entity Framework\obj\Debug\Lab07_Entity Framework.csproj.AssemblyReference.cache
+D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab07_Entity Framework\Lab07_Entity Framework\obj\Debug\Lab07_Entity_Framework.AccountAddUpdateForm.resources
+D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab07_Entity Framework\Lab07_Entity Framework\obj\Debug\Lab07_Entity_Framework.AccountForm.resources
+D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab07_Entity Framework\Lab07_Entity Framework\obj\Debug\Lab07_Entity_Framework.AddRoleForm.resources
+D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab07_Entity Framework\Lab07_Entity Framework\obj\Debug\Lab07_Entity_Framework.BillsByDateForm.resources
+D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab07_Entity Framework\Lab07_Entity Framework\obj\Debug\Lab07_Entity_Framework.BillDetailsForm.resources
+D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab07_Entity Framework\Lab07_Entity Framework\obj\Debug\Lab07_Entity_Framework.BillsForm.resources
+D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab07_Entity Framework\Lab07_Entity Framework\obj\Debug\Lab07_Entity_Framework.ChangePasswordForm.resources
+D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab07_Entity Framework\Lab07_Entity Framework\obj\Debug\Lab07_Entity_Framework.FoodForm.resources
+D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab07_Entity Framework\Lab07_Entity Framework\obj\Debug\Lab07_Entity_Framework.MainForm.resources
+D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab07_Entity Framework\Lab07_Entity Framework\obj\Debug\Lab07_Entity_Framework.PurchaseHistoryForm.resources
+D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab07_Entity Framework\Lab07_Entity Framework\obj\Debug\Lab07_Entity_Framework.TableForm.resources
+D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab07_Entity Framework\Lab07_Entity Framework\obj\Debug\Lab07_Entity_Framework.Properties.Resources.resources
+D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab07_Entity Framework\Lab07_Entity Framework\obj\Debug\Lab07_Entity_Framework.TableAddUpdate.resources
+D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab07_Entity Framework\Lab07_Entity Framework\obj\Debug\Lab07_Entity_Framework.UpdateCategoryForm.resources
+D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab07_Entity Framework\Lab07_Entity Framework\obj\Debug\Lab07_Entity_Framework.UpdateFoodForm.resources
+D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab07_Entity Framework\Lab07_Entity Framework\obj\Debug\Lab07_Entity_Framework.ViewListRoleForm.resources
+D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab07_Entity Framework\Lab07_Entity Framework\obj\Debug\Lab07_Entity Framework.csproj.GenerateResource.cache
+D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab07_Entity Framework\Lab07_Entity Framework\obj\Debug\Lab07_Entity Framework.csproj.CoreCompileInputs.cache
+D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab07_Entity Framework\Lab07_Entity Framework\obj\Debug\Lab07_En.4973398A.Up2Date
+D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab07_Entity Framework\Lab07_Entity Framework\obj\Debug\Lab07_Entity Framework.exe
+D:\2312716_MaiQuyPhuoc_baitapdesktop\Lab07_Entity Framework\Lab07_Entity Framework\obj\Debug\Lab07_Entity Framework.pdb
