@@ -28,7 +28,6 @@
             this.tsmiXoa1Ban = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiXemDMHD = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiXemNKHD = new System.Windows.Forms.ToolStripMenuItem();
-            this.tmsiXemHD = new System.Windows.Forms.ToolStripMenuItem();
             this.bntCapNhatBan = new System.Windows.Forms.Button();
             this.bntXoa = new System.Windows.Forms.Button();
             this.xemHóaĐơnHiệnTạiCủa1BànToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,16 +60,15 @@
             this.cmsBan.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiXoa1Ban,
             this.tsmiXemDMHD,
-            this.tsmiXemNKHD,
-            this.tmsiXemHD});
+            this.tsmiXemNKHD});
             this.cmsBan.Name = "contextMenuStrip1";
-            this.cmsBan.Size = new System.Drawing.Size(289, 144);
+            this.cmsBan.Size = new System.Drawing.Size(265, 116);
             // 
             // tsmiXoa1Ban
             // 
             this.tsmiXoa1Ban.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.tsmiXoa1Ban.Name = "tsmiXoa1Ban";
-            this.tsmiXoa1Ban.Size = new System.Drawing.Size(288, 28);
+            this.tsmiXoa1Ban.Size = new System.Drawing.Size(264, 28);
             this.tsmiXoa1Ban.Text = "Xóa bàn";
             this.tsmiXoa1Ban.Click += new System.EventHandler(this.tsmiXoa1Ban_Click);
             // 
@@ -78,7 +76,7 @@
             // 
             this.tsmiXemDMHD.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.tsmiXemDMHD.Name = "tsmiXemDMHD";
-            this.tsmiXemDMHD.Size = new System.Drawing.Size(288, 28);
+            this.tsmiXemDMHD.Size = new System.Drawing.Size(264, 28);
             this.tsmiXemDMHD.Text = "Xem danh mục hóa đơn";
             this.tsmiXemDMHD.Click += new System.EventHandler(this.tsmiXemDMHD_Click);
             // 
@@ -86,16 +84,9 @@
             // 
             this.tsmiXemNKHD.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.tsmiXemNKHD.Name = "tsmiXemNKHD";
-            this.tsmiXemNKHD.Size = new System.Drawing.Size(288, 28);
+            this.tsmiXemNKHD.Size = new System.Drawing.Size(264, 28);
             this.tsmiXemNKHD.Text = "Xem nhật ký bán hàng";
             this.tsmiXemNKHD.Click += new System.EventHandler(this.tsmiXemNKHD_Click);
-            // 
-            // tmsiXemHD
-            // 
-            this.tmsiXemHD.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.tmsiXemHD.Name = "tmsiXemHD";
-            this.tmsiXemHD.Size = new System.Drawing.Size(288, 28);
-            this.tmsiXemHD.Text = "Xem hóa đơn hiện tại của 1 bàn";
             // 
             // bntCapNhatBan
             // 
@@ -155,6 +146,5 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiXemDMHD;
         private System.Windows.Forms.ToolStripMenuItem tsmiXemNKHD;
         private System.Windows.Forms.ContextMenuStrip cmsBan;
-        private System.Windows.Forms.ToolStripMenuItem tmsiXemHD;
     }
 }

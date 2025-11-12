@@ -28,34 +28,44 @@ namespace Lab07_Entity_Framework // ⬅️ Đổi namespace
         {
             try
             {
+                // === SỬA LỖI 2: Tắt tính năng tự động tạo cột ===
+                // Điều này sẽ ngăn các cột colName, colUnit... tự động xuất hiện
+                dgvBillDetails.AutoGenerateColumns = false;
+
                 // Dùng EF và LINQ thay cho SQL query
                 var billDetails = _context.BillDetails
                     .Where(bd => bd.BillID == _billId)
                     .Include(bd => bd.Food.Category) // Tải kèm Food và Category
                     .Select(bd => new
                     {
-                        colName = bd.Food.Name,
-                        colUnit = bd.Food.Unit,
-                        colQuantity = bd.Quantity,
-                        colPrice = bd.Food.Price,
-                        colTotal = bd.Quantity * bd.Food.Price,
-                        colNotes = bd.Food.Notes,
-                        colCategory = bd.Food.Category.Name
+                        // Giữ nguyên các tên này, chúng ta sẽ dùng ở Bước 2
+                        Name = bd.Food.Name,
+                        Unit = bd.Food.Unit,
+                        Quantity = bd.Quantity,
+                        Price = bd.Food.Price,
+                        Total = bd.Quantity * bd.Food.Price,
+                        Notes = bd.Food.Notes,
+                        CategoryName = bd.Food.Category.Name
                     })
                     .ToList();
 
+                // Gán DataSource như bình thường
                 dgvBillDetails.DataSource = billDetails;
 
-                // Cập nhật lại tên cột (nếu tên trong Designer khác)
-                dgvBillDetails.Columns["colName"].HeaderText = "Tên món";
-                dgvBillDetails.Columns["colUnit"].HeaderText = "Đơn vị";
-                dgvBillDetails.Columns["colQuantity"].HeaderText = "Số lượng";
-                dgvBillDetails.Columns["colPrice"].HeaderText = "Đơn giá";
-                dgvBillDetails.Columns["colTotal"].HeaderText = "Thành tiền";
-                dgvBillDetails.Columns["colNotes"].HeaderText = "Ghi chú";
-                dgvBillDetails.Columns["colCategory"].HeaderText = "Loại";
+                // === SỬA LỖI 1: Tính tổng từ danh sách (list) ===
+                // KHÔNG dùng vòng lặp DataGridView vì nó không an toàn
+                // Thay vào đó, tính tổng trực tiếp từ 'billDetails' list
+                decimal total = 0;
+                if (billDetails != null)
+                {
+                    total = billDetails.Sum(item => item.Total);
+                }
 
-                UpdateTotalLabel();
+                // Cập nhật nhãn (label) tổng tiền
+                lblTotalAmount.Text = $"Tổng thành tiền: {total:N0} VND";
+
+                // Chúng ta không cần hàm UpdateTotalLabel() nữa
+                // UpdateTotalLabel(); // ⬅️ Xóa hoặc vô hiệu hóa dòng này
             }
             catch (Exception ex)
             {

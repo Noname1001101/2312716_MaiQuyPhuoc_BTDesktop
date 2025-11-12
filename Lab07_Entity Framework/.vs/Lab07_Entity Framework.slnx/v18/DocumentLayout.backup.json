@@ -3,40 +3,56 @@
   "WorkspaceRootPath": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab07_Entity Framework\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4D23424A-15AE-49F1-91F3-A56FDA0D61FE}|Lab07_Entity Framework\\Lab07_Entity Framework.csproj|d:\\2312716_maiquyphuoc_baitapdesktop\\lab07_entity framework\\lab07_entity framework\\tableform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D23424A-15AE-49F1-91F3-A56FDA0D61FE}|Lab07_Entity Framework\\Lab07_Entity Framework.csproj|solutionrelative:lab07_entity framework\\tableform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4D23424A-15AE-49F1-91F3-A56FDA0D61FE}|Lab07_Entity Framework\\Lab07_Entity Framework.csproj|d:\\2312716_maiquyphuoc_baitapdesktop\\lab07_entity framework\\lab07_entity framework\\billdetailsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D23424A-15AE-49F1-91F3-A56FDA0D61FE}|Lab07_Entity Framework\\Lab07_Entity Framework.csproj|solutionrelative:lab07_entity framework\\billdetailsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D23424A-15AE-49F1-91F3-A56FDA0D61FE}|Lab07_Entity Framework\\Lab07_Entity Framework.csproj|d:\\2312716_maiquyphuoc_baitapdesktop\\lab07_entity framework\\lab07_entity framework\\tableform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{4D23424A-15AE-49F1-91F3-A56FDA0D61FE}|Lab07_Entity Framework\\Lab07_Entity Framework.csproj|solutionrelative:lab07_entity framework\\tableform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{4D23424A-15AE-49F1-91F3-A56FDA0D61FE}|Lab07_Entity Framework\\Lab07_Entity Framework.csproj|d:\\2312716_maiquyphuoc_baitapdesktop\\lab07_entity framework\\lab07_entity framework\\billdetailsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{4D23424A-15AE-49F1-91F3-A56FDA0D61FE}|Lab07_Entity Framework\\Lab07_Entity Framework.csproj|solutionrelative:lab07_entity framework\\billdetailsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D23424A-15AE-49F1-91F3-A56FDA0D61FE}|Lab07_Entity Framework\\Lab07_Entity Framework.csproj|D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab07_Entity Framework\\lab07_entity framework\\models\\billdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D23424A-15AE-49F1-91F3-A56FDA0D61FE}|Lab07_Entity Framework\\Lab07_Entity Framework.csproj|solutionrelative:lab07_entity framework\\models\\billdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4D23424A-15AE-49F1-91F3-A56FDA0D61FE}|Lab07_Entity Framework\\Lab07_Entity Framework.csproj|d:\\2312716_maiquyphuoc_baitapdesktop\\lab07_entity framework\\lab07_entity framework\\billsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4D23424A-15AE-49F1-91F3-A56FDA0D61FE}|Lab07_Entity Framework\\Lab07_Entity Framework.csproj|solutionrelative:lab07_entity framework\\billsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D23424A-15AE-49F1-91F3-A56FDA0D61FE}|Lab07_Entity Framework\\Lab07_Entity Framework.csproj|d:\\2312716_maiquyphuoc_baitapdesktop\\lab07_entity framework\\lab07_entity framework\\models\\bill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D23424A-15AE-49F1-91F3-A56FDA0D61FE}|Lab07_Entity Framework\\Lab07_Entity Framework.csproj|solutionrelative:lab07_entity framework\\models\\bill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4D23424A-15AE-49F1-91F3-A56FDA0D61FE}|Lab07_Entity Framework\\Lab07_Entity Framework.csproj|D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab07_Entity Framework\\lab07_entity framework\\tableform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D23424A-15AE-49F1-91F3-A56FDA0D61FE}|Lab07_Entity Framework\\Lab07_Entity Framework.csproj|solutionrelative:lab07_entity framework\\tableform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D23424A-15AE-49F1-91F3-A56FDA0D61FE}|Lab07_Entity Framework\\Lab07_Entity Framework.csproj|d:\\2312716_maiquyphuoc_baitapdesktop\\lab07_entity framework\\lab07_entity framework\\models\\diningtable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4D23424A-15AE-49F1-91F3-A56FDA0D61FE}|Lab07_Entity Framework\\Lab07_Entity Framework.csproj|D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab07_Entity Framework\\lab07_entity framework\\models\\diningtable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4D23424A-15AE-49F1-91F3-A56FDA0D61FE}|Lab07_Entity Framework\\Lab07_Entity Framework.csproj|solutionrelative:lab07_entity framework\\models\\diningtable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D23424A-15AE-49F1-91F3-A56FDA0D61FE}|Lab07_Entity Framework\\Lab07_Entity Framework.csproj|d:\\2312716_maiquyphuoc_baitapdesktop\\lab07_entity framework\\lab07_entity framework\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "AbsoluteMoniker": "D:0:0:{4D23424A-15AE-49F1-91F3-A56FDA0D61FE}|Lab07_Entity Framework\\Lab07_Entity Framework.csproj|D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab07_Entity Framework\\lab07_entity framework\\models\\bill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D23424A-15AE-49F1-91F3-A56FDA0D61FE}|Lab07_Entity Framework\\Lab07_Entity Framework.csproj|solutionrelative:lab07_entity framework\\models\\bill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D23424A-15AE-49F1-91F3-A56FDA0D61FE}|Lab07_Entity Framework\\Lab07_Entity Framework.csproj|d:\\2312716_maiquyphuoc_baitapdesktop\\lab07_entity framework\\lab07_entity framework\\models\\accountviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D23424A-15AE-49F1-91F3-A56FDA0D61FE}|Lab07_Entity Framework\\Lab07_Entity Framework.csproj|solutionrelative:lab07_entity framework\\models\\accountviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D23424A-15AE-49F1-91F3-A56FDA0D61FE}|Lab07_Entity Framework\\Lab07_Entity Framework.csproj|d:\\2312716_maiquyphuoc_baitapdesktop\\lab07_entity framework\\lab07_entity framework\\models\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D23424A-15AE-49F1-91F3-A56FDA0D61FE}|Lab07_Entity Framework\\Lab07_Entity Framework.csproj|solutionrelative:lab07_entity framework\\models\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D23424A-15AE-49F1-91F3-A56FDA0D61FE}|Lab07_Entity Framework\\Lab07_Entity Framework.csproj|D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab07_Entity Framework\\lab07_entity framework\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{4D23424A-15AE-49F1-91F3-A56FDA0D61FE}|Lab07_Entity Framework\\Lab07_Entity Framework.csproj|solutionrelative:lab07_entity framework\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D23424A-15AE-49F1-91F3-A56FDA0D61FE}|Lab07_Entity Framework\\Lab07_Entity Framework.csproj|d:\\2312716_maiquyphuoc_baitapdesktop\\lab07_entity framework\\lab07_entity framework\\billsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{4D23424A-15AE-49F1-91F3-A56FDA0D61FE}|Lab07_Entity Framework\\Lab07_Entity Framework.csproj|D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab07_Entity Framework\\lab07_entity framework\\tableform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{4D23424A-15AE-49F1-91F3-A56FDA0D61FE}|Lab07_Entity Framework\\Lab07_Entity Framework.csproj|solutionrelative:lab07_entity framework\\tableform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D23424A-15AE-49F1-91F3-A56FDA0D61FE}|Lab07_Entity Framework\\Lab07_Entity Framework.csproj|D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab07_Entity Framework\\lab07_entity framework\\billsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{4D23424A-15AE-49F1-91F3-A56FDA0D61FE}|Lab07_Entity Framework\\Lab07_Entity Framework.csproj|solutionrelative:lab07_entity framework\\billsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D23424A-15AE-49F1-91F3-A56FDA0D61FE}|Lab07_Entity Framework\\Lab07_Entity Framework.csproj|d:\\2312716_maiquyphuoc_baitapdesktop\\lab07_entity framework\\lab07_entity framework\\purchasehistoryform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4D23424A-15AE-49F1-91F3-A56FDA0D61FE}|Lab07_Entity Framework\\Lab07_Entity Framework.csproj|D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab07_Entity Framework\\lab07_entity framework\\purchasehistoryform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4D23424A-15AE-49F1-91F3-A56FDA0D61FE}|Lab07_Entity Framework\\Lab07_Entity Framework.csproj|solutionrelative:lab07_entity framework\\purchasehistoryform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4D23424A-15AE-49F1-91F3-A56FDA0D61FE}|Lab07_Entity Framework\\Lab07_Entity Framework.csproj|D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab07_Entity Framework\\lab07_entity framework\\models\\billdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D23424A-15AE-49F1-91F3-A56FDA0D61FE}|Lab07_Entity Framework\\Lab07_Entity Framework.csproj|solutionrelative:lab07_entity framework\\models\\billdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,7 +62,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 330,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -55,6 +71,70 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "BillDetailsForm.cs [Design]",
+              "DocumentMoniker": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab07_Entity Framework\\Lab07_Entity Framework\\BillDetailsForm.cs",
+              "RelativeDocumentMoniker": "Lab07_Entity Framework\\BillDetailsForm.cs",
+              "ToolTip": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab07_Entity Framework\\Lab07_Entity Framework\\BillDetailsForm.cs [Design]",
+              "RelativeToolTip": "Lab07_Entity Framework\\BillDetailsForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T03:10:07.52Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BillDetailsForm.cs",
+              "DocumentMoniker": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab07_Entity Framework\\Lab07_Entity Framework\\BillDetailsForm.cs",
+              "RelativeDocumentMoniker": "Lab07_Entity Framework\\BillDetailsForm.cs",
+              "ToolTip": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab07_Entity Framework\\Lab07_Entity Framework\\BillDetailsForm.cs",
+              "RelativeToolTip": "Lab07_Entity Framework\\BillDetailsForm.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAqwDUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T02:45:53.553Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AccountViewModel.cs",
+              "DocumentMoniker": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab07_Entity Framework\\Lab07_Entity Framework\\Models\\AccountViewModel.cs",
+              "RelativeDocumentMoniker": "Lab07_Entity Framework\\Models\\AccountViewModel.cs",
+              "ToolTip": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab07_Entity Framework\\Lab07_Entity Framework\\Models\\AccountViewModel.cs",
+              "RelativeToolTip": "Lab07_Entity Framework\\Models\\AccountViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T02:43:29.629Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Account.cs",
+              "DocumentMoniker": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab07_Entity Framework\\Lab07_Entity Framework\\Models\\Account.cs",
+              "RelativeDocumentMoniker": "Lab07_Entity Framework\\Models\\Account.cs",
+              "ToolTip": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab07_Entity Framework\\Lab07_Entity Framework\\Models\\Account.cs",
+              "RelativeToolTip": "Lab07_Entity Framework\\Models\\Account.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T02:43:27.662Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BillsForm.cs",
+              "DocumentMoniker": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab07_Entity Framework\\Lab07_Entity Framework\\BillsForm.cs",
+              "RelativeDocumentMoniker": "Lab07_Entity Framework\\BillsForm.cs",
+              "ToolTip": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab07_Entity Framework\\Lab07_Entity Framework\\BillsForm.cs",
+              "RelativeToolTip": "Lab07_Entity Framework\\BillsForm.cs",
+              "ViewState": "AgIAAIIAAAAAAAAAAAAwwBwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T07:51:18.854Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "TableForm.cs [Design]",
               "DocumentMoniker": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab07_Entity Framework\\Lab07_Entity Framework\\TableForm.cs",
               "RelativeDocumentMoniker": "Lab07_Entity Framework\\TableForm.cs",
@@ -66,20 +146,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "DiningTable.cs",
               "DocumentMoniker": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab07_Entity Framework\\Lab07_Entity Framework\\Models\\DiningTable.cs",
               "RelativeDocumentMoniker": "Lab07_Entity Framework\\Models\\DiningTable.cs",
               "ToolTip": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab07_Entity Framework\\Lab07_Entity Framework\\Models\\DiningTable.cs",
               "RelativeToolTip": "Lab07_Entity Framework\\Models\\DiningTable.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-11T09:10:06.53Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "App.config",
               "DocumentMoniker": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab07_Entity Framework\\Lab07_Entity Framework\\App.config",
               "RelativeDocumentMoniker": "Lab07_Entity Framework\\App.config",
@@ -92,33 +172,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "Bill.cs",
               "DocumentMoniker": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab07_Entity Framework\\Lab07_Entity Framework\\Models\\Bill.cs",
               "RelativeDocumentMoniker": "Lab07_Entity Framework\\Models\\Bill.cs",
               "ToolTip": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab07_Entity Framework\\Lab07_Entity Framework\\Models\\Bill.cs",
               "RelativeToolTip": "Lab07_Entity Framework\\Models\\Bill.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAAkwCYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-11T08:17:56.733Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "BillsForm.cs",
-              "DocumentMoniker": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab07_Entity Framework\\Lab07_Entity Framework\\BillsForm.cs",
-              "RelativeDocumentMoniker": "Lab07_Entity Framework\\BillsForm.cs",
-              "ToolTip": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab07_Entity Framework\\Lab07_Entity Framework\\BillsForm.cs",
-              "RelativeToolTip": "Lab07_Entity Framework\\BillsForm.cs",
-              "ViewState": "AgIAAIEAAAAAAAAAAAAmwJgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-11T07:51:18.854Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 11,
               "Title": "BillsForm.cs [Design]",
               "DocumentMoniker": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab07_Entity Framework\\Lab07_Entity Framework\\BillsForm.cs",
               "RelativeDocumentMoniker": "Lab07_Entity Framework\\BillsForm.cs",
@@ -130,7 +197,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 12,
               "Title": "PurchaseHistoryForm.cs",
               "DocumentMoniker": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab07_Entity Framework\\Lab07_Entity Framework\\PurchaseHistoryForm.cs",
               "RelativeDocumentMoniker": "Lab07_Entity Framework\\PurchaseHistoryForm.cs",
@@ -138,31 +205,30 @@
               "RelativeToolTip": "Lab07_Entity Framework\\PurchaseHistoryForm.cs",
               "ViewState": "AgIAADMAAAAAAAAAAAAuwFkAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-11T07:41:38.859Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-11T07:41:38.859Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "TableForm.cs",
               "DocumentMoniker": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab07_Entity Framework\\Lab07_Entity Framework\\TableForm.cs",
               "RelativeDocumentMoniker": "Lab07_Entity Framework\\TableForm.cs",
               "ToolTip": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab07_Entity Framework\\Lab07_Entity Framework\\TableForm.cs",
               "RelativeToolTip": "Lab07_Entity Framework\\TableForm.cs",
-              "ViewState": "AgIAAPEAAAAAAAAAAAAuwAkBAAABAAAAAAAAAA==",
+              "ViewState": "AgIAABwAAAAAAAAAAAAAwCcAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-11T07:29:04.023Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 2,
               "Title": "BillDetails.cs",
               "DocumentMoniker": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab07_Entity Framework\\Lab07_Entity Framework\\Models\\BillDetails.cs",
               "RelativeDocumentMoniker": "Lab07_Entity Framework\\Models\\BillDetails.cs",
               "ToolTip": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab07_Entity Framework\\Lab07_Entity Framework\\Models\\BillDetails.cs",
               "RelativeToolTip": "Lab07_Entity Framework\\Models\\BillDetails.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-11T06:55:32.268Z",
               "EditorCaption": ""

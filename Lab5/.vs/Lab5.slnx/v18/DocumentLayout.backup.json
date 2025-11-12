@@ -3,44 +3,12 @@
   "WorkspaceRootPath": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab5\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C8D55889-0561-4FC1-B9F8-B37C5D72AB47}|Lab5\\Lab5.csproj|d:\\2312716_maiquyphuoc_baitapdesktop\\lab5\\lab5\\ordersform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{C8D55889-0561-4FC1-B9F8-B37C5D72AB47}|Lab5\\Lab5.csproj|solutionrelative:lab5\\ordersform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C8D55889-0561-4FC1-B9F8-B37C5D72AB47}|Lab5\\Lab5.csproj|D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab5\\lab5\\accountform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C8D55889-0561-4FC1-B9F8-B37C5D72AB47}|Lab5\\Lab5.csproj|d:\\2312716_maiquyphuoc_baitapdesktop\\lab5\\lab5\\accountform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C8D55889-0561-4FC1-B9F8-B37C5D72AB47}|Lab5\\Lab5.csproj|solutionrelative:lab5\\accountform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C8D55889-0561-4FC1-B9F8-B37C5D72AB47}|Lab5\\Lab5.csproj|D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab5\\lab5\\accountform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{C8D55889-0561-4FC1-B9F8-B37C5D72AB47}|Lab5\\Lab5.csproj|d:\\2312716_maiquyphuoc_baitapdesktop\\lab5\\lab5\\accountform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{C8D55889-0561-4FC1-B9F8-B37C5D72AB47}|Lab5\\Lab5.csproj|solutionrelative:lab5\\accountform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C8D55889-0561-4FC1-B9F8-B37C5D72AB47}|Lab5\\Lab5.csproj|D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab5\\lab5\\viewlistroles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C8D55889-0561-4FC1-B9F8-B37C5D72AB47}|Lab5\\Lab5.csproj|solutionrelative:lab5\\viewlistroles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C8D55889-0561-4FC1-B9F8-B37C5D72AB47}|Lab5\\Lab5.csproj|D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab5\\lab5\\viewlistroles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{C8D55889-0561-4FC1-B9F8-B37C5D72AB47}|Lab5\\Lab5.csproj|solutionrelative:lab5\\viewlistroles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C8D55889-0561-4FC1-B9F8-B37C5D72AB47}|Lab5\\Lab5.csproj|D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab5\\lab5\\accountaddupdateform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{C8D55889-0561-4FC1-B9F8-B37C5D72AB47}|Lab5\\Lab5.csproj|solutionrelative:lab5\\accountaddupdateform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C8D55889-0561-4FC1-B9F8-B37C5D72AB47}|Lab5\\Lab5.csproj|D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab5\\lab5\\addcategoryform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{C8D55889-0561-4FC1-B9F8-B37C5D72AB47}|Lab5\\Lab5.csproj|solutionrelative:lab5\\addcategoryform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C8D55889-0561-4FC1-B9F8-B37C5D72AB47}|Lab5\\Lab5.csproj|D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab5\\lab5\\ordersform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C8D55889-0561-4FC1-B9F8-B37C5D72AB47}|Lab5\\Lab5.csproj|solutionrelative:lab5\\ordersform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C8D55889-0561-4FC1-B9F8-B37C5D72AB47}|Lab5\\Lab5.csproj|D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab5\\lab5\\foodform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{C8D55889-0561-4FC1-B9F8-B37C5D72AB47}|Lab5\\Lab5.csproj|solutionrelative:lab5\\foodform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C8D55889-0561-4FC1-B9F8-B37C5D72AB47}|Lab5\\Lab5.csproj|D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab5\\lab5\\foodinfoform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{C8D55889-0561-4FC1-B9F8-B37C5D72AB47}|Lab5\\Lab5.csproj|solutionrelative:lab5\\foodinfoform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 330,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -58,118 +26,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ViewListRoles.cs",
-              "DocumentMoniker": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab5\\Lab5\\ViewListRoles.cs",
-              "RelativeDocumentMoniker": "Lab5\\ViewListRoles.cs",
-              "ToolTip": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab5\\Lab5\\ViewListRoles.cs",
-              "RelativeToolTip": "Lab5\\ViewListRoles.cs",
-              "ViewState": "AgIAADQAAAAAAAAAAAAYwJUAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "AccountForm.cs",
+              "DocumentMoniker": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab5\\Lab5\\AccountForm.cs",
+              "RelativeDocumentMoniker": "Lab5\\AccountForm.cs",
+              "ToolTip": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab5\\Lab5\\AccountForm.cs",
+              "RelativeToolTip": "Lab5\\AccountForm.cs",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAqwGYAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-10T13:11:39.081Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AccountAddUpdateForm.cs [Design]",
-              "DocumentMoniker": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab5\\Lab5\\AccountAddUpdateForm.cs",
-              "RelativeDocumentMoniker": "Lab5\\AccountAddUpdateForm.cs",
-              "ToolTip": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab5\\Lab5\\AccountAddUpdateForm.cs [Design]",
-              "RelativeToolTip": "Lab5\\AccountAddUpdateForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-10T13:11:15.97Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AddCategoryForm.cs [Design]",
-              "DocumentMoniker": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab5\\Lab5\\AddCategoryForm.cs",
-              "RelativeDocumentMoniker": "Lab5\\AddCategoryForm.cs",
-              "ToolTip": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab5\\Lab5\\AddCategoryForm.cs [Design]",
-              "RelativeToolTip": "Lab5\\AddCategoryForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-10T13:11:13.184Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ViewListRoles.cs [Design]",
-              "DocumentMoniker": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab5\\Lab5\\ViewListRoles.cs",
-              "RelativeDocumentMoniker": "Lab5\\ViewListRoles.cs",
-              "ToolTip": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab5\\Lab5\\ViewListRoles.cs [Design]",
-              "RelativeToolTip": "Lab5\\ViewListRoles.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-10T13:10:57.428Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "FoodForm.cs [Design]",
-              "DocumentMoniker": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab5\\Lab5\\FoodForm.cs",
-              "RelativeDocumentMoniker": "Lab5\\FoodForm.cs",
-              "ToolTip": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab5\\Lab5\\FoodForm.cs [Design]",
-              "RelativeToolTip": "Lab5\\FoodForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-10T01:35:38.446Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "FoodInfoForm.cs [Design]",
-              "DocumentMoniker": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab5\\Lab5\\FoodInfoForm.cs",
-              "RelativeDocumentMoniker": "Lab5\\FoodInfoForm.cs",
-              "ToolTip": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab5\\Lab5\\FoodInfoForm.cs [Design]",
-              "RelativeToolTip": "Lab5\\FoodInfoForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-10T01:35:37.532Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "OrdersForm.cs",
-              "DocumentMoniker": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab5\\Lab5\\OrdersForm.cs",
-              "RelativeDocumentMoniker": "Lab5\\OrdersForm.cs",
-              "ToolTip": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab5\\Lab5\\OrdersForm.cs",
-              "RelativeToolTip": "Lab5\\OrdersForm.cs",
-              "ViewState": "AgIAAIIBAAAAAAAAAAAuwJIBAABkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-10T01:18:14.971Z",
+              "WhenOpened": "2025-11-12T03:36:44.922Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "AccountForm.cs [Design]",
               "DocumentMoniker": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab5\\Lab5\\AccountForm.cs",
               "RelativeDocumentMoniker": "Lab5\\AccountForm.cs",
               "ToolTip": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab5\\Lab5\\AccountForm.cs [Design]",
               "RelativeToolTip": "Lab5\\AccountForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-10T01:12:35.576Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "OrdersForm.cs [Design]",
-              "DocumentMoniker": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab5\\Lab5\\OrdersForm.cs",
-              "RelativeDocumentMoniker": "Lab5\\OrdersForm.cs",
-              "ToolTip": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab5\\Lab5\\OrdersForm.cs [Design]",
-              "RelativeToolTip": "Lab5\\OrdersForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-10T01:35:39.401Z",
+              "WhenOpened": "2025-11-12T03:36:42.672Z",
               "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AccountForm.cs",
-              "DocumentMoniker": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab5\\Lab5\\AccountForm.cs",
-              "RelativeDocumentMoniker": "Lab5\\AccountForm.cs",
-              "ToolTip": "D:\\2312716_MaiQuyPhuoc_baitapdesktop\\Lab5\\Lab5\\AccountForm.cs",
-              "RelativeToolTip": "Lab5\\AccountForm.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAYwDEAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-10T01:14:15.976Z"
             }
           ]
         },

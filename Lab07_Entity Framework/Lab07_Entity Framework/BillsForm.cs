@@ -27,16 +27,13 @@ namespace Lab07_Entity_Framework
         {
             dgvBills.AutoGenerateColumns = false;
 
-            dtpTuNgay.Value = new DateTime(2024, 7, 1);
-            dtpDenNgay.Value = new DateTime(2024, 7, 30);
+            dtpTuNgay.Value = new DateTime(2024, 1, 1);
+            dtpDenNgay.Value = new DateTime(2024, 12, 30);
 
             _previousFromDate = dtpTuNgay.Value;
             _previousToDate = dtpDenNgay.Value;
 
-            // ================== THÊM DÒNG DEBUG 1 ==================
-            // Chúng ta kiểm tra ID ngay khi form được tải lên.
-            MessageBox.Show($"Form này được khởi tạo với TableID: {_tableId}", "DEBUG 1");
-            // ======================================================
+            
 
             LoadBillsByDate(); // Tải lần đầu
         }
@@ -45,10 +42,7 @@ namespace Lab07_Entity_Framework
         {
             try
             {
-                // ================== THÊM DÒNG DEBUG 2 ==================
-                // Kiểm tra lại ID ngay trước khi truy vấn
-                MessageBox.Show($"Hàm LoadBillsByDate() đang chạy với TableID: {_tableId}", "DEBUG 2");
-                // ======================================================
+                
 
                 var query = _context.Bills
                     .Where(b => b.TableID == _tableId); // Lọc theo bàn
@@ -77,9 +71,7 @@ namespace Lab07_Entity_Framework
                     })
                     .ToList();
 
-                // ================== THÊM DÒNG DEBUG 3 ==================
-                MessageBox.Show($"Đã tìm thấy: {bills.Count} hóa đơn.", "DEBUG 3");
-                // ======================================================
+               
 
                 dgvBills.DataSource = bills;
             }

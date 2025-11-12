@@ -42,39 +42,59 @@ namespace Lab5
         }
 
         // 🔹 Nạp danh sách tài khoản
+        // Trong file: AccountForm.cs
         public void LoadAccounts()
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
+                // 1. SỬA LỖI SQL:
+                //    - Tôi đã XÓA dòng (acc.Active = @Active OR @Active = -1)
+                //      vì bạn không có control nào gán giá trị cho @Active,
+                //      và logic của bạn (chkActive) là lọc theo "ra.Actived" (vai trò active)
+                //      chứ không phải "acc.Active" (tài khoản active).
                 string query = @"
-        SELECT 
-            a.AccountName,
-            a.FullName,
-            a.Password,
-            a.Email,
-            a.Tell,
-            a.DateCreated,
-            r.RoleName,
-            CASE WHEN ra.Actived = 1 THEN N'Đang hoạt động' ELSE N'Ngừng' END AS [TrangThai]
-        FROM Account a
-        LEFT JOIN RoleAccount ra ON a.AccountName = ra.AccountName
-        LEFT JOIN Role r ON ra.RoleID = r.ID
-        WHERE (1=1)";
-
-                // 🔹 Lọc theo nhóm (Role)
-                if (cboNhomTK.SelectedIndex >= 0)
-                    query += " AND r.ID = @RoleID";
+            SELECT DISTINCT 
+                acc.AccountName, 
+                acc.FullName, 
+                acc.Password, 
+                acc.Email, 
+                acc.Tell, 
+                acc.DateCreated
+            FROM 
+                dbo.Account AS acc
+            LEFT JOIN 
+                dbo.RoleAccount AS ra ON acc.AccountName = ra.AccountName
+            LEFT JOIN 
+                dbo.Role AS r ON ra.RoleID = r.ID
+            WHERE 
+                (r.ID = @RoleID OR @RoleID = 0)
+        ";
 
                 // 🔹 Lọc chỉ hiển thị vai trò đang kích hoạt
+                //    (Logic này của bạn đã ĐÚNG, vì nó khớp với chức năng "Vô hiệu hóa")
                 if (chkActive.Checked)
                     query += " AND ra.Actived = 1";
 
                 SqlCommand cmd = new SqlCommand(query, conn);
+
+                // 2. SỬA LỖI THAM SỐ:
+                //    - Chúng ta phải LUÔN LUÔN thêm tham số @RoleID,
+                //      vì nó luôn có trong câu query (WHERE ... r.ID = @RoleID ...)
+
+                int roleID = 0; // Mặc định là 0 (nghĩa là "Tất cả vai trò")
                 if (cboNhomTK.SelectedIndex >= 0)
-                    cmd.Parameters.AddWithValue("@RoleID", cboNhomTK.SelectedValue);
+                {
+                    // Nếu có chọn, thì lấy giá trị từ combobox
+                    roleID = Convert.ToInt32(cboNhomTK.SelectedValue);
+                }
+                cmd.Parameters.AddWithValue("@RoleID", roleID);
+
+                // ---- LỖI CỦA BẠN ĐÃ ĐƯỢC SỬA TẠI ĐÂY ----
 
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
+
+                // Dòng 83 của bạn (da.Fill) sẽ không còn lỗi nữa
                 da.Fill(dt);
 
                 dgvAccount.DataSource = dt;
